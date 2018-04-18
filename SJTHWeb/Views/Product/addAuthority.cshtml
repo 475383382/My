@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewBag.Title = "addAuthority";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@using sjth.Model;
+
+@model Authority
+<pages validaterequest="false" enableeventvalidation="false">
+    <link href="~/kindeditor/themes/default/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/kindeditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="~/kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="~/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="~/kindeditor/plugins/code/prettify.js"></script>
+    <script>
+
+        $(function () {
+        var srcurl = "@Model.authoritytTop";
+        var authorityUrl = "@Model.authorityUrl";
+        $("#authorityUrl").val(authorityUrl);
+
+        /*----------------------*/
+
+        //循环放照片
+      
+       //var urlst = $("#Urls").val();
+        var stringArr = [];
+        if (authorityUrl.indexOf(",") > 0) {
+            var result = $("#authorityUrl").val().split(',');
+            for (var i = 0; i < result.length; i++) {
+                //$("#clear").before("<div class='VideoConBox'><img src ='" + result[i] + "' alt='" + result[i] + "'/><div class='VideoDel'></div></div>")
+                $('<div style="float:left;margin-left:10px"><img style="width:250px; height:250px;" src="' + result[i] + '"> <div class="VideoDel">删除</div></div>').appendTo('#J_imageView');
+            }
+        } else {
+            if (authorityUrl.length != 0) {
+                $('<div style="float:left;margin-left:10px"><img style="width:250px; height:250px;" src="' + authorityUrl + '"> <div class="VideoDel">删除</div></div>').appendTo('#J_imageView');
+            }
+        }
+
+        /*-----------------*/
+            if (srcurl!="") {
+                $("#imgst").attr("src", "@Model.authoritytTop");
+            }
+               // $("#imgst").attr("src", "@Model.authoritytTop");
+        $("#J_imageView").delegate(".VideoDel", "click", function () {
+            var result = $("#authorityUrl").val().split(',');
+            var stringArr = [];
+            for (var i = 0; i < result.length; i++) {
+                stringArr.push(result[i])
+            }
+            // alert(stringArr.length)
+            stringArr.splice($(this).parent().index(), 1);
+            $("#authorityUrl").val(stringArr.join(','));
+            //alert($(this).parent().index())
+            // alert($("#authorityUrl").val())
+            $(this).parent().remove();
+        })
+    })
+
+    KindEditor.ready(function (K) {
+        var editor = K.editor({
+            uploadJson: '../../kindeditor/asp.net/upload_json.ashx',
+            allowFileManager: true
+        });
+        K('#image1').click(function () {
+            editor.loadPlugin('image', function () {
+                editor.plugin.imageDialog({
+                    showRemote: false,
+                    imageUrl: K('#url').val(),
+                    clickFn: function (url, title, width, height, border, align) {
+                        K('#authoritytTop').val(url);
+                        $("#imgst").attr("src", url)
+                        editor.hideDialog();
+                    }
+                });
+            });
+        });
+        K('#J_selectImage').click(function () {
+            editor.loadPlugin('multiimage', function () {
+                editor.plugin.multiImageDialog({
+                    clickFn: function (urlList) {
+                        var div = K('#J_imageView');
+                        // div.html('');
+                        K.each(urlList, function (i, data) {
+                            $('<div stype="float:left;margin-left:10px"><img style="width:250px; height:250px;" src="' + data.url + '"> <div class="VideoDel">删除</div></div>').appendTo(div);
+                            // alert(data.url)
+                            if ($("#authorityUrl").val().length == 0) {
+                                $("#authorityUrl").val(data.url)
+                            } else {
+                                $("#authorityUrl").val($("#authorityUrl").val() + "," + data.url)
+                            }
+                            // alert($("#authorityUrl").val())
+                        });
+                        editor.hideDialog();
+                    }
+                });
+            });
+        });
+    });
+
+
+    </script>
+    <div class="header">
+        <h1 class="page-header">
+            权威认证 <small>The news added</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#">权威认证</a></li>
+            <li class="active">权威认证添加</li>
+        </ol>
+        <input type="hidden" class="VideoCon" />
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div id="page-inner" >
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="card-title">
+                                <div class="title"></div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                        <div class="panel-body">
+                            @Html.HiddenFor(x => x.id)
+                            @Html.HiddenFor(x=>x.authoritytTop)
+                            @Html.HiddenFor(x=>x.authorityUrl)
+                            <div class="sub-title">展示图片</div>
+                            <div>
+                                <img style="width:250px; height:250px;" src="~/images/detail.png" id="imgst" />
+                            </div>
+                            <div class="sub-title"></div>
+                            <div>
+                                <input type="hidden" id="url" value="" />
+                                <input type="button" id="image1" value="选择图片" />
+                            </div>
+                            <div class="sub-title">认证名称</div>
+
+                            <div>
+                                @Html.TextBoxFor(x => x.authorityName, new { @class = "form-control", placeholder = "产品名称 + 认证名称", style = "width:250px" })
+                            </div>
+                            <div class="sub-title">详细图片</div>
+                            <input type="button" id="J_selectImage" value="批量上传" />
+                            <div style="" id=""></div>
+                            <div id="J_imageView">
+                               
+                            </div>
+
+                            <div style="clear: both" class="sub-title"></div>
+                            <button type="submit" class="btn btn-default">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+ 

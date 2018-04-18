@@ -1,0 +1,24 @@
+-----------public int Update(T entity)-----------
+UPDATE [Authority] SET [authorityName]=@authorityName,[authoritytTop]=@authoritytTop,[authorityUrl]=@authorityUrl,[datatimes]=@datatimes,[del]=@del WHERE Id = @Id
+将截断字符串或二进制数据。
+语句已终止。
+　  2016/12/15 18:29:49
+
+-----------public int Update(T entity)-----------
+UPDATE [Authority] SET [authorityName]=@authorityName,[authoritytTop]=@authoritytTop,[authorityUrl]=@authorityUrl,[datatimes]=@datatimes,[del]=@del WHERE Id = @Id
+将截断字符串或二进制数据。
+语句已终止。
+　  2016/12/15 18:30:49
+
+-----------public int Update(T entity)-----------
+UPDATE [Authority] SET [authorityName]=@authorityName,[authoritytTop]=@authoritytTop,[authorityUrl]=@authorityUrl,[datatimes]=@datatimes,[del]=@del WHERE Id = @Id
+将截断字符串或二进制数据。
+语句已终止。
+　  2016/12/15 18:35:22
+
+-----------public int Update(T entity)-----------
+UPDATE [newst] SET [headline]=@headline,[contenttext]=@contenttext,[userid]=@userid,[creationtime]=@creationtime,[newstype]=@newstype,[del]=@del WHERE Id = @Id
+将截断字符串或二进制数据。
+语句已终止。
+　  2016/12/15 19:07:24
+

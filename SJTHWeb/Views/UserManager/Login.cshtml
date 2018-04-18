@@ -1,0 +1,67 @@
+﻿@using sjth.Model
+@{
+    Layout = null;
+}
+@model UserModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>登录</title>
+    <link rel="stylesheet" href="~/css/Login.css">
+    <link href="~/css/top.css" rel="stylesheet" />
+    <script src="~/js/jquery-1.7.1.min.js"></script>
+    <script src="~/js/top.js"></script>
+    <script>
+        function ClickRemoveChangeCode() {
+            var code = $("#imgCode").attr("src");
+            $("#imgCode").attr("src", code + "1");
+        }
+    </script>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+       <!--顶部开始-->
+        <div class="top">
+            <div class="topbox">
+               
+            </div>
+        </div>
+        <!--顶部结束-->
+    <!--主要内容开始-->
+        <div class="content">
+            <div class="inputs">
+                <h1>用户登录</h1>
+                <ul>
+                    <li class="ul1">
+                        @Html.TextBoxFor(x => x.Name, new { @class = "input", placeholder = "请输入用户名" })
+
+                    </li>
+                    @Html.ValidationMessage("Name")
+                    <li class="ul2">
+
+                        @Html.TextBoxFor(x => x.password, new { @class = "input", placeholder = "请输入密码", type = "Password" })
+
+                    </li>
+                    @Html.ValidationMessage("password")
+                    <li class="ul3">
+
+                        @Html.TextBoxFor(x => x.yanzhengma, new { @class = "input", placeholder = "请输入验证码" })
+
+                        <span>
+                            <img src="/UserManager/CheckCode?ID=1" id="imgCode" alt="单击可刷新" onclick="ClickRemoveChangeCode()" />
+                        </span>
+
+                    </li>
+                    <li>@Html.ValidationMessage("yanzhengma")</li>
+                </ul>
+                <input type="submit" class="sub" value="提交">
+            </div>
+        </div>
+    <!--主要内容结束-->
+        
+    }
+</body>
+</html>

@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/nav.css" rel="stylesheet" />
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#czuo").click(function () {
+
+                $("#hidewm").slideToggle(500);
+                $("#hidqq").hide(500);
+            });
+        });
+
+        $(document).ready(function () {
+            $("#caozuoqq").click(function () {
+            
+                $("#hidqq").slideToggle(500);
+                $("#hidewm").hide(500);
+            });
+        });
+    </script>
+    <style>
+        .table > tbody > tr > td > a {
+            color: #8f8f8f;
+        }
+    </style>
+    <script type="text/javascript" src="~/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            daoh();
+        })
+
+        function daoh() {
+            var $nav = $("#navbar li");
+            $nav.click(function () {
+                $(this).find(".ej_show_box").toggle();
+            });
+        };
+
+    </script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="~/quan_m/Good_m/NEWS_S/js/bootstrap.min.js"></script>
+    <script src="~/quan_m/Good_m/NEWS_S/js/jquery.waypoints.min.js"></script>
+    <script src="~/quan_m/Good_m/NEWS_S/js/jquery.stellar.min.js"></script>
+    <script src="~/quan_m/Good_m/NEWS_S/js/jquery.countTo.js"></script>
+    <script src="~/quan_m/Good_m/NEWS_S/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/quan_m/Good_m/NEWS_S/js/magnific-popup-options.js"></script>
+    <script src="~/quan_m/Good_m/NEWS_S/js/jquery.style.switcher.js"></script>
+    <script>
+        $(function () {
+            $('#colour-variations ul').styleSwitcher({
+                defaultThemeId: 'theme-switch',
+                hasPreview: false,
+                cookie: {
+                    expires: 30,
+                    isManagingLoad: true
+                }
+            });
+            $('.option-toggle').click(function () {
+                $('#colour-variations').toggleClass('sleep');
+            });
+        });
+    </script>
+    <script src="~/quan_m/Good_m/NEWS_S/js/main.js"></script>
+    <script src="~/quan_m/Good_m/NEWS_S/js/application.js"></script>
+    <script src="~/p/jquery.pin/jquery.pin.js"></script>
+    <script src="~/quan_m/Good_m/HOME/js/tianjia.js"></script>
+    <script>
+        $(".pinned").pin({
+            containerSelector: ".container",
+            minWidth: 940
+        });
+    </script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header role="banner" id="fanda-header">
+        <div class="container">
+            <!-- <div class="row"> -->
+            <nav class="navbar navbar-default">
+
+
+                <div class="navbar-header" style="position:relative;">
+                    <!-- Mobile Toggle Menu Button -->
+                    <a href="#" class="js-fanda-nav-toggle fanda-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+
+                    <a class="navbar-brand" href="index.html" style="padding-top:10px;"><img src="~/quan_m/Good_m/HOME/images/logo.png"></a>
+
+
+                    @*<a class="visible-xs-block" href="#"><img src="~/quan_m/Good_m/HOME/images/ppzq.png" style="position:absolute;z-index:30;left:130px;top:10px;"></a>
+
+                    <a class="hidden-xs" href="#"><img src="~/quan_m/Good_m/HOME/images/ppzq.png" style="position:absolute;z-index:30;top:8px;left:130px;"></a>*@
+
+                </div>
+
+
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="~/index/Index"><span class="w16">首页</span></a></li>
+                        <li>
+                            <a href="~/Consulting/product"><span class="w16">产品中心</span></a>
+
+                        </li>
+                        <li><a href="~/Consulting/Index/1"><span class="w16">公司资讯</span></a></li>
+                        <li><a href="~/Consulting/school/5"><span class=" w16">公司学院</span></a></li>
+                        <li><a href="~/Consulting/videos"><span class="w16">视频欣赏</span></a></li>
+                        <li><a href="~/authority/index"><span class="w16">权威认证</span></a></li>
+                        <li><a href="#"><span class="w16">查询服务</span></a></li>
+                        <li><a href="/Consulting/celebrity"><span class="w16">公司明星榜</span></a></li>
+                        <li class="gywm">
+                            <a><span class="w16">关于我们</span></a>
+                            <div class="ej_show_box">
+                                <ul>
+                                    <li><a href="~/Consulting/Aboutus">关于我们</a></li>
+                                    <li><a href="~/Consulting/dljm">代理加盟</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+    
+        @RenderBody()
+    <div class="visible-xs-block">
+        <div class="well well-lg ">
+            <div class="row" style="text-align: center">
+                <div class="col-xs-4" style="border-right:1px #0d1b0d  dotted"><a id="czuo" style="font-size:18px; font-family:'微软雅黑';color:#000;"><i class="icon-weixin"></i>&nbsp;微信</a></div>
+                <div class="col-xs-4" style="border-right:1px #0d1b0d  dotted" class="img-responsive"><a href="http://weibo.com/1958difo/" style="font-size:18px; font-family:'微软雅黑';color:#000;"><i class="icon-weibo"></i>&nbsp;微博</a></div>
+                <div class="col-xs-4" style=""><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3317247221&amp;site=qq&amp;menu=yes" style="font-size:18px; font-family:'微软雅黑';color:#000;"><i class="icon-qq"></i>&nbsp;QQ</a></div>
+            </div>
+        </div>
+        <div class="container-fluid" style=" display:none;" id="hidewm">
+            <div class="row" style="background-color: #e5e5e5; padding-top: 20px; padding-bottom: 20px;margin-top:0px;">
+                <div class="col-xs-6" style="margin-top: 20px; font-family:'微软雅黑';color: #000;font-size:14px;">
+                    <h3>泉立方微信</h3>
+                    长按识别二维码关注
+                    <br>或搜索微信号：DIFOquanlifang添加
+                </div>
+                <div class="col-xs-6" style="margin-top: 20px;"><img src="~/quan_m/Good_m/NEWS_S/imgs/ewm.png"></div>
+            </div>
+        </div>
+        @*<div class="container-fluid">
+            <div class="row" style="margin-bottom: 10px; text-align:center">
+                <div class="col-xs-6"> <a href="http://shouquan.1958difo.net/" style="font-size:18px; font-family:'微软雅黑';color:#000;"><i class="icon-newspaper-o"></i>&nbsp;授权查询</a></div>
+                <div class="col-xs-6"><a href="http://join.quanlifang.net/zhaoshang/m/index.html" style="font-size:18px; font-family:'微软雅黑';color:#000;"><i class="icon-user-plus"></i>&nbsp;申请加盟</a></div>
+            </div>
+        </div>*@
+        <div class="well well-xs">
+            <div class="row" style="text-align: center">
+                <div class="col-xs-12" style="font-family:'微软雅黑'; font-size: 14px;">
+                    广州靓密生物科技有限公司 粤ICP备1629130号-1
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="footer" role="contentinfo" style="background-color:#091038" class="hidden-xs">
+        <div class="container hidden-xs">
+            <div class="row">
+                <table class="table" style="text-align:left;">
+                    <thead>
+                        <tr>
+                            <th >关于靓密</th>
+                            <th>品牌介绍</th>
+                            <th >明星产品</th>
+                            <th >代理商登录</th>
+                           <th > 加入我们</th>
+                               
+                                <th colspan="2"><div align="left">联系我们</div></th>
+                                @*<th width="19%" style="text-align:center">泉立方官方微信</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr rowspan="">
+                            <td><a href="">品牌介绍</a></td>
+                            <td><a href="~/Consulting/Aboutus" target="_blank">关于我们</a></td>
+                            <td><a href="">结清颗粒</a></td>
+                            <td><a href="">企业公告</a></td>
+                            <td> <a href="">申请代理</a></td>
+                           
+                            <td colspan="2"><div align="left">联系电话:</div></td>
+                            @*<td rowspan="6" align="center"><img src="~/quan_m/Good_m/NEWS_S/imgs/ewm.png " class="img-responsive"></td>*@ @*二维码*@
+                        </tr>
+                        <tr>
+                            <td><a href="~/Consulting/celebrity">公司明星</a></td>
+                            <td><a href="~/Consulting/celebrity" target="_blank">公司明星</a></td>
+                            <td><a href="">泡泡片</a></td>
+                            <td><a href="">企业新闻</a></td>
+                            <td>&nbsp;</td>
+                           
+                            <td colspan="2"><div align="left" style="font-size:16px; font-family:'微软雅黑'; color:#E0E0E0; font-weight:bold">400-880-6634</div></td>
+                        </tr>
+                       @* <tr>
+    <td><a href="">代理商登录</a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>&nbsp;</td>
+    <td></td>
+    <td width="5%" rowspan="2">
+        <div align="left" onmouseover="document.getElementById('WB1').style.display='block';document.getElementById('WB2').style.display='none';document.getElementById('qqbg2').style.display='block';document.getElementById('qqbg1').style.display='none';"
+             onmouseout="document.getElementById('WB1').style.display='block';document.getElementById('WB2').style.display='none';document.getElementById('qqbg1').style.display='block';document.getElementById('qqbg2').style.display='none';"><a target="_blank" href="tencent://message/?uin=3317247221&amp;Site=http://www.quanlifang.net&amp;Menu=yes"><img id="qqbg1" src="~/quan_m/Good_m/NEWS_S/imgs/qq.png" align="absmiddle"><img src="~/quan_m/Good_m/NEWS_S/imgs/qq-hover.png" align="absmiddle" id="qqbg2"></a></div>
+        <div align="left"></div>
+    </td>
+    <td width="8%" rowspan="2">
+        <div align="left" onmouseover="document.getElementById('WB2').style.display='block';document.getElementById('WB1').style.display='none';document.getElementById('qqbg1').style.display='block';document.getElementById('qqbg2').style.display='none';"
+             onmouseout="document.getElementById('WB1').style.display='block';document.getElementById('WB2').style.display='none';document.getElementById('qqbg1').style.display='block';document.getElementById('qqbg2').style.display='none';"><a href="http://weibo.com/1958difo" target="_blank"><img id="WB1" src="~/quan_m/Good_m/NEWS_S/imgs/weibo.png" class="img-responsive"><img id="WB2" src="~/quan_m/Good_m/NEWS_S/imgs/weibo-hover.png"></a></div>
+    </td>
+                        </tr>*@
+                      <tr>
+                            <td>查询服务添加</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>代理商登陆</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="2"><div align="left"></div></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="2"><div align="left"></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style=" width:100%;height:63px; border-top:1px solid #3D3D3D; text-align:center">
+                <p style="color:#CCC; font-family:'微软雅黑'; font-size:14px; margin-top:15px;">
+                    Copyright ©2017-2018&nbsp;广州靓密生物科技有限公司&nbsp;&nbsp;&nbsp;粤ICP备1629130号-1
+                    <br>
+                  
+                </p>
+
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

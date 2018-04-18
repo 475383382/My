@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style>
+.ej_show_box{position: absolute;width: 120%;height: auto;top:50px;display: none;background: rgba(127,169,255,0.8);font-family: "微软雅黑"; font-size: 14px; }
+.ej_show_box ul li{list-style-type: none; width: 100%;  margin-top: 5px; margin-bottom: 5px; margin-left: 25px !important; color: #000000; font-family: '微软雅黑' !important;}
+.ej_show_box ul li a{ color: #000000 !important;}
+.ej_show_box ul li a:hover{ color: #0551ed !important; text-decoration: none;}
+</style>
+<link rel="stylesheet" href="zhaoshang/css/index.css">
+<link rel="stylesheet" href="quan_m/Good_m/HOME/css/tianjia.css">
+<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/style.css">
+<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/animate.css">
+<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/icomoon.css">
+<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/simple-line-icons.css">
+<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/magnific-popup.css">
+<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/bootstrap.css">
+<script type="text/javascript" src="quan_m/qlf/js/hover_pack.js"></script>
+<script type="text/javascript" src="/include/dedeajax2.js"></script>
+<style>		
+#ddvv{
+
+ 
+ position:absolute;
+ position:fixed;
+ right:50px;
+ top:150px;
+ width:210px; height:620px;
+ z-index:1000;
+
+background-image:url(zhaoshang/images/zsbg.png); 
+background-repeat:no-repeat;
+
+}
+
+#colour-variations {
+	padding: 10px;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	width: 140px;
+	position: fixed;
+	left: 0;
+	top: 100px;
+	z-index: 999999;
+	background: #fff;
+	/*border-radius: 4px;*/
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	-moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	-ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+}
+#colour-variations.sleep {
+	margin-left: -140px;
+}
+#colour-variations h3 {
+	text-align: center;
+	;
+	font-size: 11px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #777;
+	margin: 0 0 10px 0;
+	padding: 0;
+	;
+}
+#colour-variations ul,  #colour-variations ul li {
+	padding: 0;
+	margin: 0;
+}
+#colour-variations li {
+	list-style: none;
+	display: block;
+	margin-bottom: 5px!important;
+	float: left;
+	width: 100%;
+}
+#colour-variations li a {
+	width: 100%;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: 0.4s;
+	-o-transition: 0.4s;
+	transition: 0.4s;
+}
+#colour-variations li a:hover {
+	opacity: .9;
+}
+#colour-variations li a > span {
+	width: 33.33%;
+	height: 20px;
+	float: left;
+	display: -moz-inline-stack;
+	display: inline-block;
+	zoom: 1;
+ *display: inline;
+}
+.option-toggle {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin-top: 5px;
+	margin-right: -30px;
+	width: 30px;
+	height: 30px;
+	background: #f64662;
+	text-align: center;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	-moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	-ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+	box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+}
+.option-toggle i {
+	top: 2px;
+	position: relative;
+}
+.option-toggle:hover, .option-toggle:focus, .option-toggle:active {
+	color: #fff;
+	text-decoration: none;
+	outline: none;
+}
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+	border: 0px;
+	padding: 8px;
+	line-height: 1.42857;
+	vertical-align: top;
+	font-size: 20px;
+	font-family: '微软雅黑';
+	color: #FFF;
+	font-weight: 800;
+	padding-left: 2px;
+}
+.table > tbody > tr > td {
+	font-size: 14px;
+	font-weight: 100;
+	padding: 2px;
+	color: #8F8F8F;
+	font-weight: 100;
+}
+#qqbg1 {
+	display: block;
+}
+#qqbg2 {
+	display: none;
+}
+#WB2 {
+	display: none;
+}
+#WB1 {
+	display: block;
+}
+.navtitle {
+		font-family: '微软雅黑';
+	font-size: 16px;
+	font-weight: 200
+	
+}
+.toptit {
+	font-family: '微软雅黑';
+	font-size: 18px;
+	color: #666;
+}
+.topp {
+	font-family: '微软雅黑';
+	font-size: 12px;
+	color: #666;
+}
+.topa {
+	font-family: '微软雅黑';
+	font-size: 14px;
+	color: #666;
+}
+.w13{
+	 font-family:'微软雅黑';
+	 font-size:13px;
+	}
+.w16{
+	 font-family:'微软雅黑';
+	 font-size:16px;
+	}	
+.w18{
+	 font-family:'微软雅黑';
+	 font-size:18px;
+	}
+
+#pageNav { 
+font: 12px/24px Tahoma; 
+height: 50px; 
+margin: 25px auto 0; 
+text-align: center; 
+width: 500px; 
+} 
+#pageNav ul { 
+list-style-type: none; 
+overflow: hidden; 
+} 
+#pageNav ul li { 
+background-color: #FFFFFF; 
+border:#CCCCCC solid 1px;
+color:#666666;
+display: block; 
+height: 30px; 
+margin: 0 2px; 
+padding: 2px 1px; 
+float: left; 
+} 
+#pageNav ul li a { 
+
+color: #0B3B8C; 
+padding: 0 3px; 
+} 
+#pageNav ul li a:hover { 
+color:#FF0000;
+
+} 
+#pageNav ul li.hover { 
+background-color:#FF0000;
+border: 0 none; 
+color: #000000; 
+font-weight: bold; 
+} 
+#pageNav ul li.hover a { 
+color: #000000; 
+} 
+.zc_pimg{ height:300px; border:1px solid #d1d1d1;
+
+	}
+.zc_newlist{ border:0px; border-top:#d1d1d1 solid 1px; padding-top:20px;
+	}
+.zc_newlist h3{
+	color:#333;
+	font-size:20px;
+	
+	}
+.zc_newlist p{
+	color:#666;
+	font-size:16px;
+	}
+.zc_newlisttitle{
+	 border:0px; 
+	 border-bottom:#d1d1d1 solid 1px;
+	 padding-top:15px; width:180px;
+	 text-align:center;
+	 background-image:url(quan_m/Good_m/images/icon/line.png) ;
+	 background-repeat: no-repeat;
+	
+
+	}
+.zc_newlisttitle h3{
+	color:#333;
+	font-size:18px;
+	
+	}	
+.zc_newlisttitle2{
+	 border:0px; 
+	 border-bottom:#d1d1d1 solid 1px;
+	 padding-top:15px; width:180px;
+	 text-align:center;
+	  background-repeat: no-repeat;
+	
+
+	}
+.zc_newlisttitle2 h3{
+	color:#333;
+	font-size:18px;
+	
+	}
+.fziti{ font-family:'微软雅黑';	 
+	
+	}	
+#divimg img{
+max-width:100%;height:auto;
+
+
+
+}	
+	
+</style>
+<script src="quan_m/Good_m/NEWS_S/js/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+<div id="pptq"></div>
+<section>
+        <img class="tu1" src="zhaoshang/images/1.jpg" height="auto" width="100%" alt="" />
+    </section>
+<section class="tow" style="margin-bottom:0px;padding-bottom:0px;">
+        <img src="zhaoshang/images/2.png" height="auto" width="100%" alt="" />
+        <img class="z2" src="zhaoshang/images/z2.png" height="auto" width="100%" alt="" />
+    
+        <div class="kong"></div>
+        <div class="z4">
+          <div class="z4-z">
+            <div class="z4-z-s">
+              <img src="zhaoshang/images/6.png" height="auto" width="100%" alt="" />
+            </div>
+            <div class="z4-z-x">
+              <div class="z4-z-x-z">
+                <img src="zhaoshang/images/7gongyin.png" height="auto" width="100%" alt="" />
+                <img src="zhaoshang/images/8jiang.png" height="auto" width="100%" alt="" />
+              </div>
+
+              <div class="z4-z-x-y">
+                <img src="images/9-f.png" height="auto" width="68.5%" alt="" />
+                <a href="#" type="button" class="btn" data-toggle="modal" data-target=".bs-example-modal-lg">
+                    <img src="zhaoshang/images/9-tu.png" height="auto" width="100%" alt="" />
+                </a>
+                
+              </div>
+
+            </div>
+
+          </div>
+              <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
+                <div class="modal-dialog modal-lg"  >
+                  <div class="modal-content " >
+                  <p class="spbt">为什么泉立方能成被众多消费者认可?</p>
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <div class="shi">
+				  <!--<iframe src='' frameborder='0' width="800" height="460" allowfullscreen='true'></iframe>-->
+				  
+				  
+				  
+				  </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+
+
+        <div class="kong"></div>
+        <div class="z5">
+          <div class="z5-z">
+            <img src="zhaoshang/images/11.png" height="auto" width="66.33%" alt="" />
+            <img class="pdt30" src="zhaoshang/images/12xianxia.png" height="auto" width="63.4%" alt="" />
+            <img class="pdt20" src="zhaoshang/images/13xianshang.png" height="auto" width="93.75%" alt="" />
+            <div class="z5-z-x pdt20">
+              <img class="tu14" src="zhaoshang/images/14daiyan.png" height="auto" width="15.5%" alt="" />
+              <div class="gundong box">
+                <img class="yinying" src="zhaoshang/images/yingying.png" height="auto" width="100%" alt="" />
+                <!-- <div class="box"> -->
+                  <ul>
+                      <li><img src="zhaoshang/images/yi.jpg" height="auto" width="100%" alt="" /></li>
+                      <li><img src="zhaoshang/images/er.jpg" height="auto" width="100%" alt="" /></li>
+                      <li><img src="zhaoshang/images/yi.jpg" height="auto" width="100%" alt="" /></li>
+                  </ul>
+                <!-- </div> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kong"></div>
+        <img src="zhaoshang/images/z6.png" height="auto" width="100%" alt="" />
+        <div class="kong"></div>
+        <img src="zhaoshang/images/z7.png" height="auto" width="100%" alt="" />
+        <div class="kong"></div>
+        <img src="zhaoshang/images/z8.png" height="auto" width="100%" alt="" />
+        <div class="kong"></div>
+        <div class="ding" style="margin-bottom:0px;padding-bottom">
+            <!-- <div class="xin"> -->
+                <img src="zhaoshang/images/bt.png" height="auto" width="100%" alt="" />
+                <div class="bd-suojin">
+                   
+                      <form   name="myForm2" id="myForm2" class="form-horizontal" method="post" action="../plus/diy.php" onsubmit="return true;">
+			<input type="hidden" name="action" value="post" />
+            <input type="hidden" name="diyid" value="3" />
+            <input type="hidden" name="do" value="2" />
+           <input type="text" name="tt_stime" id="tt_stime" style="display:none" class="intxt" value="0">
+
+				
+    <div class="form-group">
+        <label class="col-xs-3 control-label">姓名</label>
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="tt_name" id="tt_name" placeholder="请填写您的姓名" />
+        </div>
+       
+    </div>
+
+  
+ <div class="ding">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">手机</label>
+        <div class="col-xs-6">
+            <input type="text" class="form-control" name="tt_tel" id="tt_tel"  placeholder="请输入您的手机号码" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">微信</label>
+        <div class="col-xs-6">
+            <input type="text" name="tt_weixing" class="form-control" id="tt_weixing" placeholder="请输入您的微信号"/>
+        </div>
+    </div>
+    
+    
+    <div class="form-group">
+                         
+                         
+        <label  class="col-xs-3  control-label" style="font-size:16px">地区</label>
+                         
+        <div class="col-xs-6">
+        <div class="row">
+        
+         <div class="col-xs-4">
+         <select id="seachprov" name="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"  class="form-control">
+          </select></div>
+         <div class="col-xs-4">
+          <select id="seachcity" name="homecity" onChange="changeCity(this.value,'seachdistrict','seachdistrict');" onclick="set_address()"  class="form-control">
+          </select></div>
+          <div class="col-xs-4">
+          <span id="seachdistrict_div">
+          <select id="seachdistrict" name="seachdistrict" onChange="set_address()"  class="form-control">
+          </select></span>
+               </div>   
+            <input type="text" name="address" id="address"style="display:none" class="intxt" value>
+          
+    </div> </div>
+ </div>
+ </div>
+      
+<input type="text" name="tt_stime" id="tt_stime" style="display:none" class="intxt" value="0">  
+	<input type="hidden" name="dede_fields" value="tt_name,text;tt_tel,text;tt_weixing,text;address,text;tt_stime,int">
+<input type="hidden" name="dede_fieldshash" value="7f16966401c7307e0557ca08a59b33c8">
+			  
+
+
+    <div class="form-group" >
+        <div class="col-xs-12 col-xs-offset-5"style="margin-bottom:80px;">
+            <button class="btn btn-primary btn-lg" type="submit" name="submit"class="btn btn-default">提交信息</button>
+        </div>
+    </div>
+</form>
+                </div>
+            <!-- </div> -->
+        </div>
+		
+		
+		  <!-- 增加部分代码 -->
+        
+        <div class="kong chanpin-d"></div>
+        <div class="chanpin-q" style="padding-bottom:50px;">
+          <div class="chanpin">
+            <img class="img-responsive center-block" src="zhaoshang/images/1112.png" height="auto" width="37.58%" alt="" />
+            <ul>
+              <li class="li1">
+                <a href="">
+                  <img src="zhaoshang/images/122.png" height="auto" width="100%" alt="" />
+                </a>
+              </li>
+              <li class="li2">
+                <a href="">
+                  <img src="zhaoshang/images/123.png" height="auto" width="100%" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+		
+		
+		
+		
+		
+		
+		
+    </section>
+
+<br><br>
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script>
+      $(document).ready(function(){
+          $("#czuo").click(function(){
+
+              $("#hidewm").slideToggle(500);
+              $("#hidqq").hide(500);
+          });
+      });
+
+      $(document).ready(function(){
+          $("#caozuoqq").click(function(){
+
+              $("#hidqq").slideToggle(500);
+              $("#hidewm").hide(500);
+          });
+      });
+	  
+	  </script>
+<style>
+
+.table > tbody > tr > td > a {
+	color:#8f8f8f
+	 
+}
+</style>
+<script>	
+function ajax()
+ {
+ var xmlHttp;
+ 
+ try
+    {
+    xmlHttp=new XMLHttpRequest();
+    }
+ catch (e)
+    {
+
+   try
+      {
+      xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+      }
+   catch (e)
+      {
+
+      try
+         {
+         xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+      catch (e)
+         {
+         alert("您的浏览器不支持AJAX！");
+         return false;
+         }
+      }
+    }
+xmlHttp.onreadystatechange=function()
+      {
+      if(xmlHttp.readyState==4)
+        {
+   
+   document.getElementById("pptq").innerHTML=xmlHttp.responseText;
+         }}
+    xmlHttp.open("GET","navlist.html",true);
+    xmlHttp.send(null);
+}
+
+ajax();
+</script>
+<script>	
+function ajax()
+ {
+ var xmlHttp;
+ 
+ try
+    {
+    xmlHttp=new XMLHttpRequest();
+    }
+ catch (e)
+    {
+
+   try
+      {
+      xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+      }
+   catch (e)
+      {
+
+      try
+         {
+         xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+      catch (e)
+         {
+         alert("您的浏览器不支持AJAX！");
+         return false;
+         }
+      }
+    }
+xmlHttp.onreadystatechange=function()
+      {
+      if(xmlHttp.readyState==4)
+        {
+   
+   document.getElementById("bottomdibu").innerHTML=xmlHttp.responseText;
+         }}
+    xmlHttp.open("GET","bottom.html",true);
+    xmlHttp.send(null);
+}
+
+ajax();
+</script>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script>
+	$(function(){
+	daoh();
+})
+
+function daoh(){
+		var $nav = $("#navbar li");
+	$nav.click(function(){
+		$(this).find(".ej_show_box").toggle();
+	});
+	};
+
+</script>
+
+<div id="bottomdibu"></div>
+<script src="zhaoshang/js/AreaData_min.js"></script>
+<script src="zhaoshang/js/Area.js"></script>
+<script src="zhaoshang/js/index.js"></script>
+<script src="jquery/1.11.1/jquery.min.js"></script>
+<script src="bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="quan_m/Good_m/NEWS_S/js/bootstrap.min.js"></script>
+<script src="quan_m/Good_m/NEWS_S/js/jquery.waypoints.min.js"></script>
+<script src="quan_m/Good_m/NEWS_S/js/jquery.stellar.min.js"></script>
+<script src="quan_m/Good_m/NEWS_S/js/jquery.countTo.js"></script>
+<script src="quan_m/Good_m/NEWS_S/js/jquery.magnific-popup.min.js"></script>
+<script src="quan_m/Good_m/NEWS_S/js/magnific-popup-options.js"></script>
+<script src="quan_m/Good_m/NEWS_S/js/jquery.style.switcher.js"></script>
+
+<script>
+		$(function(){
+			$('#colour-variations ul').styleSwitcher({
+				defaultThemeId: 'theme-switch',
+				hasPreview: false,
+				cookie: {
+		          	expires: 30,
+		          	isManagingLoad: true
+		      	}
+			});	
+			$('.option-toggle').click(function() {
+				$('#colour-variations').toggleClass('sleep');
+			});
+		});
+	</script>
+	<script>
+		$(function(){
+	var $nav = $("#navbar li");
+	$nav.hover(function(){
+		$(this).find(".ej_show_box").css({"display":"block"});
+	},function(){
+		$(this).find(".ej_show_box").css({"display":"none"});
+	});
+	$(".wow").hover(function(){
+		$(this).find("figcaption").css({"display":"block"});
+	},function(){
+		$(this).find("figcaption").css({"display":"none"});
+	})
+});
+
+$(function(){
+               var num=0
+               var timer=null
+       
+               var fn=function(){
+                   // num--
+                   num -=7
+                   if(num<-1870){
+                       num=0
+                   }
+                   $('.box ul').css({left:num})
+               }
+       
+               timer=setInterval(fn,30)
+    
+               // 暂停和开始
+               $('.box').hover(function() {
+                   clearInterval(timer)
+               }, function() {
+                   clearInterval(timer)
+                   timer = setInterval(fn, 30)
+               });
+               
+    
+              
+           })
+
+</script>
+<script src="quan_m/Good_m/NEWS_S/js/main.js"></script>
+<script src="quan_m/Good_m/NEWS_S/js/application.js"></script>
+<script src="p/jquery.pin/jquery.pin.js"></script>
+<script>
+      $(".pinned").pin({containerSelector: ".container", minWidth: 940});
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+-----------public int Insert(T entity)-----------
+INSERT INTO [newst]([headline],[contenttext],[userid],[creationtime],[newstype]) VALUES(@headline,@contenttext,@userid,@creationtime,@newstype)
+不能将值 NULL 插入列 'id'，表 'century.dbo.newst'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+　  2016/12/9 18:47:48
+
+-----------public int Insert(T entity)-----------
+INSERT INTO [newst]([headline],[contenttext],[userid],[creationtime],[newstype],[del]) VALUES(@headline,@contenttext,@userid,@creationtime,@newstype,@del)
+不能将值 NULL 插入列 'id'，表 'century.dbo.newst'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+　  2016/12/9 19:08:51
+
+-----------public int Insert(T entity)-----------
+INSERT INTO [newst]([headline],[contenttext],[userid],[creationtime],[newstype],[del]) VALUES(@headline,@contenttext,@userid,@creationtime,@newstype,@del)
+不能将值 NULL 插入列 'id'，表 'century.dbo.newst'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+　  2016/12/9 19:11:50
+

@@ -1,0 +1,402 @@
+﻿@{
+    ViewBag.Title = "靓密.中国";
+    Layout = "~/Views/Shared/navlist.cshtml";
+}
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta name="360-site-verification" content="d2da69dc3fa3810de5b589fb98402684" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <style>
+        .ej_show_box {
+            position: absolute;
+            width: 120%;
+            height: auto;
+            top: 50px;
+            display: none;
+            background: rgba(127,169,255,0.8);
+            font-family: "微软雅黑";
+            font-size: 14px;
+        }
+
+            .ej_show_box ul li {
+                list-style-type: none;
+                width: 100%;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-left: -15px !important;
+                color: #000000;
+                font-family: '微软雅黑' !important;
+            }
+
+                .ej_show_box ul li a {
+                    color: #000000 !important;
+                }
+
+                    .ej_show_box ul li a:hover {
+                        color: #0551ed !important;
+                        text-decoration: none;
+                    }
+    </style>
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/tianjia.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/style.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/animate.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/simple-line-icons.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/buttons.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/bootstrap.css">
+
+    <script src="~/quan_m/Good_m/HOME/js/tianjia.js"></script>
+    <style>
+        .table > tbody > tr > td > a {
+            color: #8f8f8f;
+        }
+
+        .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+            border: 0px;
+        }
+
+        .item img {
+            width: 1920px;
+            height: 800px;
+        }
+    </style>
+    <script src="~/quan_m/Good_m/HOME/js/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    <div id="pptq"></div>
+    <div id="slider" data-section="home" class="hidden-xs">
+        <!-- mobile. -->
+        <img class="visible-xs-block " style="width:100%;height:auto;" src="~/quan_m/Good_m/HOME/images/ltmoblie.jpg" />
+
+        <!-- pc. -->
+        <div class="owl-carousel owl-carousel-fullwidth hidden-xs" style="padding-bottom:0px;">
+            @if (ViewBag.ListPC != null)
+            {
+                foreach (var item in ViewBag.ListPC)
+                {
+                    <div class="item">
+                        <a href="@item.htmlurl"><img src="@item.imgurl"></a>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+
+    <!-- mobile -->
+    <div id="slider" data-section="home" class="visible-xs-block">
+        <div class="owl-carousel owl-carousel-fullwidth " style="padding-bottom:0px;">
+
+            @if (ViewBag.ListSJ != null)
+            {
+                foreach (var item in ViewBag.ListSJ)
+                {
+                    <div class="item" style="padding-bottom:0px;">
+                        <a href="@item.htmlurl"><img src="@item.imgurl" /></a>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+    <!-- ///结束mobile// -->
+    <div style="width:100%;margin-top:0px; padding-bottom:0px;padding-top:0px;background-color:#0cb6ca">
+        <div class="container hidden-xs" style="height:auto;color:#FFF; text-align:center">
+            <div class="col-md-2" style="font-family:'微软雅黑';margin-top:5px; padding:0px;border-right:#FFF dashed 1px;margin-bottom:5px;">
+                <div style=""><img src="~/quan_m/Good_m/HOME/images/0.png"></div>
+                <div>科技洗涤</div>
+            </div>
+            <div class="col-md-2" style="font-family:'微软雅黑';margin-top:5px; padding:0px;border-right:#FFF dashed 1px;margin-bottom:5px;">
+                <div style=""><img src="~/quan_m/Good_m/HOME/images/1.png"></div>
+                <div style="font-family:'微软雅黑'; font-weight:">绿色健康</div>
+            </div>
+            <div class="col-md-2" style="font-family:'微软雅黑';margin-top:5px; padding:0px;border-right:#FFF dashed 1px;margin-bottom:5px;">
+                <div style=""><img src="~/quan_m/Good_m/HOME/images/2.png"></div>
+                <div style="font-family:'微软雅黑'; font-weight:">节约水电</div>
+            </div>
+            <div class="col-md-2" style="font-family:'微软雅黑';margin-top:5px; padding:0px;border-right:#FFF dashed 1px;margin-bottom:5px;">
+                <div style=""><img src="~/quan_m/Good_m/HOME/images/3.png"></div>
+                <div style="font-family:'微软雅黑'; font-weight:">温和天然</div>
+            </div>
+            <div class="col-md-2" style="font-family:'微软雅黑';margin-top:5px; padding:0px;border-right:#FFF dashed 1px;margin-bottom:5px;">
+                <div style=""><img src="~/quan_m/Good_m/HOME/images/4.png"></div>
+                <div style="font-family:'微软雅黑'; font-weight:">轻简主义</div>
+            </div>
+            <div class="col-md-2" style="font-family:'微软雅黑';margin-top:5px; padding:0px;margin-bottom:5px;">
+                <div style=""><img src="~/quan_m/Good_m/HOME/images/5.png"></div>
+                <div style="font-family:'微软雅黑'; font-weight:">低碳环保</div>
+            </div>
+
+
+        </div>
+        <div class="container visible-xs-block" style="height:auto;color:#FFF;text-align:center;background-image:url(../../quan_m/Good_m/HOME/images/home2.jpg); background-repeat:no-repeat">
+            <div class="row">
+                <h1 style="font-family:'微软雅黑';color:#fff">泉立方</h1>
+                <h2 style="font-family:'微软雅黑';color:#fff">德国技术 欧美品质</h2>
+                <p style="font-family:'微软雅黑';font-size:12px;">GERMAN TECHNOLOGY,EUROPE AND AMERICA QUALITY</p>
+            </div>
+            <div class="row">
+                <div class="col-xs-2" style="font-family:'微软雅黑';margin-top:5px; padding:0px;border-right:#FFF dashed 1px;margin-bottom:5px;">
+                    <div style=""><img src="~/quan_m/Good_m/HOME/images/0.png" class="img-responsive"></div>
+                    <div>科技</div>
+                </div>
+                <div class="col-xs-2" style="font-family:'微软雅黑';margin-top:5px; padding:0px;border-right:#FFF dashed 1px;margin-bottom:5px;">
+                    <div style=""><img src="~/quan_m/Good_m/HOME/images/1.png" class="img-responsive"></div>
+                    <div style="font-family:'微软雅黑'; ">健康</div>
+                </div>
+                <div class="col-xs-2" style="font-family:'微软雅黑';margin-top:5px; padding:0px;margin-bottom:5px;">
+                    <div style=""><img src="~/quan_m/Good_m/HOME/images/2.png" class="img-responsive"></div>
+                    <div style="font-family:'微软雅黑'; ">节省</div>
+                </div>
+
+
+
+
+                <div class="col-xs-2" style="font-family:'微软雅黑';margin-top:5px; padding:0px;border-right:#FFF dashed 1px;margin-bottom:5px;">
+                    <div style=""><img src="~/quan_m/Good_m/HOME/images/3.png" class="img-responsive"></div>
+                    <div style="font-family:'微软雅黑'; ">温和</div>
+                </div>
+                <div class="col-xs-2" style="font-family:'微软雅黑'; padding:0px;padding-top:5px;border-right:#FFF dashed 1px;margin-bottom:5px;">
+                    <div style=""><img src="~/quan_m/Good_m/HOME/images/4.png" class="img-responsive"></div>
+                    <div style="font-family:'微软雅黑'; ">轻简</div>
+                </div>
+                <div class="col-xs-2" style="font-family:'微软雅黑'; padding:0px;padding-top:5px;margin-bottom:5px;">
+                    <div style=""><img src="~/quan_m/Good_m/HOME/images/5.png" class="img-responsive"></div>
+                    <div style="font-family:'微软雅黑'; ">环保</div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- 1pc!-->
+    <div style="width:100%; margin:0px; padding:0px; position:relative; text-align:center" class="hidden-xs">
+        <div style="z-index:2;position:absolute;top:67%;left:60%;"><a href="/DetergentSheets" class="button button-raised button-primary button-pill">点击了解</a></div>
+        <img src="~/quan_m/Good_m/HOME/images/xyp01.jpg" style="width:100%;height:auto">
+
+    </div>
+    <!-- 1moblie!-->
+    <div style="width:100%; margin:0:px; padding:0:px; position:relative; text-align:center" class="visible-xs-block">
+        <div style="z-index:2;position:absolute;top:72%;left:48%;"><a href="/DetergentSheets" class="btn btn-primary  btn-xs">点击了解</a></div>
+        <img src="~/quan_m/Good_m/HOME/images/xi.jpg" style="width:100%;height:auto">
+
+    </div>
+    <!-- 2pc!-->
+    <div style="width:100%; margin:0px; padding:0px;margin-top:20px; position:relative; text-align:center" class="hidden-xs">
+        <div style="z-index:2;position:absolute;top:67%;left:25%;"><a href="/ColorAbsorber" class="button button-raised button-primary button-pill">点击了解</a></div>
+        <img src="~/quan_m/Good_m/HOME/images/smp01.jpg" style="width:100%;height:auto">
+
+    </div>
+    <!-- 2moblie!-->
+    <div style="width:100%; margin:0px; padding:0px;margin-top:20px; position:relative; text-align:center" class="visible-xs-block">
+        <div style="z-index:2;position:absolute;top:70%;left:22%;"><a href="/ColorAbsorber" class="btn btn-primary  btn-xs">点击了解</a></div>
+        <img src="~/quan_m/Good_m/HOME/images/se.jpg" style="width:100%;height:auto">
+
+    </div>
+    <!-- 3pc!-->
+    <div style="width:100%; margin:0px; padding:0px;margin-top:20px; text-align:center" class="hidden-xs">
+        <img src="~/quan_m/Good_m/HOME/images/jishu.jpg" style="width:100%;height:auto">
+
+    </div>
+    <!-- 3moblie!-->
+    <div style="width:100%; margin:0px; padding:0px; text-align:center" class="visible-xs-block">
+        <img src="~/quan_m/Good_m/HOME/images/fan1.jpg" style="width:100%;height:auto">
+
+    </div>
+    <div style="width:100%; margin:0px; padding:0px; text-align:center" class="visible-xs-block">
+        <img src="~/quan_m/Good_m/HOME/images/fan2.jpg" style="width:100%;height:auto">
+
+    </div>
+    <div style="width:100%; margin:0px; padding:0px; text-align:center" class="visible-xs-block">
+        <img src="~/quan_m/Good_m/HOME/images/home3.jpg" style="width:100%;height:auto">
+
+    </div>
+    <!-- 3moblie!-->
+    <div class="visible-xs-block" style="width:100%; margin:0px; padding:0px;margin-top:20px; text-align:center;position:relative; ">
+        <img src="~/quan_m/Good_m/HOME/images/adbg.png" style="width:100%;height:auto;">
+        <div style="z-index:2;position:absolute;top:90%;left:40%;"><a href="#" class="btn btn-primary  btn-xs">查看详细</a></div>
+        <!-- 开始 !-->
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="position:absolute; z-index:-1; top:42%; ">
+            <!-- Indicators -->
+            <!-- <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol> -->
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" style="background-image:url(../../quan_m/Good_m/HOME/images/bgk1.png); background-repeat:no-repeat">
+                <div class="item active">
+                    <img src="~/quan_m/Good_m/HOME/images/m1.png" alt="...">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/quan_m/Good_m/HOME/images/m2.png" alt="...">
+                    <div class="carousel-caption">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--结束 !-->
+    </div>
+    <div style="width:100%; margin:0px; padding:0px; text-align:center" class="visible-xs-block">
+        <img src="~/quan_m/Good_m/HOME/images/ppln.jpg" style="width:100%;height:auto">
+
+    </div>
+    @*<div id="fanda-pricing" data-section="pricing" class="hidden-xs">
+        <div class="container">
+
+            <div class="row hidden-xs">
+                <div class="col-md-12 section-heading text-center">
+                    <h2 class="single-animate animate-pricing-1" style="font-family:'微软雅黑'" style="border:0px; text-decoration:">合作商家</h2>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 subtext single-animate animate-pricing-2">
+                            <h4 style="font-family:'微软雅黑'; color:#666; line-height:25px;">"泉立方"不断爆发，线上线下全覆盖。联手天猫、京东、苏宁易购等线上平台，强势进驻沃尔玛、家乐福、永辉、华润等各大商超和实体店，现已突破一千多家合作商家，辐射上亿人群，继续以10%-15%的增长率强劲增长。</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row hidden-xs">
+                <div class="col-md-3 col-xs-6">
+                    <div class="price-box to-animate"><img src="~/quan_m/Good_m/HOME/images/hezuo/3.png" class="img-responsive"></div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="price-box to-animate"><img src="~/quan_m/Good_m/HOME/images/hezuo/2.png" class="img-responsive"> </div>
+                </div>
+                <div class="clearfix visible-sm-block"></div>
+                <div class="col-md-3 col-xs-6 to-animate">
+                    <div class="price-box"> <img src="~/quan_m/Good_m/HOME/images/hezuo/1.png" class="img-responsive"></div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="price-box to-animate"> <img src="~/quan_m/Good_m/HOME/images/hezuo/4.png" class="img-responsive"></div>
+                </div>
+            </div>
+            <div class="row hidden-xs ">
+                <div class="col-md-3 col-xs-6">
+                    <div class="price-box to-animate"><img src="~/quan_m/Good_m/HOME/images/hezuo/5.png" class="img-responsive"> </div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <div class="price-box to-animate"><img src="~/quan_m/Good_m/HOME/images/hezuo/6.png" class="img-responsive"> </div>
+                </div>
+                <div class="clearfix visible-sm-block"></div>
+                <div class="col-md-3 col-xs-6 to-animate">
+                    <div class="price-box"> <img src="~/quan_m/Good_m/HOME/images/hezuo/7.png" class="img-responsive"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>*@
+    <div style="width:100%; margin:0px; padding:0px;margin-top:20px; text-align:center">
+        <img src="~/quan_m/Good_m/HOME/images/fand.jpg" style="width:100%;height:auto" class="hidden-xs">
+    </div>
+    <div id="fanda-press" style="padding-top:20px;" class="hidden-xs">
+        <div class="container" style="padding-top:0px; width:100%">
+            <div class="row" style=" padding-top:0px;">
+                <div class="col-md-12 section-heading text-center hidden-xs" style="margin-top:0px; padding-top:0px; margin-bottom:0px; ">
+
+                    <h2 class="single-animate animate-pricing-1 " style="font-family:'微软雅黑';margin-top:0px; padding-top:0px;">合作媒体</h2>
+
+                </div>
+                <br>
+                <div class="col-md-12 text-center hidden-xs">
+                    <ul class="social social-circle">
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/01.png" class="img-responsive" /></li>
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/02.png" class="img-responsive" /></li>
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/03.png" class="img-responsive" /></li>
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/04.png" class="img-responsive" /></li>
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/05.png" class="img-responsive" /></li>
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/06.png" class="img-responsive" /></li>
+
+                    </ul>
+                    <ul class="social social-circle">
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/07.png" class="img-responsive" /></li>
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/08.png" class="img-responsive" /></li>
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/09.png" class="img-responsive" /></li>
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/10.png" class="img-responsive" /></li>
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/11.png" class="img-responsive" /></li>
+                        <li class="to-animate"><img style="width:60%; height:auto" src="~/quan_m/Good_m/HOME/images/meiti/12.png" class="img-responsive" /></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>-->
+    <script>
+        $(document).ready(function () {
+            $("#czuo").click(function () {
+
+                $("#hidewm").slideToggle(500);
+                $("#hidqq").hide(500);
+            });
+        });
+        $(document).ready(function () {
+            $("#caozuoqq").click(function () {
+
+                $("#hidqq").slideToggle(500);
+                $("#hidewm").hide(500);
+            });
+        });
+    </script>
+    <div id="bottomdibu"></div>
+    <!-- jQuery -->
+    <script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/quan_m/Good_m/HOME/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="~/quan_m/Good_m/HOME/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/quan_m/Good_m/HOME/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="~/quan_m/Good_m/HOME/js/jquery.waypoints.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="~/quan_m/Good_m/HOME/js/owl.carousel.min.js"></script>
+
+    <!-- For demo purposes only styleswitcher ( You may delete this anytime ) -->
+    <script src="~/quan_m/Good_m/HOME/js/jquery.style.switcher.js"></script>
+    <script>
+        $(function () {
+            $('#colour-variations ul').styleSwitcher({
+                defaultThemeId: 'theme-switch',
+                hasPreview: false,
+                cookie: {
+                    expires: 30,
+                    isManagingLoad: true
+                }
+            });
+            $('.option-toggle').click(function () {
+                $('#colour-variations').toggleClass('sleep');
+            });
+        });
+    </script>
+
+    <!-- End demo purposes only -->
+    <!-- Main JS (Do not remove) -->
+    <script src="~/quan_m/Good_m/HOME/js/main.js"></script>
+    <script src="~/quan_m/Good_m/HOME/js/tianjia.js"></script>
+
+    <script>
+        $(".pinned").pin({
+            containerSelector: ".container",
+            minWidth: 940
+        });
+    </script>
+</body>
+</html>

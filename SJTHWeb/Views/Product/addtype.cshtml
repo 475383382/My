@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "addtype";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@using sjth.Model;
+@model newstype
+<div class="header">
+    <h1 class="page-header">
+        标题添加 <small>The news added</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#">新闻管理</a></li>
+        <li class="active">标题添加 </li>
+    </ol>
+
+</div>
+@using(Html.BeginForm()){
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="card-title">
+                            <div class="title"></div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="sub-title">标题类型</div>
+                        @Html.HiddenFor(x => x.id)
+                        <div>
+                            <select id="PPID" name="PPID" class="form-control" style="width:200px">
+                                <option value="1">公司咨询</option>
+                                <option value="2">公司学院</option>
+                            </select>
+                        </div>
+                        <div class="sub-title">标题名称</div>
+                        @Html.HiddenFor(x=>x.id)
+                        <div>
+                            @Html.TextBoxFor(x => x.typename, new { @class = "form-control", placeholder = "请输入标题类型", required = "required", style = "width:200px" })
+                        </div>
+                        
+                        <div class="sub-title"></div>
+                        <button type="submit" class="btn btn-default">提交</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+<script>
+    var ppp = "@Model.PPID";
+    if (ppp != 0) {
+        $("#PPID").val(ppp)
+    }
+    
+</script>
+

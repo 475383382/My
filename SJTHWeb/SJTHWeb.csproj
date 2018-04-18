@@ -1,0 +1,1493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE53D09A-D553-4B6D-8443-843826BE78A9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SJTHWeb</RootNamespace>
+    <AssemblyName>SJTHWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LitJSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>kindeditor\asp.net\bin\LitJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthAttribute.cs" />
+    <Compile Include="Controllers\authorityController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ConsultingController.cs" />
+    <Compile Include="Controllers\ErrorAttribute.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\index1Controller.cs" />
+    <Compile Include="Controllers\indexController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserManagerController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MyHtmlHeiper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="6\assets\css\bootstrap-theme.min.css" />
+    <Content Include="6\assets\css\bootstrap.css" />
+    <Content Include="6\assets\css\checkbox3.min.css" />
+    <Content Include="6\assets\css\custom-styles.css" />
+    <Content Include="6\assets\css\font-awesome.css" />
+    <Content Include="6\assets\css\select2.min.css" />
+    <Content Include="6\assets\css\StyleSheet1.css" />
+    <Content Include="6\assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="6\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="6\assets\img\bg-img.jpg" />
+    <Content Include="6\assets\js\bootstrap.min.js" />
+    <Content Include="6\assets\js\chart-data.js" />
+    <Content Include="6\assets\js\chart.min.js" />
+    <Content Include="6\assets\js\chartjs.js" />
+    <Content Include="6\assets\js\custom-scripts.js" />
+    <Content Include="6\assets\js\custom.js" />
+    <Content Include="6\assets\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="6\assets\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="6\assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="6\assets\js\easypiechart-data.js" />
+    <Content Include="6\assets\js\easypiechart.js" />
+    <Content Include="6\assets\js\jquery-1.10.2.js" />
+    <Content Include="6\assets\js\jquery.metisMenu.js" />
+    <Content Include="6\assets\js\Lightweight-Chart\chart.js" />
+    <Content Include="6\assets\js\Lightweight-Chart\cssCharts.css" />
+    <Content Include="6\assets\js\Lightweight-Chart\index - Copy.html" />
+    <Content Include="6\assets\js\Lightweight-Chart\index.html" />
+    <Content Include="6\assets\js\Lightweight-Chart\jquery.chart.js" />
+    <Content Include="6\assets\js\Lightweight-Chart\jquery.chart.min.js" />
+    <Content Include="6\assets\js\morris\morris-0.4.3.min.css" />
+    <Content Include="6\assets\js\morris\morris.js" />
+    <Content Include="6\assets\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="6\assets\js\select2.full.min.js" />
+    <Content Include="6\chart.html" />
+    <Content Include="6\empty.html" />
+    <Content Include="6\form.html" />
+    <Content Include="6\index.html" />
+    <Content Include="6\morris-chart.html" />
+    <Content Include="6\tab-panel.html" />
+    <Content Include="6\table.html" />
+    <Content Include="6\ui-elements.html" />
+    <Content Include="6\说明.txt" />
+    <Content Include="assets\css\bootstrap-theme.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\checkbox3.min.css" />
+    <Content Include="assets\css\custom-styles.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\select2.min.css" />
+    <Content Include="assets\css\StyleSheet1.css" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\bg-img.jpg" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\chart-data.js" />
+    <Content Include="assets\js\chart.min.js" />
+    <Content Include="assets\js\chartjs.js" />
+    <Content Include="assets\js\custom-scripts.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="assets\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="assets\js\dataTables\jquery.dataTables.js" />
+    <Content Include="assets\js\easypiechart-data.js" />
+    <Content Include="assets\js\easypiechart.js" />
+    <Content Include="assets\js\jquery-1.10.2.js" />
+    <Content Include="assets\js\jquery.metisMenu.js" />
+    <Content Include="assets\js\Lightweight-Chart\chart.js" />
+    <Content Include="assets\js\Lightweight-Chart\cssCharts.css" />
+    <Content Include="assets\js\Lightweight-Chart\index - Copy.html" />
+    <Content Include="assets\js\Lightweight-Chart\index.html" />
+    <Content Include="assets\js\Lightweight-Chart\jquery.chart.js" />
+    <Content Include="assets\js\Lightweight-Chart\jquery.chart.min.js" />
+    <Content Include="assets\js\morris\morris-0.4.3.min.css" />
+    <Content Include="assets\js\morris\morris.js" />
+    <Content Include="assets\js\morris\raphael-2.1.0.min.js" />
+    <Content Include="assets\js\select2.full.min.js" />
+    <Content Include="bootstrap\2.3.2\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\CheckPages.css" />
+    <Content Include="css\echarts.js" />
+    <Content Include="css\index.css" />
+    <Content Include="css\jquery.lightbox.css" />
+    <Content Include="css\Login.css" />
+    <Content Include="css\nav.css" />
+    <Content Include="css\pace.min.js" />
+    <Content Include="css\Page.css" />
+    <Content Include="css\pages.css" />
+    <Content Include="css\PricePages.css" />
+    <Content Include="css\qrlist.css" />
+    <Content Include="css\qwrz.css" />
+    <Content Include="css\celedrity.css" />
+    <Content Include="css\top.css" />
+    <Content Include="css\Video_detail.js" />
+    <Content Include="css\Video_index.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\20150523202149_31194.jpg" />
+    <Content Include="images\20150523202149_36819.jpg" />
+    <Content Include="images\20150523202149_59363.jpg" />
+    <Content Include="images\20150523215833_29900.jpg" />
+    <Content Include="images\20150523215833_51976.jpg" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\cl1.png" />
+    <Content Include="images\cl2.png" />
+    <Content Include="images\cl3.png" />
+    <Content Include="images\cl4.png" />
+    <Content Include="images\cl5.png" />
+    <Content Include="images\detail.png" />
+    <Content Include="images\dian.jpg" />
+    <Content Include="images\diannao.png" />
+    <Content Include="images\f.jpg" />
+    <Content Include="images\lock-locked-icon.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo1.jpg" />
+    <Content Include="images\man-user-icon.png" />
+    <Content Include="images\pencil-icon.png" />
+    <Content Include="images\phone-icon.png" />
+    <Content Include="images\q.jpg" />
+    <Content Include="images\re.jpg" />
+    <Content Include="images\s1.jpg" />
+    <Content Include="images\search.jpg" />
+    <Content Include="images\search.png" />
+    <Content Include="images\tips.png" />
+    <Content Include="images\xin.jpg" />
+    <Content Include="jquery\1.11.1\jquery.min.js" />
+    <Content Include="js\1.11.2\jquery.min.js" />
+    <Content Include="js\1.9.1\jquery.min.js" />
+    <Content Include="js\fenye.js" />
+    <Content Include="js\jquery-1.7.1.min.js" />
+    <Content Include="js\jquery-1.7.min.js" />
+    <Content Include="js\jquery.lightbox.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\top.js" />
+    <Content Include="js\ueditor.all.min.js" />
+    <Content Include="js\ueditor.config.js" />
+    <Content Include="js\Video_detail.js" />
+    <Content Include="kindeditor\asp.net\bin\LitJSON.dll" />
+    <Content Include="kindeditor\asp.net\demo.aspx" />
+    <Content Include="kindeditor\asp.net\README.txt" />
+    <Content Include="kindeditor\asp\demo.asp" />
+    <Content Include="kindeditor\asp\file_manager_json.asp" />
+    <Content Include="kindeditor\asp\JSON_2.0.4.asp" />
+    <Content Include="kindeditor\asp\UpLoad_Class.asp" />
+    <Content Include="kindeditor\asp\upload_json.asp" />
+    <Content Include="kindeditor\attached\image\20161215\20161215183354_3319.jpg" />
+    <Content Include="kindeditor\attached\image\20161215\20161215183354_4429.jpg" />
+    <Content Include="kindeditor\attached\image\20161215\20161215183354_4879.jpg" />
+    <Content Include="kindeditor\attached\image\20161215\20161215183354_5869.jpg" />
+    <Content Include="kindeditor\attached\image\20161215\20161215183544_9993.jpg" />
+    <Content Include="kindeditor\attached\image\20161215\20161215183545_0773.jpg" />
+    <Content Include="kindeditor\attached\image\20161215\20161215183545_1833.jpg" />
+    <Content Include="kindeditor\attached\image\20161215\20161215183545_2463.jpg" />
+    <Content Include="kindeditor\attached\image\20161215\20161215183619_9223.jpg" />
+    <Content Include="kindeditor\attached\image\20161216\20161216103816_8133.png" />
+    <Content Include="kindeditor\attached\image\20161216\20161216150634_5061.png" />
+    <Content Include="kindeditor\attached\image\20161216\20161216160750_6324.jpg" />
+    <Content Include="kindeditor\attached\image\20161219\20161219184243_3847.png" />
+    <Content Include="kindeditor\attached\image\20161220\20161220190449_4934.png" />
+    <Content Include="kindeditor\attached\image\20161220\20161220190845_7249.png" />
+    <Content Include="kindeditor\attached\image\20161220\20161220192619_9292.png" />
+    <Content Include="kindeditor\attached\image\20161220\20161220200905_1159.jpg" />
+    <Content Include="kindeditor\attached\image\20161220\20161220201017_8341.jpg" />
+    <Content Include="kindeditor\attached\image\20161220\20161220201046_4927.jpg" />
+    <Content Include="kindeditor\attached\image\20161220\20161220201104_1647.jpg" />
+    <Content Include="kindeditor\attached\image\20161221\20161221185411_4666.jpg" />
+    <Content Include="kindeditor\attached\image\20161222\20161222203957_9459.png" />
+    <Content Include="kindeditor\attached\image\20161222\20161222204541_6625.png" />
+    <Content Include="kindeditor\attached\image\20161223\20161223142819_6941.png" />
+    <Content Include="kindeditor\attached\image\20161223\20161223143019_1669.png" />
+    <Content Include="kindeditor\attached\image\20161224\20161224123132_5407.png" />
+    <Content Include="kindeditor\attached\image\20161224\20161224123431_9249.png" />
+    <Content Include="kindeditor\examples\auto-height.html" />
+    <Content Include="kindeditor\examples\colorpicker.html" />
+    <Content Include="kindeditor\examples\custom-plugin.html" />
+    <Content Include="kindeditor\examples\custom-theme.html" />
+    <Content Include="kindeditor\examples\default.html" />
+    <Content Include="kindeditor\examples\dialog.html" />
+    <Content Include="kindeditor\examples\dynamic-load.html" />
+    <Content Include="kindeditor\examples\file-dialog.html" />
+    <Content Include="kindeditor\examples\file-manager.html" />
+    <Content Include="kindeditor\examples\filter-mode.html" />
+    <Content Include="kindeditor\examples\image-dialog.html" />
+    <Content Include="kindeditor\examples\index.css" />
+    <Content Include="kindeditor\examples\index.html" />
+    <Content Include="kindeditor\examples\jquery-ui.html" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\jquery-ui-1.9.2.custom.css" />
+    <Content Include="kindeditor\examples\jquery-ui\css\smoothness\jquery-ui-1.9.2.custom.min.css" />
+    <Content Include="kindeditor\examples\jquery-ui\js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="kindeditor\examples\jquery-ui\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="kindeditor\examples\jquery.html" />
+    <Content Include="kindeditor\examples\jquery.js" />
+    <Content Include="kindeditor\examples\multi-image-dialog.html" />
+    <Content Include="kindeditor\examples\multi-language.html" />
+    <Content Include="kindeditor\examples\newline.html" />
+    <Content Include="kindeditor\examples\node.html" />
+    <Content Include="kindeditor\examples\paste-type.html" />
+    <Content Include="kindeditor\examples\qqstyle.html" />
+    <Content Include="kindeditor\examples\readonly.html" />
+    <Content Include="kindeditor\examples\simple.html" />
+    <Content Include="kindeditor\examples\uploadbutton.html" />
+    <Content Include="kindeditor\examples\url-type.html" />
+    <Content Include="kindeditor\examples\word-count.html" />
+    <Content Include="kindeditor\jsp\lib\commons-fileupload-1.2.1.jar" />
+    <Content Include="kindeditor\jsp\lib\commons-io-1.4.jar" />
+    <Content Include="kindeditor\jsp\lib\json_simple-1.1.jar" />
+    <Content Include="kindeditor\jsp\README.txt" />
+    <Content Include="kindeditor\kindeditor-all-min.js" />
+    <Content Include="kindeditor\kindeditor-all.js" />
+    <Content Include="kindeditor\kindeditor-min.js" />
+    <Content Include="kindeditor\kindeditor.js" />
+    <Content Include="kindeditor\lang\ar.js" />
+    <Content Include="kindeditor\lang\en.js" />
+    <Content Include="kindeditor\lang\ko.js" />
+    <Content Include="kindeditor\lang\zh_CN.js" />
+    <Content Include="kindeditor\lang\zh_TW.js" />
+    <Content Include="kindeditor\license.txt" />
+    <Content Include="kindeditor\plugins\anchor\anchor.js" />
+    <Content Include="kindeditor\plugins\autoheight\autoheight.js" />
+    <Content Include="kindeditor\plugins\baidumap\baidumap.js" />
+    <Content Include="kindeditor\plugins\baidumap\index.html" />
+    <Content Include="kindeditor\plugins\baidumap\map.html" />
+    <Content Include="kindeditor\plugins\clearhtml\clearhtml.js" />
+    <Content Include="kindeditor\plugins\code\code.js" />
+    <Content Include="kindeditor\plugins\code\prettify.css" />
+    <Content Include="kindeditor\plugins\code\prettify.js" />
+    <Content Include="kindeditor\plugins\emoticons\emoticons.js" />
+    <Content Include="kindeditor\plugins\emoticons\images\0.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\1.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\10.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\100.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\101.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\102.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\103.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\104.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\105.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\106.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\107.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\108.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\109.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\11.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\110.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\111.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\112.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\113.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\114.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\115.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\116.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\117.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\118.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\119.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\12.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\120.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\121.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\122.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\123.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\124.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\125.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\126.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\127.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\128.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\129.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\13.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\130.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\131.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\132.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\133.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\134.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\14.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\15.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\16.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\17.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\18.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\19.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\2.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\20.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\21.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\22.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\23.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\24.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\25.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\26.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\27.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\28.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\29.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\3.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\30.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\31.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\32.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\33.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\34.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\35.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\36.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\37.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\38.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\39.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\4.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\40.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\41.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\42.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\43.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\44.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\45.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\46.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\47.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\48.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\49.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\5.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\50.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\51.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\52.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\53.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\54.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\55.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\56.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\57.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\58.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\59.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\6.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\60.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\61.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\62.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\63.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\64.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\65.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\66.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\67.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\68.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\69.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\7.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\70.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\71.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\72.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\73.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\74.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\75.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\76.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\77.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\78.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\79.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\8.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\80.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\81.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\82.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\83.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\84.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\85.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\86.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\87.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\88.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\89.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\9.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\90.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\91.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\92.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\93.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\94.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\95.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\96.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\97.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\98.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\99.gif" />
+    <Content Include="kindeditor\plugins\emoticons\images\static.gif" />
+    <Content Include="kindeditor\plugins\filemanager\filemanager.js" />
+    <Content Include="kindeditor\plugins\filemanager\images\file-16.gif" />
+    <Content Include="kindeditor\plugins\filemanager\images\file-64.gif" />
+    <Content Include="kindeditor\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="kindeditor\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="kindeditor\plugins\filemanager\images\go-up.gif" />
+    <Content Include="kindeditor\plugins\flash\flash.js" />
+    <Content Include="kindeditor\plugins\image\image.js" />
+    <Content Include="kindeditor\plugins\image\images\align_left.gif" />
+    <Content Include="kindeditor\plugins\image\images\align_right.gif" />
+    <Content Include="kindeditor\plugins\image\images\align_top.gif" />
+    <Content Include="kindeditor\plugins\image\images\refresh.png" />
+    <Content Include="kindeditor\plugins\insertfile\insertfile.js" />
+    <Content Include="kindeditor\plugins\lineheight\lineheight.js" />
+    <Content Include="kindeditor\plugins\link\link.js" />
+    <Content Include="kindeditor\plugins\map\map.html" />
+    <Content Include="kindeditor\plugins\map\map.js" />
+    <Content Include="kindeditor\plugins\media\media.js" />
+    <Content Include="kindeditor\plugins\multiimage\images\image.png" />
+    <Content Include="kindeditor\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="kindeditor\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="kindeditor\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="kindeditor\plugins\multiimage\multiimage.js" />
+    <Content Include="kindeditor\plugins\pagebreak\pagebreak.js" />
+    <Content Include="kindeditor\plugins\plainpaste\plainpaste.js" />
+    <Content Include="kindeditor\plugins\preview\preview.js" />
+    <Content Include="kindeditor\plugins\quickformat\quickformat.js" />
+    <Content Include="kindeditor\plugins\table\table.js" />
+    <Content Include="kindeditor\plugins\template\html\1.html" />
+    <Content Include="kindeditor\plugins\template\html\2.html" />
+    <Content Include="kindeditor\plugins\template\html\3.html" />
+    <Content Include="kindeditor\plugins\template\template.js" />
+    <Content Include="kindeditor\plugins\wordpaste\wordpaste.js" />
+    <Content Include="kindeditor\themes\common\anchor.gif" />
+    <Content Include="kindeditor\themes\common\blank.gif" />
+    <Content Include="kindeditor\themes\common\flash.gif" />
+    <Content Include="kindeditor\themes\common\loading.gif" />
+    <Content Include="kindeditor\themes\common\media.gif" />
+    <Content Include="kindeditor\themes\common\rm.gif" />
+    <Content Include="kindeditor\themes\default\background.png" />
+    <Content Include="kindeditor\themes\default\default.css" />
+    <Content Include="kindeditor\themes\default\default.png" />
+    <Content Include="kindeditor\themes\qq\editor.gif" />
+    <Content Include="kindeditor\themes\qq\qq.css" />
+    <Content Include="kindeditor\themes\simple\simple.css" />
+    <Content Include="Models\bottom.html" />
+    <Content Include="Models\HtmlPage1.html" />
+    <Content Include="Models\HtmlPage2.html" />
+    <Content Include="Models\navlist.html" />
+    <Content Include="product_imgs\cptp.jpg" />
+    <Content Include="p\jquery.pin\jquery.pin.js" />
+    <Content Include="quan_m\Good_m\ABOUT\css\animate.css" />
+    <Content Include="quan_m\Good_m\ABOUT\css\bootstrap.css" />
+    <Content Include="quan_m\Good_m\ABOUT\css\flexslider.css" />
+    <Content Include="quan_m\Good_m\ABOUT\css\new_file.css" />
+    <Content Include="quan_m\Good_m\ABOUT\css\style.css" />
+    <Content Include="quan_m\Good_m\ABOUT\images\bujubg.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\images\gys\1.png" />
+    <Content Include="quan_m\Good_m\ABOUT\images\gys\2.png" />
+    <Content Include="quan_m\Good_m\ABOUT\images\gys\3.png" />
+    <Content Include="quan_m\Good_m\ABOUT\images\gys\4.png" />
+    <Content Include="quan_m\Good_m\ABOUT\images\logo %281%29.png" />
+    <Content Include="quan_m\Good_m\ABOUT\images\logo.png" />
+    <Content Include="quan_m\Good_m\ABOUT\images\pic_1.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\images\pic_2.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\images\pic_3.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\images\pic_4.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\images\ppzq.png" />
+    <Content Include="quan_m\Good_m\ABOUT\images\slide_2.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\images\slide_3.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\images\zizhism.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\images\zizhismp.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\images\zizhixy.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\images\zizhixyp.jpg" />
+    <Content Include="quan_m\Good_m\ABOUT\js\bootstrap.min.js" />
+    <Content Include="quan_m\Good_m\ABOUT\js\jquery.easing.1.3.js" />
+    <Content Include="quan_m\Good_m\ABOUT\js\jquery.flexslider-min.js" />
+    <Content Include="quan_m\Good_m\ABOUT\js\jquery.min.js" />
+    <Content Include="quan_m\Good_m\ABOUT\js\jquery.stellar.min.js" />
+    <Content Include="quan_m\Good_m\ABOUT\js\jquery.waypoints.min.js" />
+    <Content Include="quan_m\Good_m\ABOUT\js\main.js" />
+    <Content Include="quan_m\Good_m\ABOUT\js\modernizr-2.6.2.min.js" />
+    <Content Include="quan_m\Good_m\HOME\css\animate.css" />
+    <Content Include="quan_m\Good_m\HOME\css\bootstrap.css" />
+    <Content Include="quan_m\Good_m\HOME\css\buttons.css" />
+    <Content Include="quan_m\Good_m\HOME\css\icomoon.css" />
+    <Content Include="quan_m\Good_m\HOME\css\owl.carousel.min.css" />
+    <Content Include="quan_m\Good_m\HOME\css\owl.theme.default.min.css" />
+    <Content Include="quan_m\Good_m\HOME\css\PRODUCT.css" />
+    <Content Include="quan_m\Good_m\HOME\css\products-list.css" />
+    <Content Include="quan_m\Good_m\HOME\css\simple-line-icons.css" />
+    <Content Include="quan_m\Good_m\HOME\css\style.css" />
+    <Content Include="quan_m\Good_m\HOME\css\tianjia.css" />
+    <Content Include="quan_m\Good_m\HOME\images\0.png" />
+    <Content Include="quan_m\Good_m\HOME\images\1-161202191230431.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\1.png" />
+    <Content Include="quan_m\Good_m\HOME\images\2.png" />
+    <Content Include="quan_m\Good_m\HOME\images\3.png" />
+    <Content Include="quan_m\Good_m\HOME\images\4.png" />
+    <Content Include="quan_m\Good_m\HOME\images\5.png" />
+    <Content Include="quan_m\Good_m\HOME\images\adbg.png" />
+    <Content Include="quan_m\Good_m\HOME\images\banner1.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\bgk1.png" />
+    <Content Include="quan_m\Good_m\HOME\images\bg_bg.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\fan1.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\fan2.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\fand.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\hezuo\1.png" />
+    <Content Include="quan_m\Good_m\HOME\images\hezuo\2.png" />
+    <Content Include="quan_m\Good_m\HOME\images\hezuo\3.png" />
+    <Content Include="quan_m\Good_m\HOME\images\hezuo\4.png" />
+    <Content Include="quan_m\Good_m\HOME\images\hezuo\5.png" />
+    <Content Include="quan_m\Good_m\HOME\images\hezuo\6.png" />
+    <Content Include="quan_m\Good_m\HOME\images\hezuo\7.png" />
+    <Content Include="quan_m\Good_m\HOME\images\home3.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\jishu.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\logo.png" />
+    <Content Include="quan_m\Good_m\HOME\images\ltmoblie.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\m1.png" />
+    <Content Include="quan_m\Good_m\HOME\images\m2.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\01.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\02.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\03.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\04.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\05.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\06.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\07.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\08.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\09.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\10.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\11.png" />
+    <Content Include="quan_m\Good_m\HOME\images\meiti\12.png" />
+    <Content Include="quan_m\Good_m\HOME\images\ppln.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\ppzq.png" />
+    <Content Include="quan_m\Good_m\HOME\images\se.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\smp01.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\text_lt.png" />
+    <Content Include="quan_m\Good_m\HOME\images\text_mz.png" />
+    <Content Include="quan_m\Good_m\HOME\images\xi.jpg" />
+    <Content Include="quan_m\Good_m\HOME\images\xyp01.jpg" />
+    <Content Include="quan_m\Good_m\HOME\js\bootstrap.min.js" />
+    <Content Include="quan_m\Good_m\HOME\js\jquery.easing.1.3.js" />
+    <Content Include="quan_m\Good_m\HOME\js\jquery.min.js" />
+    <Content Include="quan_m\Good_m\HOME\js\jquery.style.switcher.js" />
+    <Content Include="quan_m\Good_m\HOME\js\jquery.waypoints.min.js" />
+    <Content Include="quan_m\Good_m\HOME\js\main.js" />
+    <Content Include="quan_m\Good_m\HOME\js\modernizr-2.6.2.min.js" />
+    <Content Include="quan_m\Good_m\HOME\js\mxb.js" />
+    <Content Include="quan_m\Good_m\HOME\js\navlist.js" />
+    <Content Include="quan_m\Good_m\HOME\js\owl.carousel.min.js" />
+    <Content Include="quan_m\Good_m\HOME\js\tianjia.js" />
+    <Content Include="quan_m\Good_m\icon\line.png" />
+    <Content Include="quan_m\Good_m\images\hezuo\2.png" />
+    <Content Include="quan_m\Good_m\images\hezuo\3.png" />
+    <Content Include="quan_m\Good_m\images\icon\line.png" />
+    <Content Include="quan_m\Good_m\images\smp\1step-2.jpg" />
+    <Content Include="quan_m\Good_m\images\smp\1step-3.jpg" />
+    <Content Include="quan_m\Good_m\images\smp\1step.jpg" />
+    <Content Include="quan_m\Good_m\images\smp\advantage_tittle.png" />
+    <Content Include="quan_m\Good_m\images\smp\b2_cloth.png" />
+    <Content Include="quan_m\Good_m\images\smp\b2_text.png" />
+    <Content Include="quan_m\Good_m\images\smp\b3_img.png" />
+    <Content Include="quan_m\Good_m\images\smp\b3_img2.jpg" />
+    <Content Include="quan_m\Good_m\images\smp\b3_text.png" />
+    <Content Include="quan_m\Good_m\images\smp\b4_img.png" />
+    <Content Include="quan_m\Good_m\images\smp\bianxie_hover.png" />
+    <Content Include="quan_m\Good_m\images\smp\bianxie_img.png" />
+    <Content Include="quan_m\Good_m\images\smp\cx_hover.png" />
+    <Content Include="quan_m\Good_m\images\smp\cx_ico2.png" />
+    <Content Include="quan_m\Good_m\images\smp\dt_hover.png" />
+    <Content Include="quan_m\Good_m\images\smp\dt_ico2.png" />
+    <Content Include="quan_m\Good_m\images\smp\fanchuanse_hover.png" />
+    <Content Include="quan_m\Good_m\images\smp\fanchuanse_img.png" />
+    <Content Include="quan_m\Good_m\images\smp\fys.jpg" />
+    <Content Include="quan_m\Good_m\images\smp\jk_hover.png" />
+    <Content Include="quan_m\Good_m\images\smp\jk_ico2.png" />
+    <Content Include="quan_m\Good_m\images\smp\quyiwei_hover.png" />
+    <Content Include="quan_m\Good_m\images\smp\quyiwei_img.png" />
+    <Content Include="quan_m\Good_m\images\smp\xd.jpg" />
+    <Content Include="quan_m\Good_m\images\smp\xw.jpg" />
+    <Content Include="quan_m\Good_m\mingxbd\images\01.jpg" />
+    <Content Include="quan_m\Good_m\mingxbd\images\011.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\css\animate.css" />
+    <Content Include="quan_m\Good_m\NEWS_S\css\bootstrap.css" />
+    <Content Include="quan_m\Good_m\NEWS_S\css\icomoon.css" />
+    <Content Include="quan_m\Good_m\NEWS_S\css\jquery.stellar.min.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\css\magnific-popup.css" />
+    <Content Include="quan_m\Good_m\NEWS_S\css\simple-line-icons.css" />
+    <Content Include="quan_m\Good_m\NEWS_S\css\style.css" />
+    <Content Include="quan_m\Good_m\NEWS_S\css\Video_index.css" />
+    <Content Include="quan_m\Good_m\NEWS_S\ewm %281%29.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\ewm.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\gongan.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\logo.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\ppzq %281%29.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\ppzq.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smpbg.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smppy.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\1step-2.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\1step-3.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\1step.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\b2_cloth.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\b2_text.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\b3_img.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\b3_img2.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\b3_text.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\b4_img.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\bianxie_hover.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\cx_hover.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\dt_hover.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\fanchuanse_hover.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\fys.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\jk_hover.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\quyiwei_hover.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\xd.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\smp\xw.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\videobg.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\XY_img\smpgm.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\zixun\allnews.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\zixun\gongsihuodong.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\zixun\jquery-lightbox-theme.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\zixun\line.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\zixun\notice.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\zixun\tuandui.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\zixun\xueyuan.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\zixun\zixun.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\zxbg.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\images\zxbg3.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\banner.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\semu%281%29.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\semu%2810%29.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\semu%282%29.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\semu%283%29.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\semu%284%29.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\semu%285%29.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\semu%286%29.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\semu%287%29.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\semu%288%29.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\img01\semu%289%29.jpg" />
+    <Content Include="quan_m\Good_m\NEWS_S\imgs\ewm %281%29.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\imgs\ewm.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\imgs\gongan.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\imgs\qq-hover.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\imgs\qq.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\imgs\weibo-hover.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\imgs\weibo.png" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\application.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\bootstrap.min.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\jquery.countTo.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\jquery.magnific-popup.min.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\jquery.stellar.min.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\jquery.style.switcher.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\jquery.waypoints.min.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\magnific-popup-options.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\main.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\modernizr-2.6.2.min.js" />
+    <Content Include="quan_m\Good_m\NEWS_S\js\zhaoshang.js" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\css\jquery.lightbox.css" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\images\01.jpg" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\images\02.jpg" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\images\03.jpg" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\images\04.jpg" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\images\05.jpg" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\images\06.jpg" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\images\07.jpg" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\images\08.jpg" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\images\09.jpg" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\js\jquery.lightbox.min.js" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\js\jquery.min.js" />
+    <Content Include="quan_m\Good_m\PRODUCT_S\smpbg.jpg" />
+    <Content Include="quan_m\Good_m\xyp\images\XY_img\smpgm.jpg" />
+    <Content Include="quan_m\qlf\js\hover_pack.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="6\assets\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="6\assets\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="6\assets\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="6\assets\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="6\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="6\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="6\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="6\assets\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="6\assets\js\Lightweight-Chart\README.md" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.eot" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.ttf" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontba72.woff" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="assets\js\Lightweight-Chart\README.md" />
+    <Content Include="assets\fonts\K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2" />
+    <Content Include="assets\fonts\u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="assets\fonts\xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="6\assets\fonts\K88pR3goAWT7BTt32Z01mxJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="6\assets\fonts\xozscpT2726on7jbcb_pAhJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="6\assets\fonts\59ZRklaO5bWGqF5A9baEERJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="6\assets\fonts\cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2" />
+    <Content Include="6\assets\fonts\LWCjsQkB6EMdfHrEVqA1KRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="6\assets\fonts\u-WUoqrET9fUeobQW7jkRRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="6\assets\fonts\RjgO7rYTmqiVp7vzi-Q5URJtnKITppOI_IvcXXDNrsc.woff2" />
+    <Content Include="kindeditor\asp.net\file_manager_json.ashx" />
+    <Content Include="kindeditor\asp.net\upload_json.ashx" />
+    <Content Include="kindeditor\jsp\demo.jsp" />
+    <Content Include="kindeditor\jsp\file_manager_json.jsp" />
+    <Content Include="kindeditor\jsp\upload_json.jsp" />
+    <Content Include="kindeditor\php\demo.php" />
+    <Content Include="kindeditor\php\file_manager_json.php" />
+    <Content Include="kindeditor\php\JSON.php" />
+    <Content Include="kindeditor\php\upload_json.php" />
+    <Content Include="Scripts\My97DatePicker\calendar.js" />
+    <Content Include="Scripts\My97DatePicker\lang\en.js" />
+    <Content Include="Scripts\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Scripts\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Scripts\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\My97DatePicker\WdatePicker.js" />
+    <Content Include="Scripts\My97DatePicker\ybjz.js" />
+    <Content Include="static\css\bootstrap.min.css" />
+    <Content Include="static\css\main.css" />
+    <Content Include="static\images\ab.jpg" />
+    <Content Include="static\images\arrow.gif" />
+    <Content Include="static\images\banner\banner1.jpg" />
+    <Content Include="static\images\banner\banner14.jpg" />
+    <Content Include="static\images\banner\banner2.jpg" />
+    <Content Include="static\images\banner\banner3.jpg" />
+    <Content Include="static\images\c.jpg" />
+    <Content Include="static\images\list1.jpg" />
+    <Content Include="static\images\list2.jpg" />
+    <Content Include="static\images\list3.jpg" />
+    <Content Include="static\images\list4.jpg" />
+    <Content Include="static\images\list5.jpg" />
+    <Content Include="static\images\listcon.jpg" />
+    <Content Include="static\images\navbg.jpg" />
+    <Content Include="static\images\news\news1.jpg" />
+    <Content Include="static\images\news\news2.jpg" />
+    <Content Include="static\images\news\news3.jpg" />
+    <Content Include="static\images\news\news4.jpg" />
+    <Content Include="static\images\products\pro1-1.png" />
+    <Content Include="static\images\products\pro1.jpg" />
+    <Content Include="static\images\products\pro2.jpg" />
+    <Content Include="static\images\products\pro3.jpg" />
+    <Content Include="static\images\products\pro4.jpg" />
+    <Content Include="static\images\products\pro5.jpg" />
+    <Content Include="static\images\products\pro6.jpg" />
+    <Content Include="static\images\products\pro7.jpg" />
+    <Content Include="static\images\products\pro8.jpg" />
+    <Content Include="static\images\topbg.png" />
+    <Content Include="static\images\wx.jpg" />
+    <Content Include="static\js\bootstrap.min.js" />
+    <Content Include="static\js\jquery.min.js" />
+    <Content Include="static\js\main.js" />
+    <Content Include="static\map\map.html" />
+    <Content Include="s_img\161122\1-161122101H91a.jpg" />
+    <Content Include="s_img\161122\1-161122104340460.jpg" />
+    <Content Include="s_img\161122\1-161122112401557.jpg" />
+    <Content Include="s_img\161122\1-16112211252RO.jpg" />
+    <Content Include="s_img\161130\1-161122104340460.jpg" />
+    <Content Include="s_img\161130\1-161130145200J5.jpg" />
+    <Content Include="s_img\161130\1-16113016442WK.jpg" />
+    <Content Include="s_img\161202\1-16120219121VH.jpg" />
+    <Content Include="s_img\161202\1-161202191230431.jpg" />
+    <Content Include="s_img\allimg\160716\2-160G61555151L.jpg" />
+    <Content Include="Views\index1\Index.cshtml" />
+    <Content Include="zhaoshang\css\index.css" />
+    <Content Include="zhaoshang\images\1.jpg" />
+    <Content Include="zhaoshang\images\11.png" />
+    <Content Include="zhaoshang\images\1112.png" />
+    <Content Include="zhaoshang\images\122.png" />
+    <Content Include="zhaoshang\images\123.png" />
+    <Content Include="zhaoshang\images\12xianxia.png" />
+    <Content Include="zhaoshang\images\13xianshang.png" />
+    <Content Include="zhaoshang\images\14daiyan.png" />
+    <Content Include="zhaoshang\images\2.png" />
+    <Content Include="zhaoshang\images\6.png" />
+    <Content Include="zhaoshang\images\7gongyin.png" />
+    <Content Include="zhaoshang\images\8jiang.png" />
+    <Content Include="zhaoshang\images\9-f.png" />
+    <Content Include="zhaoshang\images\9-tu.png" />
+    <Content Include="zhaoshang\images\bt.png" />
+    <Content Include="zhaoshang\images\er.jpg" />
+    <Content Include="zhaoshang\images\qq.png" />
+    <Content Include="zhaoshang\images\yi.jpg" />
+    <Content Include="zhaoshang\images\yingying.png" />
+    <Content Include="zhaoshang\images\z2.png" />
+    <Content Include="zhaoshang\images\z3.png" />
+    <Content Include="zhaoshang\images\z6.png" />
+    <Content Include="zhaoshang\images\z7.png" />
+    <Content Include="zhaoshang\images\z8.png" />
+    <Content Include="zhaoshang\images\zsbg.png" />
+    <Content Include="zhaoshang\images\zx.png" />
+    <Content Include="zhaoshang\js\Area.js" />
+    <Content Include="zhaoshang\js\AreaData_min.js" />
+    <Content Include="zhaoshang\js\index.js" />
+    <Content Include="zhaoshang\js\jquery.min.js" />
+    <Content Include="zhaoshang\js\scripts.js" />
+    <Content Include="zxw2016年12月16日\Aboutus.html" />
+    <Content Include="zxw2016年12月16日\bootstrap\2.3.2\js\bootstrap.min.js" />
+    <Content Include="zxw2016年12月16日\bottom.html" />
+    <Content Include="zxw2016年12月16日\chaxun.html" />
+    <Content Include="zxw2016年12月16日\css\jquery.lightbox.css" />
+    <Content Include="zxw2016年12月16日\css\nav.css" />
+    <Content Include="zxw2016年12月16日\heard.html" />
+    <Content Include="zxw2016年12月16日\images\20150523202149_31194.jpg" />
+    <Content Include="zxw2016年12月16日\images\20150523202149_36819.jpg" />
+    <Content Include="zxw2016年12月16日\images\20150523202149_59363.jpg" />
+    <Content Include="zxw2016年12月16日\images\20150523215833_29900.jpg" />
+    <Content Include="zxw2016年12月16日\images\20150523215833_51976.jpg" />
+    <Content Include="zxw2016年12月16日\include\dedeajax2.js" />
+    <Content Include="zxw2016年12月16日\index.html" />
+    <Content Include="zxw2016年12月16日\join_us.html" />
+    <Content Include="zxw2016年12月16日\jquery\1.11.1\jquery.min.js" />
+    <Content Include="zxw2016年12月16日\js\1.11.2\jquery.min.js" />
+    <Content Include="zxw2016年12月16日\js\1.9.1\jquery.min.js" />
+    <Content Include="zxw2016年12月16日\js\jquery-1.7.min.js" />
+    <Content Include="zxw2016年12月16日\js\jquery.lightbox.min.js" />
+    <Content Include="zxw2016年12月16日\js\jquery.min.js" />
+    <Content Include="zxw2016年12月16日\lianxiwomen.html" />
+    <Content Include="zxw2016年12月16日\navlist.html" />
+    <Content Include="zxw2016年12月16日\notic-allnews.html" />
+    <Content Include="zxw2016年12月16日\notic-list.html" />
+    <Content Include="zxw2016年12月16日\notic-listnews.html" />
+    <Content Include="zxw2016年12月16日\notic.html" />
+    <Content Include="zxw2016年12月16日\product-list.html" />
+    <Content Include="zxw2016年12月16日\product.html" />
+    <Content Include="zxw2016年12月16日\product_imgs\cptp.jpg" />
+    <Content Include="zxw2016年12月16日\p\jquery.pin\jquery.pin.js" />
+    <Content Include="zxw2016年12月16日\quanwei-list.html" />
+    <Content Include="zxw2016年12月16日\quanwei.html" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\css\animate.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\css\bootstrap.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\css\flexslider.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\css\new_file.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\css\style.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\bujubg.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\ditu.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\gys\1.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\gys\2.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\gys\3.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\gys\4.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\logo %281%29.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\logo.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\pic_1.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\pic_2.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\pic_3.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\pic_4.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\ppzq.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\slide_2.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\slide_3.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\zizhism.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\zizhismp.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\zizhixy.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\images\zizhixyp.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\js\bootstrap.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\js\jquery.easing.1.3.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\js\jquery.flexslider-min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\js\jquery.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\js\jquery.stellar.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\js\jquery.waypoints.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\js\main.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\ABOUT\js\modernizr-2.6.2.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\animate.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\bootstrap.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\buttons.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\icomoon.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\owl.carousel.min.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\owl.theme.default.min.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\PRODUCT.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\products-list.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\simple-line-icons.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\style.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\css\tianjia.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\0.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\1-161202191230431.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\1.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\2.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\3.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\4.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\5.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\adbg.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\banner1.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\bgk1.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\bg_bg.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\fan1.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\fan2.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\fand.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\hezuo\1.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\hezuo\2.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\hezuo\3.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\hezuo\4.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\hezuo\5.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\hezuo\6.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\hezuo\7.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\home3.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\jishu.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\logo.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\ltmoblie.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\m1.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\m2.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\01.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\02.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\03.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\04.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\05.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\06.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\07.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\08.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\09.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\10.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\11.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\meiti\12.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\ppln.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\ppzq.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\se.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\smp01.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\text_lt.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\text_mz.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\xi.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\images\xyp01.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\js\bootstrap.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\js\jquery.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\js\jquery.style.switcher.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\js\jquery.waypoints.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\js\main.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\js\modernizr-2.6.2.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\js\mxb.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\js\navlist.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\js\owl.carousel.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\HOME\js\tianjia.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\icon\line.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\hezuo\2.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\hezuo\3.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\icon\line.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\1step-2.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\1step-3.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\1step.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\advantage_tittle.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\b2_cloth.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\b2_text.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\b3_img.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\b3_img2.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\b3_text.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\b4_img.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\bianxie_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\bianxie_img.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\cx_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\cx_ico2.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\dt_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\dt_ico2.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\fanchuanse_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\fanchuanse_img.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\fys.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\jk_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\jk_ico2.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\quyiwei_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\quyiwei_img.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\xd.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\images\smp\xw.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\mingxbd\images\01.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\mingxbd\images\011.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\css\animate.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\css\bootstrap.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\css\icomoon.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\css\jquery.stellar.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\css\magnific-popup.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\css\simple-line-icons.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\css\style.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\css\Video_index.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\ewm %281%29.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\ewm.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\gongan.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\logo.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\ppzq %281%29.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\ppzq.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smpbg.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smppy.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\1step-2.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\1step-3.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\1step.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\b2_cloth.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\b2_text.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\b3_img.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\b3_img2.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\b3_text.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\b4_img.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\bianxie_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\cx_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\dt_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\fanchuanse_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\fys.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\jk_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\quyiwei_hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\xd.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\smp\xw.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\videobg.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\XY_img\smpgm.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\zixun\allnews.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\zixun\gongsihuodong.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\zixun\jquery-lightbox-theme.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\zixun\line.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\zixun\notice.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\zixun\tuandui.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\zixun\xueyuan.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\zixun\zixun.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\zxbg.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\images\zxbg3.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\banner.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\semu%281%29.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\semu%2810%29.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\semu%282%29.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\semu%283%29.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\semu%284%29.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\semu%285%29.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\semu%286%29.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\semu%287%29.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\semu%288%29.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\img01\semu%289%29.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\imgs\ewm %281%29.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\imgs\ewm.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\imgs\gongan.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\imgs\qq-hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\imgs\qq.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\imgs\tuanduibj.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\imgs\weibo-hover.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\imgs\weibo.png" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\application.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\bootstrap.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\jquery.countTo.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\jquery.magnific-popup.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\jquery.stellar.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\jquery.style.switcher.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\jquery.waypoints.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\magnific-popup-options.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\main.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\modernizr-2.6.2.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\quanwei.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\NEWS_S\js\zhaoshang.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\css\jquery.lightbox.css" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\images\01.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\images\02.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\images\03.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\images\04.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\images\05.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\images\06.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\images\07.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\images\08.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\images\09.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\js\jquery.lightbox.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\js\jquery.min.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\PRODUCT_S\smpbg.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\Video\js\share.js" />
+    <Content Include="zxw2016年12月16日\quan_m\Good_m\xyp\images\XY_img\smpgm.jpg" />
+    <Content Include="zxw2016年12月16日\quan_m\qlf\js\hover_pack.js" />
+    <Content Include="zxw2016年12月16日\s_img\161122\1-161122101H91a.jpg" />
+    <Content Include="zxw2016年12月16日\s_img\161122\1-161122104340460.jpg" />
+    <Content Include="zxw2016年12月16日\s_img\161122\1-161122112401557.jpg" />
+    <Content Include="zxw2016年12月16日\s_img\161122\1-16112211252RO.jpg" />
+    <Content Include="zxw2016年12月16日\s_img\161130\1-161122104340460.jpg" />
+    <Content Include="zxw2016年12月16日\s_img\161130\1-161130145200J5.jpg" />
+    <Content Include="zxw2016年12月16日\s_img\161130\1-16113016442WK.jpg" />
+    <Content Include="zxw2016年12月16日\s_img\161202\1-16120219121VH.jpg" />
+    <Content Include="zxw2016年12月16日\s_img\161202\1-161202191230431.jpg" />
+    <Content Include="zxw2016年12月16日\s_img\allimg\160716\2-160G61555151L.jpg" />
+    <Content Include="zxw2016年12月16日\video.html" />
+    <Content Include="zxw2016年12月16日\xueyuan-list.html" />
+    <Content Include="zxw2016年12月16日\xueyuan-listtream.html" />
+    <Content Include="zxw2016年12月16日\xueyuan-tream.html" />
+    <Content Include="zxw2016年12月16日\xueyuan.html" />
+    <Content Include="zxw2016年12月16日\zhaoshang\css\index.css" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\1.jpg" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\11.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\1112.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\122.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\123.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\12xianxia.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\13xianshang.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\14daiyan.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\2.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\6.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\7gongyin.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\8jiang.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\9-f.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\9-tu.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\bt.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\er.jpg" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\qq.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\yi.jpg" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\yingying.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\z2.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\z3.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\z6.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\z7.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\z8.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\zsbg.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\images\zx.png" />
+    <Content Include="zxw2016年12月16日\zhaoshang\js\Area.js" />
+    <Content Include="zxw2016年12月16日\zhaoshang\js\AreaData_min.js" />
+    <Content Include="zxw2016年12月16日\zhaoshang\js\index.js" />
+    <Content Include="zxw2016年12月16日\zhaoshang\js\jquery.min.js" />
+    <Content Include="zxw2016年12月16日\zhaoshang\js\scripts.js" />
+    <Content Include="蓝色化工产品公司响应式网站模板\about.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\contact.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\index.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\news-detail.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\news-detail1.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\news-detail2.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\news-detail3.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\news.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\products-detail.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\products-detail1.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\products-detail2.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\products-detail3.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\products-detail4.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\products-detail5.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\products-detail6.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\products-detail7.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\products.html" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\css\bootstrap.min.css" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\css\main.css" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\ab.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\arrow.gif" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\banner\banner1.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\banner\banner2.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\banner\banner3.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\c.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\list1.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\list2.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\list3.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\list4.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\list5.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\listcon.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\navbg.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\news\news1.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\news\news2.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\news\news3.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\news\news4.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\products\pro1-1.png" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\products\pro1.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\products\pro2.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\products\pro3.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\products\pro4.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\products\pro5.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\products\pro6.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\products\pro7.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\products\pro8.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\topbg.png" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\images\wx.jpg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\js\bootstrap.min.js" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\js\jquery.min.js" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\js\main.js" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\map\map.html" />
+    <None Include="Properties\PublishProfiles\1.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\page.css" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\UserManager\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\UserManager\aa.cshtml" />
+    <Content Include="Views\UserManager\userInfo.cshtml" />
+    <Content Include="Views\UserManager\Login.cshtml" />
+    <Content Include="Views\Product\addNews.cshtml" />
+    <Content Include="Views\Product\newstype.cshtml" />
+    <Content Include="Views\Product\addtype.cshtml" />
+    <Content Include="Views\Product\newsList.cshtml" />
+    <Content Include="Views\Product\AuthorityList.cshtml" />
+    <Content Include="Views\Product\addAuthority.cshtml" />
+    <Content Include="Views\authority\Index.cshtml" />
+    <Content Include="Views\authority\Authority.cshtml" />
+    <Content Include="Views\Consulting\Index.cshtml" />
+    <Content Include="Views\Product\productList.cshtml" />
+    <Content Include="Views\Product\addproduct.cshtml" />
+    <Content Include="zxw2016年12月16日\.project" />
+    <Content Include="Views\Shared\navlist.cshtml" />
+    <Content Include="Views\Consulting\school.cshtml" />
+    <Content Include="Views\Consulting\product.cshtml" />
+    <Content Include="Views\Consulting\particulars.cshtml" />
+    <Content Include="Views\Product\lunbo.cshtml" />
+    <Content Include="Views\Product\addlunbo.cshtml" />
+    <Content Include="Views\Product\videoList.cshtml" />
+    <Content Include="Views\Product\addvideo.cshtml" />
+    <Content Include="Views\Consulting\videos.cshtml" />
+    <Content Include="Views\Product\xiaoshou.cshtml" />
+    <Content Include="Views\Product\addxiaoshou.cshtml" />
+    <Content Include="Views\Consulting\celebrity.cshtml" />
+    <Content Include="Views\Consulting\Details.cshtml" />
+    <Content Include="Views\Consulting\schoolDetails.cshtml" />
+    <Content Include="Views\Consulting\dljm.cshtml" />
+    <Content Include="Views\Consulting\Aboutus.cshtml" />
+    <Content Include="Views\Product\count.cshtml" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="蓝色化工产品公司响应式网站模板\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\Shared\_LayoutPage2.cshtml" />
+    <Content Include="Views\index\Index.cshtml" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="quan_m\Good_m\mingxbd\css\" />
+    <Folder Include="quan_m\Good_m\mingxbd\js\" />
+    <Folder Include="quan_m\Good_m\Video\" />
+    <Folder Include="zxw2016年12月16日\quan_m\Good_m\mingxbd\css\" />
+    <Folder Include="zxw2016年12月16日\quan_m\Good_m\mingxbd\js\" />
+    <Folder Include="zxw2016年12月16日\quan_m\Good_m\Video\css\" />
+    <Folder Include="zxw2016年12月16日\quan_m\Good_m\Video\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sjth.BLL\sjth.BLL.csproj">
+      <Project>{2acb9813-767c-4801-9f12-c25e8fc5554a}</Project>
+      <Name>sjth.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sjth.Common\sjth.Common.csproj">
+      <Project>{c1dc5eaf-ffbc-421c-b032-1f884d7853ed}</Project>
+      <Name>sjth.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sjth.Model\sjth.Model.csproj">
+      <Project>{f7d0dc87-2172-46e8-9d52-da7aadca7257}</Project>
+      <Name>sjth.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>30819</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:30819/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

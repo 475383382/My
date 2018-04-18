@@ -1,0 +1,30 @@
+﻿
+	*{margin: 0 auto;padding: 0px;}
+	li{list-style-type: none;}
+	img{border: 0px;}
+	a{text-decoration: none;}
+	.Clear{ clear: both;}
+	.yuedb{ margin: 30px auto;}
+	.mxphb-title{ height: 50px; line-height: 50px; text-align: center; font-family: "微软雅黑";font-size: 20px; color: #000000;}
+		.yuedb{ height: auto;}
+		.ydb-left{font-size: 16px;color: #000000; height: auto;font-family: "微软雅黑";}
+		.ydb-right{}
+	@media only screen and (min-width: 1000px) {
+
+		.ydb-right img{width: 100px;height: 100px;}
+	.ydb-right li{ float: left;width: 100px;height: 130px;text-align: center; overflow: hidden;}
+	.ydb-right li span{display: inline-block; width: 100px;height: 30px; line-height: 30px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;-webkit-text-overflow:ellipsis;}
+		.mxphb-title{ width: 950px;}
+		.yuedb{ width: 950px; margin-bottom: 50px;}
+		.ydb-left{float: left; width: 120px; height: auto; line-height: 40px;}
+		.ydb-right{ float: left; width: 820px;margin-left: 10px;}
+		.ydb-right li{margin: 10px 20px;}
+	}
+
+	@media only screen and (min-width: 100px) and (max-width: 700px) {
+		.mxphb-title{ width: 90%;}
+		.yuedb{ width: 90%;}
+		.ydb-right li{ margin: 5px 1%; width: 30%; float: left; height: 130px;}
+		.ydb-right img{width: 100%; height: 100px;}
+		.ydb-right span{ width: 100%; text-align: center; font-size: 0.8em; display: inline-block;}
+	}

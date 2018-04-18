@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "celebrity";
+    Layout = "~/Views/Shared/navlist.cshtml";
+}
+<link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/tianjia.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/style.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/animate.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/simple-line-icons.css">
+<link rel="stylesheet"  href="~/quan_m/Good_m/HOME/css/buttons.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/owl.carousel.min.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/bootstrap.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/animate.css">
+<script type="text/javascript" src="~/jquery/1.11.1/jquery.min.js"></script>
+
+<style>
+
+.ej_show_box{position: absolute;width: 120%;height: auto;top:50px;display: none;background: rgba(127,169,255,0.8);font-family: "微软雅黑"; font-size: 14px; }
+.ej_show_box ul li{list-style-type: none; width: 100%;  margin-top: 5px; margin-bottom: 5px; margin-left: 15px !important; color: #000000; font-family: '微软雅黑' !important;}
+.ej_show_box ul li a{ color: #000000 !important;}
+.ej_show_box ul li a:hover{ color: #0551ed !important; text-decoration: none;}
+
+    .tupianbg{background: url(~/quan_m/Good_m/NEWS_S/images/zixun/tuanduibj.png) no-repeat #f2f2f2 ; height: 60px;display: block; width: 180px;}
+.tupianbg span{margin-left: 24px; font-family: "微软雅黑"; font-size: 14px;display: block;color: #000000;}
+.title-china{font-size: 25px !important; }
+.title-yiglish{padding-top: 5px;}
+</style>
+<link href="~/css/celedrity.css" rel="stylesheet" />
+<style>
+   .table > tbody > tr > td > a {
+	color:#8f8f8f 
+}
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+	border: 0px;
+}
+</style>
+<script type="text/javascript" src="~/js/jquery.min.js"></script>
+<script>
+    $(function () {
+        daoh();
+    })
+
+    $(function(){
+        var $nav = $("#navbar li");
+        $nav.hover(function(){
+            $(this).find(".ej_show_box").css({"display":"block"});
+        },function(){
+            $(this).find(".ej_show_box").css({"display":"none"});
+        });
+    })
+</script>
+<script>
+    $(function () {
+        var t = $(".ydb-right span").text().length;
+        $(".ydb-right span").each(function () {
+            var t = $(this).text();
+            var tt = $(this).text().length;
+            if (tt > 5) {
+                t = t.substring(0, 5);
+                $(this).html(t + "...");
+
+            } else {
+                $(this).html(t);
+            }
+        })
+
+    })
+
+</script>
+
+<section id="fadan-home" data-section="home" style="data-stellar-background-ratio:0.1">
+
+    <img class="hidden-xs" src="~/quan_m/Good_m//NEWS_S/images/videobg.jpg" style=" width:100%; height:auto">
+    <img class="visible-xs-block" src="~/quan_m/Good_m//NEWS_S/images/videobg2.jpg" style=" width:100%; height:auto">
+
+
+</section>
+<div class="mxphb">
+    <div class="mxphb-title">明星排行榜</div>
+    <div class="yuedb">
+        @*ViewBag.nian = nian;
+        ViewBag.yue = yue;
+        ViewBag.jidu = jidu;*@
+        <div class="ydb-left">月度榜:</div>
+        <div class="ydb-right">
+            <ul>
+                @if (ViewBag.yue != null)
+                {
+                    foreach (var item in ViewBag.yue)
+                    {
+                        <li>
+                            <img src="@item.img"><span title="@item.name">@item.name</span>
+                        </li>
+                    }
+                }
+                <div class="Clear"></div>
+            </ul>
+        </div>
+        <div class="Clear"></div>
+    </div>
+   
+    <div class="yuedb">
+        <div class="ydb-left">年度榜:</div>
+        <div class="ydb-right">
+            <ul>
+                @if (ViewBag.nian != null)
+                {
+                    foreach (var item in ViewBag.nian)
+                    {
+                        <li>
+                            <img src="@item.img"><span title="@item.name">@item.name</span>
+                        </li>
+                    }
+                }
+                <div class="Clear"></div>
+            </ul>
+        </div>
+        <div class="Clear"></div>
+    </div>
+</div>

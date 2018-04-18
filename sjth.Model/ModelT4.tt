@@ -1,0 +1,275 @@
+﻿ <#@ template debug="True" hostspecific="True" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.xml" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ assembly name="$(SolutionDir)\sjth.Common\bin\Debug\sjth.Common.dll" #>
+
+<#	// 生成配置
+	// 是否生成所有表
+	bool builderAll = true;
+	// 是否使用表名配置
+	bool useTableNamesDictionary = true;
+#>
+<#	// 连接字符串,表结构查询语句
+	string musicStoreConnectionString = @"Data Source=bds257784298.my3w.com;Initial Catalog=bds257784298_db;User ID=bds257784298;Password=zhw860629";
+	//三层 T4 数据库连接字符串从 OA.Common 里取 
+	//string musicStoreConnectionString = yhkj.Common.ConfigurationHelper.AppSetting();
+	string getAllTableSchemaSqlTemplate = @"SELECT sysobjects.Name as TableName, syscolumns.Name as ColumnName, SysTypes.Name as ColumnType, syscolumns.Length as ColumnLength,CASE syscolumns.isnullable WHEN '1' THEN 'true' ELSE 'false' END AS istablenull, isnull(sys.extended_properties.Value,'') as Remark,case when syscolumns.name in (select primarykey=a.name FROM syscolumns a inner join sysobjects b on a.id=b.id  and b.xtype='U' and b.name<>'dtproperties' where  exists(SELECT 1 FROM sysobjects where xtype='PK' and name in (SELECT name FROM sysindexes WHERE indid in(SELECT indid FROM sysindexkeys WHERE id = a.id AND colid=a.colid))) and b.name=sysobjects.Name) then 1 else 0 end as IsKey FROM sysobjects,SysTypes,syscolumns LEFT JOIN sys.extended_properties ON (Syscolumns.Id = sys.extended_properties.major_id AND Syscolumns.Colid = sys.extended_properties.minor_id) WHERE (sysobjects.Xtype ='u' OR Sysobjects.Xtype ='v') AND sysobjects.name='{0}' AND Sysobjects.Id = Syscolumns.Id AND SysTypes.XType = Syscolumns.XType AND SysTypes.Name <> 'sysname' AND Sysobjects.Name Like '%' AND (sys.extended_properties.name='MS_Description' or sys.extended_properties.name is null) ORDER By SysObjects.Name, SysColumns.colid ";
+#>
+<#	// 设置要生成的当前数据库中所有的表名	
+	Dictionary<string,string> tableNames=new Dictionary<string,string>();
+   
+		using (SqlConnection sqlConnection = new SqlConnection(musicStoreConnectionString))
+		{
+			// 获取所有用户表的查询语句
+			string getAllTableNameSql = "SELECT name FROM sysobjects where xtype='U'";
+			SqlCommand sqlCommand = new SqlCommand(getAllTableNameSql, sqlConnection);
+			sqlConnection.Open();
+			SqlDataReader reader = sqlCommand.ExecuteReader();
+
+			while (reader.Read())
+			{
+				string theTableName = reader["name"] as string;
+				if(useTableNamesDictionary == true)
+				{
+					if(tableNames.ContainsKey(theTableName)){
+						continue;
+					}
+				}
+				tableNames.Add(theTableName,theTableName.TrimEnd('s'));
+			}
+		} 
+#>
+
+using System;
+namespace sjth.Model
+{
+    
+<#	// 循环生成实体类
+		int i=0;
+
+		foreach (string tableName in tableNames.Keys)
+		{
+#>
+<#
+			// 表注释
+			string tableRemark = string.Empty;
+			using (SqlConnection sqlConnection = new SqlConnection(musicStoreConnectionString))
+			{
+				// 获取所有用户表的查询语句
+				string getTableRemarkSql = string.Format("SELECT value FROM fn_listextendedproperty (NULL, 'schema', 'dbo', 'table', default, NULL, NULL) where name=N'MS_Description' or objname=N'{0}' ", tableName);
+				SqlCommand sqlCommand = new SqlCommand(getTableRemarkSql, sqlConnection);
+				sqlConnection.Open();
+				SqlDataReader reader = sqlCommand.ExecuteReader();
+				
+				if (reader.Read())
+				{
+					i++;
+					tableRemark = reader["value"] as string;
+					tableRemark += "实体类"+i;
+				}
+			} 
+#>
+
+	/// <summary>
+	///	<#=tableRemark #>
+	/// </summary>
+	[Serializable]
+    public partial class <#=tableNames[tableName] #>:BaseEntity
+    {
+	/// <summary>
+	///	<#=tableRemark #>构造函数
+	/// </summary>
+	public <#=tableNames[tableName] #>()
+	{
+   <#	// 生成构造函数
+			using (SqlConnection sqlConnection = new SqlConnection(musicStoreConnectionString))
+			{
+				// 获取所有用户表的查询语句
+				string getAllTableSchemaSql = string.Format(getAllTableSchemaSqlTemplate, tableName);
+				SqlCommand sqlCommand = new SqlCommand(getAllTableSchemaSql, sqlConnection);
+				sqlConnection.Open();
+				SqlDataReader reader = sqlCommand.ExecuteReader();
+				while (reader.Read())
+				{
+					string dbDataType = reader["ColumnType"] as string; // 数据库中使用的类型
+					bool istablenull =reader["istablenull"].ToString().ToBoolean();//判断字段是否允许为空
+					string dataType = string.Empty; // 数据类型
+					string dataEmp=string.Empty;//数据默认值
+					
+					switch (dbDataType)
+					{
+						case "decimal":
+						case "numeric":
+						case "money":
+						case "smallmoney":
+							dataType = istablenull == true ? "decimal?" : "decimal"; 
+							dataEmp="0";
+							break;
+						case "char":
+						case "nchar":
+						case "varchar":
+						case "nvarchar":
+						case "text":
+						case "ntext":
+							dataType = "string";
+							dataEmp="string.Empty";
+							break;
+						case "uniqueidentifier":
+							dataType = istablenull == true ? "Guid?" : "Guid"; 
+							break;
+						case "bit":
+							dataType = "bool?";
+							dataEmp="true"; 
+							break;
+						case "real":
+							dataType = "Single?";
+							break;
+						case "bigint":
+							dataType = "long?";
+							dataEmp="0";  
+							break;
+						case "int":
+							dataType = istablenull == true ? "int?" : "int"; 
+							dataEmp="0";
+							break;
+						case "tinyint":
+						case "smallint":
+							dataType =istablenull == true ? "short?" : "short";
+							dataEmp="0";  
+							break;
+						case "float":
+							dataType = istablenull == true ? "float?" : "float"; 
+							dataEmp="0";  
+							break;
+						case "date":
+						case "datetime":
+						case "datetime2":
+						case "smalldatetime":
+							dataType =istablenull == true ? "DateTime?" : "DateTime"; 
+							dataEmp="DateTime.Now"; 
+							break;
+						case "datetimeoffset ":
+							dataType = istablenull == true ? "DateTimeOffset?" : "DateTimeOffset"; 
+							break;
+						case "timeSpan ":
+							dataType = istablenull == true ? "TimeSpan?" : "TimeSpan"; 
+							break;
+						case "image":
+						case "binary":
+						case "varbinary":
+							dataType = "byte[]";
+							break;
+						default:
+							break;
+					}
+#>
+<# if( reader["ColumnName"] as string !="id" ) 
+    {#>    <#=reader["ColumnName"] as string#> = <#=dataEmp#> ;
+     <#	}#>
+<#
+				}
+			} 
+#>
+	}
+
+<#	// 生成属性
+			using (SqlConnection sqlConnection = new SqlConnection(musicStoreConnectionString))
+			{
+				// 获取所有用户表的查询语句
+				string getAllTableSchemaSql = string.Format(getAllTableSchemaSqlTemplate, tableName);
+				SqlCommand sqlCommand = new SqlCommand(getAllTableSchemaSql, sqlConnection);
+				sqlConnection.Open();
+				SqlDataReader reader = sqlCommand.ExecuteReader();
+				
+
+				while (reader.Read())
+				{
+					string dbDataType = reader["ColumnType"] as string; // 数据库中使用的类型
+					bool istablenull =reader["istablenull"].ToString().ToBoolean();//判断字段是否允许为空
+					string dataType = string.Empty; // 数据类型
+					string dataEmp=string.Empty;//数据默认值
+					
+					switch (dbDataType)
+					{
+						case "decimal":
+						case "numeric":
+						case "money":
+						case "smallmoney":
+							dataType = istablenull == true ? "decimal?" : "decimal"; 
+							dataEmp="0";
+							break;
+						case "char":
+						case "nchar":
+						case "varchar":
+						case "nvarchar":
+						case "text":
+						case "ntext":
+							dataType = "string";
+							dataEmp=string.Empty;
+							break;
+						case "uniqueidentifier":
+							dataType = istablenull == true ? "Guid?" : "Guid"; 
+							break;
+						case "bit":
+							dataType = "bool?";
+							break;
+						case "real":
+							dataType = "Single?";
+							break;
+						case "bigint":
+							dataType = "long?";
+							break;
+						case "int":
+							dataType = istablenull == true ? "int?" : "int"; 
+							break;
+						case "tinyint":
+						case "smallint":
+							dataType =istablenull == true ? "short?" : "short";  
+							break;
+						case "float":
+							dataType = istablenull == true ? "float?" : "float"; 
+							break;
+						case "date":
+						case "datetime":
+						case "datetime2":
+						case "smalldatetime":
+							dataType =istablenull == true ? "DateTime?" : "DateTime"; 
+							break;
+						case "datetimeoffset ":
+							dataType = istablenull == true ? "DateTimeOffset?" : "DateTimeOffset"; 
+							break;
+						case "timeSpan ":
+							dataType = istablenull == true ? "TimeSpan?" : "TimeSpan"; 
+							break;
+						case "image":
+						case "binary":
+						case "varbinary":
+							dataType = "byte[]";
+							break;
+						default:
+							break;
+					}
+#>
+<# if( reader["ColumnName"] as string !="id" )
+	 {#>
+        /// <summary>
+		///	<#=reader["Remark"] as string#> 
+		/// </summary>
+		public <#=dataType #> <#=reader["ColumnName"] as string#> { get; set; }
+	<#	}#>
+<#
+				}
+			} 
+#>
+    }
+<#
+		}
+#>
+}

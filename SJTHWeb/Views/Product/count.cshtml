@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "count";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<script src="~/css/echarts.js"></script>
+<script>
+    $("#tj1").addClass("active-menu");
+    $("#tj").addClass("active");
+</script>
+<div class="header">
+    <h3 class="page-header">
+        网站内容统计 <small></small>
+    </h3>
+    <ol class="breadcrumb">
+        
+        <li class="active">内容统计</li>
+    </ol>
+
+</div>
+<div id="page-inner">
+    <div class="row" style="text-align:center">
+        <div id="main" style="width:400px;height:500px; left:50px;"></div>
+    </div>
+</div>
+<script>
+    option = {
+        title: {
+            text: '后台内容统计',
+            subtext: '数据仅供参考',
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['产品数量', '权威认证', '公司咨询', '公司学院', '视频欣赏']
+        },
+        series: [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius: '55%',
+                center: ['50%', '60%'],
+                data: [
+                    { value: @ViewBag.pcount, name: '产品数量' },
+                    { value: @ViewBag.a, name: '权威认证' },
+                    { value: @ViewBag.gszx, name: '公司咨询' },
+                    { value: @ViewBag.xuzn, name: '公司学院' },
+                    { value: @ViewBag.vo, name: '视频欣赏' }
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    var chart = echarts.init(document.getElementById('main'));
+    chart.setOption(option);
+</script>

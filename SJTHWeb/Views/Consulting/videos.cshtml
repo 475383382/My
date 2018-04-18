@@ -1,0 +1,521 @@
+﻿
+@{
+    ViewBag.Title = "video";
+    Layout = "~/Views/Shared/navlist.cshtml";
+}
+<script src="~/js/Video_detail.js"></script>
+<link href="~/css/Video_index.css" rel="stylesheet" />
+
+<style>
+    li{ list-style-type:none}
+				.current{ }
+				.current a{ width:217px !important; height:100px; }
+				.current a embed{ float:left; width:100px; height:70px;}
+				.current a p{ float:right; width:100px; height:70px !important; overflow:hidden;}
+    .ej_show_box {
+        position: absolute;
+        width: 120%;
+        height: auto;
+        top: 50px;
+        display: none;
+        background: rgba(127,169,255,0.8);
+        font-family: "微软雅黑";
+        font-size: 14px;
+    }
+
+        .ej_show_box ul li {
+            list-style-type: none;
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 25px !important;
+            color: #000000;
+            font-family: '微软雅黑' !important;
+        }
+
+            .ej_show_box ul li a {
+                color: #000000 !important;
+            }
+
+                .ej_show_box ul li a:hover {
+                    color: #0551ed !important;
+                    text-decoration: none;
+                }
+</style>
+<link rel="stylesheet" href="~/quan_m/Good_m/NEWS_S/css/animate.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/NEWS_S/css/icomoon.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/NEWS_S/css/simple-line-icons.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/NEWS_S/css/magnific-popup.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/NEWS_S/css/bootstrap.css">
+<link rel="stylesheet" href="~/quan_m/Good_m/NEWS_S/css/style.css">
+<link href="~/quan_m/Good_m/NEWS_S/css/Video_index.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/tianjia.css">
+<link href="~/css/Video_index.css" rel="stylesheet" />
+<script type="text/javascript" src="~/quan_m/qlf/js/hover_pack.js"></script>
+<script type="text/javascript" src="~/include/dedeajax2.js"></script>
+<script src="~/css/Video_detail.js"></script>
+<style>
+    #colour-variations {
+        padding: 10px;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        width: 140px;
+        position: fixed;
+        left: 0;
+        top: 100px;
+        z-index: 999999;
+        background: #fff;
+        /*border-radius: 4px;*/
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        -webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        -moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        -ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+    }
+
+        #colour-variations.sleep {
+            margin-left: -140px;
+        }
+
+        #colour-variations h3 {
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #777;
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+
+        #colour-variations ul, #colour-variations ul li {
+            padding: 0;
+            margin: 0;
+        }
+
+        #colour-variations li {
+            list-style: none;
+            display: block;
+            margin-bottom: 5px !important;
+            float: left;
+            width: 100%;
+        }
+
+            #colour-variations li a {
+                width: 100%;
+                position: relative;
+                display: block;
+                overflow: hidden;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -ms-border-radius: 4px;
+                border-radius: 4px;
+                -webkit-transition: 0.4s;
+                -o-transition: 0.4s;
+                transition: 0.4s;
+            }
+
+                #colour-variations li a:hover {
+                    opacity: .9;
+                }
+
+                #colour-variations li a > span {
+                    width: 33.33%;
+                    height: 20px;
+                    float: left;
+                    display: -moz-inline-stack;
+                    display: inline-block;
+                    zoom: 1;
+                    *display: inline;
+                }
+
+    .option-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 5px;
+        margin-right: -30px;
+        width: 30px;
+        height: 30px;
+        background: #f64662;
+        text-align: center;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        color: #fff;
+        cursor: pointer;
+        -webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        -moz-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        -ms-box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+        box-shadow: 0 0 9px 0 rgba(0,0,0,.1);
+    }
+
+        .option-toggle i {
+            top: 2px;
+            position: relative;
+        }
+
+        .option-toggle:hover, .option-toggle:focus, .option-toggle:active {
+            color: #fff;
+            text-decoration: none;
+            outline: none;
+        }
+
+    .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+        border: 0px;
+        padding: 8px;
+        line-height: 1.42857;
+        vertical-align: top;
+        font-size: 20px;
+        font-family: '微软雅黑';
+        color: #FFF;
+        font-weight: 800;
+        padding-left: 2px;
+    }
+
+    .table > tbody > tr > td {
+        font-size: 14px;
+        font-weight: 100;
+        padding: 2px;
+        color: #8F8F8F;
+        font-weight: 100;
+    }
+
+    #qqbg1 {
+        display: block;
+    }
+
+    #qqbg2 {
+        display: none;
+    }
+
+    #WB2 {
+        display: none;
+    }
+
+    #WB1 {
+        display: block;
+    }
+
+    .navtitle {
+        font-family: '微软雅黑';
+        font-size: 16px;
+        font-weight: 200;
+    }
+
+    .toptit {
+        font-family: '微软雅黑';
+        font-size: 18px;
+        color: #666;
+    }
+
+    .topp {
+        font-family: '微软雅黑';
+        font-size: 12px;
+        color: #666;
+    }
+
+    .topa {
+        font-family: '微软雅黑';
+        font-size: 14px;
+        color: #666;
+    }
+
+    .w13 {
+        font-family: '微软雅黑';
+        font-size: 13px;
+    }
+
+    .w16 {
+        font-family: '微软雅黑';
+        font-size: 16px;
+    }
+
+    .w18 {
+        font-family: '微软雅黑';
+        font-size: 18px;
+    }
+
+    #pageNav {
+        font: 12px/24px Tahoma;
+        height: 50px;
+        margin: 25px auto 0;
+        text-align: center;
+        width: 500px;
+    }
+
+      #pageNav ul {
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+    #pageNav ul li {
+                background-color: #FFFFFF;
+                border: #CCCCCC solid 1px;
+                color: #666666;
+                display: block;
+                height: 30px;
+                margin: 0 2px;
+                padding: 2px 1px;
+                float: left;
+            }
+
+      #pageNav ul li a {
+                    color: #0B3B8C;
+                    padding: 0 3px;
+                }
+
+       #pageNav ul li a:hover {
+                        color: #FF0000;
+                    }
+
+      #pageNav ul li.hover {
+                    background-color: #FF0000;
+                    border: 0 none;
+                    color: #000000;
+                    font-weight: bold;
+                }
+
+      #pageNav ul li.hover a {
+                        color: #000000;
+                    }
+
+    .zc_pimg {
+        height: 300px;
+        border: 1px solid #CCC;
+    }
+
+    .zc_newlist {
+        border: 0px;
+        border-top: #333 solid 1px;
+        padding-top: 20px;
+    }
+
+        .zc_newlist h3 {
+            color: #333;
+            font-size: 20px;
+        }
+
+        .zc_newlist p {
+            color: #666;
+            font-size: 16px;
+        }
+
+    .zc_newlisttitle {
+        border: 0px;
+        border-bottom: #333 solid 1px;
+        padding-top: 15px;
+        width: 180px;
+        text-align: center;
+        background-image: url(../../quan_m/Good_m/images/icon/line.png);
+        background-repeat: no-repeat;
+    }
+
+        .zc_newlisttitle h3 {
+            color: #333;
+            font-size: 18px;
+        }
+
+    .zc_newlisttitle2 {
+        border: 0px;
+        border-bottom: #333 solid 1px;
+        padding-top: 15px;
+        width: 180px;
+        text-align: center;
+        background-repeat: no-repeat;
+    }
+
+        .zc_newlisttitle2 h3 {
+            color: #333;
+            font-size: 18px;
+        }
+
+    .fziti {
+        font-family: '微软雅黑';
+    }
+
+
+    .ej_show_box {
+        position: absolute;
+        width: 120%;
+        height: auto;
+        top: 50px;
+        display: none;
+        background: rgba(127,169,255,0.8);
+        font-family: "微软雅黑";
+        font-size: 14px;
+    }
+
+        .ej_show_box ul li {
+            list-style-type: none;
+            width: 100%;
+            margin: 5px auto 5px 25px;
+            color: #000000;
+            font-family: '微软雅黑' !important;
+        }
+
+            .ej_show_box ul li a {
+                color: #000000 !important;
+            }
+
+                .ej_show_box ul li a:hover {
+                    color: #0551ed !important;
+                    text-decoration: none;
+                }
+</style>
+
+<script src="~/quan_m/Good_m/NEWS_S/js/modernizr-2.6.2.min.js"></script>
+<script src="~/quan_m/Good_m/Video/js/share.js"></script>
+<section id="fadan-home" data-section="home" style="data-stellar-background-ratio:0.1">
+
+    <img class="hidden-xs" src="~/quan_m/Good_m//NEWS_S/images/videobg.jpg" style=" width:100%; height:auto">
+    <img class="visible-xs-block" src="~/quan_m/Good_m//NEWS_S/images/videobg2.jpg" style=" width:100%; height:auto">
+
+
+</section>
+<!-- vedio-area -->
+<div class="vedio-area hidden-xs" style=" margin-top:100px; background-color:#fff">
+    <!-- vedio-header -->
+    <div class="wrapper vedio-header" style="height:40px; padding:0px; margin-bottom:0px; padding-top:0px;">
+        <h1 style="font-weight:bold; font-family:&#39;微软雅黑:&#39;">泉立方洗衣片刘涛宣传广告片</h1>
+
+    </div>
+    <!-- //vedio-header -->
+    <!-- vedio-content -->
+    <div class="wrapper vedio-content clearfix" style="margin-top:5px; padding-top:0px;">
+        <!-- recommend-bar -->
+        <div class="recommend-bar"><span class="icon"><em class="open-text" style="font-family:&#39;微软雅黑:&#39;font-style:normal; font-size:12px;">收起列表</em><em class="closed-text" style="font-family:&#39 ;微软雅黑:&#39;font-style:normal;font-size:12px;">展开列表</em><i class="arrow-icon">展开/关闭</i></span></div>
+        <!--// recommend-bar -->
+        <!-- recommend-box -->
+        <div class="recommend-box" style="display: block;">
+            <div class="recommend-list">
+                <h3>相关视频</h3>
+                <div class="recommend-date">
+                  
+                    <ul class="recommend-items">
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                                <li class="current" style="margin-top: 0px;">
+                                    <a href="@item.url" class="pic" target="PC">
+                                        
+                                        <embed src="@item.url" width="100" height="70" />
+                                        <p style="line-height:1.5; height:50px; font-size:12px; color:#dedede">@item.name</p>
+                                    </a>
+                                    </li>
+                            
+                        }
+                    }
+                    </ul>
+                </div>
+                <div class="recommend-operation"><span class="prev"><i class="icon">上一页</i></span><span class="next"><i class="icon">下一页</i></span></div>
+            </div>
+        </div>
+        <!-- //recommend-box -->
+        <!-- player-box -->
+        <div class="player-box" style="width: 720px; height: 500px;">
+            <div id="player">
+                <iframe name="PC" id="PC" src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=d0334d898fv&auto=0" frameborder="0" width="760" height="460" allowfullscreen="true"></iframe>
+            </div>
+
+            <!-- //player-box -->
+        </div>
+        <!-- //vedio-content -->
+
+
+        <div class="layer-box" id="close_div">
+            <!-- <a href="#light_div" onclick="open_light();" class="newDotLink" target="_self"></a> -->
+        </div>
+
+
+    </div>
+</div>
+
+<div class="container visible-xs-block">
+    <div class="row" style="margin-top:20px;padding:15px;">
+
+        <h4 class=" visible-xs-block" style="font-weight:bold; font-family:&#39;微软雅黑:&#39;padding:10px;">泉立方洗衣片刘涛宣传广告片</h4><p></p>
+        <iframe name="myFrameName" id="myFrameName" src="https://v.qq.com/iframe/player.html?vid=u035841hf22&tiny=0&auto=0" frameborder="0" style="width:100%;height:auto" allowfullscreen="true"></iframe>
+    </div>
+    <div class="row">
+        <div class="list-group" style="padding:15px;font-size:14px;">
+            <a href="#" class="list-group-item active">
+                视频列表
+            </a>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <a href="@item.url" target="myFrameName" class="list-group-item" > <span class="label label-info">当前:</span>@item.name</a>
+                }
+            }
+
+        </div>
+
+    </div>
+
+</div>
+
+<br>
+
+<style>
+    .table > tbody > tr > td > a {
+        color: #8f8f8f;
+    }
+</style>
+<script type="text/javascript" src="~/js/jquery.min.js"></script>
+<script src="~/css/Video_detail.js"></script>
+<script type="text/javascript" src="video/Video_detail.js.下载"></script>
+<script type="text/javascript" src="p/jquery.pin/jquery.pin.js"></script>
+<script type="text/javascript" src="jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        daoh();
+    })
+
+    function daoh() {
+        var $nav = $("#navbar li");
+        $nav.click(function () {
+            $(this).find(".ej_show_box").toggle();
+        });
+    };
+
+    $(function () {
+        var $nav = $("#navbar li");
+        $nav.hover(function () {
+            $(this).find(".ej_show_box").css({ "display": "block" });
+        }, function () {
+            $(this).find(".ej_show_box").css({ "display": "none" });
+        });
+
+    });
+
+</script>
+<script>
+    $(function () {
+        var t = $(".recommend-date li p").text().length;
+        $(".recommend-date li p").each(function () {
+            var t = $(this).text();
+            var tt = $(this).text().length;
+            if (tt > 5) {
+                t = t.substring(0, 5);
+                $(this).html(t + "...");
+
+            } else {
+                $(this).html(t);
+            }
+        })
+
+    })
+</script>
+<script>
+    $(".pinned").pin({
+        containerSelector: ".container",
+        minWidth: 940
+    });
+</script>
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Chrome","requestId":"197873cf391c415eb725f0f5dc48bcb8"}
+</script>

@@ -1,0 +1,36 @@
+﻿body {
+}
+.table > tbody > tr > td > a {
+	color:#8f8f8f
+}
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+	border: 0px;
+}
+li{ list-style-type: none;}
+.Clear{ clear: both;}
+@media only screen and (min-width: 1200px){
+	.about_con .biaoti{height: 65px;line-height: 65px;font-size: 18px; width: 1200px; margin:0 auto 25px auto;border-bottom: 1px #cdcdcd solid;}
+    .rz_js{ width: 1200px; height: auto;  margin: 0 auto;}
+    .rz_js{ }
+    .rz_js li{ width: 45%; height: auto; margin-right: 5%; float: left; margin-top: 5%;}
+    .rz_js li:nth-child(2n){ margin-right: 0px !important;}
+    .rz_js li img{ width: 100%;}
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	.about_con .biaoti{height: 65px;line-height: 65px;font-size: 18px;margin-bottom: 35px;width: 700px;border-bottom: 1px #cdcdcd solid;}
+    .rz_js{ width: 700px; height: auto; margin: 0 auto;}
+    .rz_js{ }
+    .rz_js li{ width: 45%; height: auto; margin-right: 5%; float: left; margin-top: 5%;}
+    .rz_js li:nth-child(2n){ margin-right: 0px !important;}
+    .rz_js li img{ width: 100%;}
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+	.about_con .biaoti{height: 65px;line-height: 65px;font-size: 18px;margin-bottom: 35px;width: 90%; margin: 0 auto; border-bottom: 1px #cdcdcd solid;}
+    .rz_js{ width: 480px; height: auto; margin: 0 auto;}
+    .rz_js{ }
+    .rz_js li{ width: 90%; height: auto; margin-right: 5%; margin-top: 5%;}
+    .rz_js li:nth-child(2n){ margin-right: 0px !important;}
+    .rz_js li img{ width: 100%;}
+}
+

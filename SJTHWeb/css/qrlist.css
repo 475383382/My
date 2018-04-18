@@ -1,0 +1,44 @@
+﻿body {
+}
+   
+
+.table > tbody > tr > td > a {
+	color:#8f8f8f
+}
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+	border: 0px;
+}
+.wow img{ width: 100%; height: 90%; }
+.case figure {
+    width: 360px;
+    float: left;
+    position: relative;
+    height: 280px;
+    margin: 15px;
+    text-align: center;
+
+}
+@media screen and (max-width: 480px) {
+    .case figure {
+        width: 360px;
+        text-align: center;
+        /*position: relative;*/
+        height: auto;
+        /*margin: 10px auto;*/
+    }
+
+    .row a {
+        color: #000000 !important;
+    }
+
+    .product-name1 {
+        text-align: center;
+        width: 100%;
+        font-size: 1.8rem;
+        line-height: 20px;
+        font-family: "Source Sans Pro", Arial, sans-serif;
+        text-align: center !important;
+        width: 100%;
+        margin-top: 5px;
+    }
+}

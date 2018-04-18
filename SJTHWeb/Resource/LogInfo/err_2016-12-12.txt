@@ -1,0 +1,51 @@
+-----------public int Insert(T entity)-----------
+INSERT INTO [Authority]([authorityName],[authoritytTop],[authorityUrl],[datatimes],[dal]) VALUES(@authorityName,@authoritytTop,@authorityUrl,@datatimes,@dal)
+将截断字符串或二进制数据。
+语句已终止。
+　  2016/12/12 14:51:20
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[headline],[contenttext],[userid],[creationtime],[newstype],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY [id]) AS ROW_NUM,[headline],[contenttext],[userid],[creationtime],[newstype],[del],id FROM [newst] WHERE 1 = 1  del =1 
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“del”附近有语法错误。
+　  2016/12/12 15:00:18
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[dal] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY [id]) AS ROW_NUM,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[dal],id FROM [Authority] WHERE 1 = 1  and del =1
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+列名 'del' 无效。
+　  2016/12/12 15:09:36
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[dal] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY [id]) AS ROW_NUM,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[dal],id FROM [Authority] WHERE 1 = 1  and del =1 
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+列名 'del' 无效。
+　  2016/12/12 15:10:06
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[dal] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY [id]) AS ROW_NUM,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[dal],id FROM [Authority] WHERE 1 = 1  and del =1 
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+列名 'del' 无效。
+　  2016/12/12 15:10:38
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[dal] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY [id]) AS ROW_NUM,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[dal],id FROM [Authority] WHERE 1 = 1  and del =1 
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+列名 'dal' 无效。
+　  2016/12/12 15:12:58
+

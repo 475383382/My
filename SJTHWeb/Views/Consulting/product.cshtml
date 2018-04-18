@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "product";
+    Layout = "~/Views/Shared/navlist.cshtml";
+}
+
+    <style>
+        .ej_show_box {
+            position: absolute;
+            width: 120%;
+            height: auto;
+            top: 50px;
+            display: none;
+            background: rgba(127,169,255,0.8);
+            font-family: "微软雅黑";
+            font-size: 14px;
+        }
+
+            .ej_show_box ul li {
+                list-style-type: none;
+                width: 100%;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-left: -15px !important;
+                color: #000000;
+                font-family: '微软雅黑' !important;
+            }
+
+                .ej_show_box ul li a {
+                    color: #000000 !important;
+                }
+
+                    .ej_show_box ul li a:hover {
+                        color: #0551ed !important;
+                        text-decoration: none;
+                    }
+    </style>
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/animate.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/icomoon.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/simple-line-icons.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/buttons.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/tianjia.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/PRODUCT.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/bootstrap.css">
+    <link rel="stylesheet" href="~/quan_m/Good_m/HOME/css/style.css">
+
+    <style>
+        .table > tbody > tr > td > a {
+            color: #8f8f8f;
+        }
+
+        .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+            border: 0px;
+        }
+        .ej_show_box{position: absolute;width: 120%;height: auto;top:50px;display: none;background: rgba(127,169,255,0.8);font-family: "微软雅黑"; font-size: 14px; }
+.ej_show_box ul li{list-style-type: none; width: 100%;  margin-top: 5px; margin-bottom: 5px; margin-left: -15px !important; color: #000000; font-family: '微软雅黑' !important;}
+.ej_show_box ul li a{ color: #000000 !important;}
+.ej_show_box ul li a:hover{ color: #0551ed !important; text-decoration: none;}
+.row a{ color: #787878 !important;}
+    </style>
+
+
+
+    <script src="~/quan_m/Good_m/HOME/js/modernizr-2.6.2.min.js"></script>
+
+    <section id="fadan-home" data-section="home" style=" text-align:center">
+        <img class="hidden-xs" src="~/quan_m/Good_m/NEWS_S/images/smpbg.jpg" style="width:100%;height:auto">
+        <div class="visible-xs-block" style=" width:100%;height:20px;">&nbsp;</div>
+        <img class="visible-xs-block" src="~/quan_m/Good_m/NEWS_S/img01/banner.jpg" style="width:100%;height:auto">
+    </section>
+    <section>
+        <div class="neirong">
+            <section class="case sx-padding" id="demo">
+                <div class="container">
+                    <div class="row">
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <figure class="wow animated flipInX" align="center">
+                                    <a href="@Url.Action("particulars", "Consulting", new { id = @item.id })" target="_blank">
+                                        <img style="width:360px;height:256px;" src="@item.productImage" alt="@item.productName" />
+                            <b>@item.productName</b>
+                                    </a>
+                                </figure>
+                            }
+                        }
+                        
+                       
+                    </div>
+                    <div class="pages">
+                        <div class="pages">
+                            <div id="pegeNav">@Html.ShowPageNavigate((int)ViewData["pageIndex"], (int)ViewData["pageSize"], (int)ViewData["total"])</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <script type="text/javascript" src="~/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            daoh();
+        })
+
+        function daoh() {
+            var $nav = $("#navbar li");
+            $nav.click(function () {
+                $(this).find(".ej_show_box").toggle();
+            });
+        };
+
+    </script>
+    <script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/quan_m/Good_m/HOME/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="~/quan_m/Good_m/HOME/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/quan_m/Good_m/HOME/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="~/quan_m/Good_m/HOME/js/jquery.waypoints.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="~/quan_m/Good_m/HOME/js/owl.carousel.min.js"></script>
+
+    <!-- For demo purposes only styleswitcher ( You may delete this anytime ) -->
+    <script src="~/quan_m/Good_m/HOME/js/jquery.style.switcher.js"></script>
+    <script>
+        $(function () {
+            $('#colour-variations ul').styleSwitcher({
+                defaultThemeId: 'theme-switch',
+                hasPreview: false,
+                cookie: {
+                    expires: 30,
+                    isManagingLoad: true
+                }
+            });
+            $('.option-toggle').click(function () {
+                $('#colour-variations').toggleClass('sleep');
+            });
+        });
+
+
+
+        $(function () {
+            var $nav = $("#navbar li");/**/
+            /*$("#navbar li").css({"border":"1px #f00 solid","height":"75px","overflow":"hidden"});*/
+
+            $nav.hover(function () {
+                $(this).find(".ej_show_box").css({ "display": "block" });
+                /*console.log($(this).index());*/
+            }, function () {
+                $(this).find(".ej_show_box").css({ "display": "none" });
+            });
+            $(".wow").hover(function () {
+                $(this).find("figcaption").css({ "display": "block" });
+            }, function () {
+                $(this).find("figcaption").css({ "display": "none" });
+            })
+        });
+
+
+
+    </script>
+    <!-- Main JS (Do not remove) -->
+    <script src="~/quan_m/Good_m/HOME/js/main.js"></script>

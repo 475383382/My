@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "addlunbo";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@model sjth.Model.lunbo
+
+    <link href="~/kindeditor/themes/default/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/kindeditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="~/kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="~/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="~/kindeditor/plugins/code/prettify.js"></script>
+    <script>
+        /*-----------------*/
+
+        KindEditor.ready(function (K) {
+            var editor = K.editor({
+                uploadJson: '../../kindeditor/asp.net/upload_json.ashx',
+                allowFileManager: true
+            });
+            K('#image1').click(function () {
+                editor.loadPlugin('image', function () {
+                    editor.plugin.imageDialog({
+                        showRemote: false,
+                        imageUrl: K('#url').val(),
+                        clickFn: function (url, title, width, height, border, align) {
+                            K('#productImage').val(url);
+                            $("#imgst").attr("src", url)
+                            $("#imgurl").val(url);
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+        });
+
+
+    </script>
+    <div class="header">
+        <h1 class="page-header">
+            轮播图 <small>The news added</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#">轮播图管理</a></li>
+            <li class="active">轮播图添加</li>
+        </ol>
+        <input type="hidden" class="VideoCon" />
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="card-title">
+                                <div class="title"></div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                        <div class="panel-body">
+                            @Html.HiddenFor(x => x.id)
+                            @Html.HiddenFor(x=>x.imgurl)
+                            <div class="sub-title">图片类别</div>
+                           
+                            <div>
+                                <select id="type" name="type" class="form-control" style="width:120px">
+                                    <option value="1">电脑轮播</option>
+                                    <option value="2">手机轮播</option>
+                                </select>
+                            </div>
+                            <div class="sub-title">展示图片</div>
+                            <div>
+                                <img style="width:250px; height:250px;" src="~/images/detail.png" id="imgst" />
+                            </div>
+                            <div class="sub-title"></div>
+                            <div>
+                                <input type="hidden" id="url" value="" />
+                                <input type="button" id="image1" value="选择图片" />
+                            </div>
+                            <div class="sub-title">html连接</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.htmlurl, new { @class = "form-control", placeholder = "超链接", style = "width:450px" })
+                            </div>
+                            <div class="sub-title">图片名称</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.name, new { @class = "form-control", placeholder = "图片名称可不填写", style = "width:450px" })
+                            </div>
+                            <div class="sub-title"></div>
+                            <button type="submit" class="btn btn-default">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+<script>
+    $(function () {
+        var urls = "@Model.imgurl";
+        var type = "@Model.type";
+        if (urls.length > 0) {
+            $("#imgst").attr("src", urls);
+            $("#imgurl").val(urls);
+        }
+        if (type.length>0) {
+            $("#type").val(type);
+        }
+    })
+</script>

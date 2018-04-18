@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+	<!--<![endif]-->
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>公司资讯列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<style>
+.ej_show_box{position: absolute;width: 120%;height: auto;top:50px;display: none;background: rgba(127,169,255,0.8);font-family: "微软雅黑"; font-size: 14px; }
+.ej_show_box ul li{list-style-type: none; width: 100%;  margin-top: 5px; margin-bottom: 5px; margin-left: -15px !important; color: #000000; font-family: '微软雅黑' !important;}
+.ej_show_box ul li a{ color: #000000 !important;}
+.ej_show_box ul li a:hover{ color: #0551ed !important; text-decoration: none;}
+</style>
+		<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/animate.css">
+		<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/icomoon.css">
+		<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/simple-line-icons.css">
+		<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/magnific-popup.css">
+		<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/bootstrap.css">
+		<link rel="stylesheet" href="quan_m/Good_m/NEWS_S/css/style.css">
+		<link rel="stylesheet" href="quan_m/Good_m/HOME/css/buttons.css">
+		<script type="text/javascript" src="quan_m/qlf/js/hover_pack.js"></script>
+		<script type="text/javascript" src="include/dedeajax2.js"></script>
+		<link rel="stylesheet" href="quan_m/Good_m/HOME/css/tianjia.css">
+		<style>
+			#colour-variations {
+				padding: 10px;
+				-webkit-transition: 0.5s;
+				-o-transition: 0.5s;
+				transition: 0.5s;
+				width: 140px;
+				position: fixed;
+				left: 0;
+				top: 100px;
+				z-index: 999999;
+				background: #fff;
+				/*border-radius: 4px;*/
+				border-top-right-radius: 4px;
+				border-bottom-right-radius: 4px;
+				-webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+				-moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+				-ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+				box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+			}
+			
+			#colour-variations.sleep {
+				margin-left: -140px;
+			}
+			
+			#colour-variations h3 {
+				text-align: center;
+				
+				font-size: 11px;
+				letter-spacing: 2px;
+				text-transform: uppercase;
+				color: #777;
+				margin: 0 0 10px 0;
+				padding: 0;
+				
+			}
+			
+			#colour-variations ul,
+			#colour-variations ul li {
+				padding: 0;
+				margin: 0;
+			}
+			
+			#colour-variations li {
+				list-style: none;
+				display: block;
+				margin-bottom: 5px!important;
+				float: left;
+				width: 100%;
+			}
+			
+			#colour-variations li a {
+				width: 100%;
+				position: relative;
+				display: block;
+				overflow: hidden;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				-ms-border-radius: 4px;
+				border-radius: 4px;
+				-webkit-transition: 0.4s;
+				-o-transition: 0.4s;
+				transition: 0.4s;
+			}
+			
+			#colour-variations li a:hover {
+				opacity: .9;
+			}
+			
+			#colour-variations li a> span {
+				width: 33.33%;
+				height: 20px;
+				float: left;
+				display: -moz-inline-stack;
+				display: inline-block;
+				zoom: 1;
+				*display: inline;
+			}
+			
+			.option-toggle {
+				position: absolute;
+				right: 0;
+				top: 0;
+				margin-top: 5px;
+				margin-right: -30px;
+				width: 30px;
+				height: 30px;
+				background: #f64662;
+				text-align: center;
+				border-top-right-radius: 4px;
+				border-bottom-right-radius: 4px;
+				color: #fff;
+				cursor: pointer;
+				-webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+				-moz-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+				-ms-box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+				box-shadow: 0 0 9px 0 rgba(0, 0, 0, .1);
+			}
+			
+			.option-toggle i {
+				top: 2px;
+				position: relative;
+			}
+			
+			.option-toggle:hover,
+			.option-toggle:focus,
+			.option-toggle:active {
+				color: #fff;
+				text-decoration: none;
+				outline: none;
+			}
+			
+			.table> thead> tr> th,
+			.table> thead> tr> td,
+			.table> tbody> tr> th,
+			.table> tbody> tr> td,
+			.table> tfoot> tr> th,
+			.table> tfoot> tr> td {
+				border: 0px;
+				padding: 8px;
+				line-height: 1.42857;
+				vertical-align: top;
+				font-size: 20px;
+				font-family: '微软雅黑';
+				color: #FFF;
+				font-weight: 800;
+				padding-left: 2px;
+			}
+			
+			.table> tbody> tr> td {
+				font-size: 14px;
+				font-weight: 100;
+				padding: 2px;
+				color: #8F8F8F;
+				font-weight: 100;
+			}
+			
+			#qqbg1 {
+				display: block;
+			}
+			
+			#qqbg2 {
+				display: none;
+			}
+			
+			#WB2 {
+				display: none;
+			}
+			
+			#WB1 {
+				display: block;
+			}
+			
+			.navtitle {
+				font-family: '微软雅黑';
+				font-size: 16px;
+				font-weight: 200
+			}
+			
+			.toptit {
+				font-family: '微软雅黑';
+				font-size: 18px;
+				color: #666;
+			}
+			
+			.topp {
+				font-family: '微软雅黑';
+				font-size: 12px;
+				color: #666;
+			}
+			
+			.topa {
+				font-family: '微软雅黑';
+				font-size: 14px;
+				color: #666;
+			}
+			
+			.w13 {
+				font-family: '微软雅黑';
+				font-size: 13px;
+			}
+			
+			.w16 {
+				font-family: '微软雅黑';
+				font-size: 16px;
+			}
+			
+			.w18 {
+				font-family: '微软雅黑';
+				font-size: 18px;
+			}
+			
+			#pageNav {
+				font: 12px/24px Tahoma;
+				height: 50px;
+				margin: 25px auto 0;
+				text-align: center;
+				width: 500px;
+			}
+			
+			#pageNav ul {
+				list-style-type: none;
+				overflow: hidden;
+			}
+			
+			#pageNav ul li {
+				background-color: #FFFFFF;
+				border: #CCCCCC solid 1px;
+				color: #666666;
+				display: block;
+				height: 30px;
+				margin: 0 2px;
+				padding: 2px 1px;
+				float: left;
+			}
+			
+			#pageNav ul li a {
+				color: #0B3B8C;
+				padding: 0 3px;
+			}
+			
+			#pageNav ul li a:hover {
+				color: #FF0000;
+			}
+			
+			#pageNav ul li.hover {
+				background-color: #FF0000;
+				border: 0 none;
+				color: #000000;
+				font-weight: bold;
+			}
+			
+			#pageNav ul li.hover a {
+				color: #000000;
+			}
+			
+			.zc_pimg {
+				height: 300px;
+				border: 1px solid #d1d1d1;
+			}
+			
+			.zc_newlist {
+				border: 0px;
+				border-top: #d1d1d1 solid 1px;
+				padding-top: 20px;
+			}
+			
+			.zc_newlist h3 {
+				color: #333;
+				font-size: 20px;
+			}
+			
+			.zc_newlist p {
+				color: #666;
+				font-size: 16px;
+			}
+			
+			.zc_newlisttitle {
+				border: 0px;
+				border-bottom: #d1d1d1 solid 1px;
+				padding-top: 15px;
+				width: 180px;
+				text-align: center;
+				background-image: url(http://www.quanlifang.net/quan_m/Good_m/images/icon/line.png);
+				background-repeat: no-repeat;
+			}
+			
+			.zc_newlisttitle h3 {
+				color: #333;
+				font-size: 18px;
+			}
+			
+			.zc_newlisttitle2 {
+				border: 0px;
+				border-bottom: #d1d1d1 solid 1px;
+				padding-top: 15px;
+				width: 180px;
+				text-align: center;
+				background-repeat: no-repeat;
+			}
+			
+			.zc_newlisttitle2 h3 {
+				color: #333;
+				font-size: 18px;
+			}
+			
+			.fziti {
+				font-family: '微软雅黑';
+			}
+		</style>
+		<script src="quan_m/Good_m/NEWS_S/js/modernizr-2.6.2.min.js"></script>
+		<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	</head>
+
+	<body>
+		<div id="pptq"></div>
+		<section id="fadan-home" data-section="home" style=" background-color:#006" data-stellar-background-ratio="0.1">
+			<img class="hidden-xs" src="quan_m/Good_m/NEWS_S/images/zxbg.jpg" style=" width:100%; height:auto">
+			<img class="visible-xs-block" src="quan_m/Good_m/NEWS_S/images/zxbg3.jpg" style=" width:100%; height:auto">
+		</section>
+		<div class="container" style="margin-top:50px;">
+			<div class="row">
+				<div class="col-md-3 col-xs-12">
+					<div style="text-align:left" class="hidden-xs">
+						<img src="quan_m/Good_m/NEWS_S/images/zixun/zixun.png" />
+						<div class="zc_newlisttitle">
+							<h3><a href="notic.html" class="fziti">官方公告</a></h3>
+						</div>
+						<div class="zc_newlisttitle2">
+							<h3><a href="notic-allnews.html" class="fziti">全部新闻</a><small></small></h3>
+						</div>
+					</div>
+					<ul class="nav nav-pills visible-xs-block" role="tablist">
+						<li role="presentation" class="active">
+							<a href="notic.html">官方公告</a>
+						</li>
+						<li role="presentation">
+							<a href="notic-allnews.html">新闻资讯</a>
+						</li>
+					</ul>
+				</div>
+				<style>
+					#seccss li {
+						list-style-type: none;
+						text-align: center;
+					}
+					
+					#seccss li select {
+						width: 60px;
+					}
+				</style>
+				<div class="col-md-9 col-xs-12" >
+
+
+<div class="panel " style=" margin-bottom:60px;margin-top:50px; border:0px;" id="divimg">
+<div style="text-align:center; font-weight:800px;padding-top:30px;color:ff0030">
+<h2 style="font-family:'微软雅黑'; text-align:left">2016梵大集团战略发布会，泉立方代言人亮相</h2>
+
+ 
+  <p class="hidden-xs" style=" font-size:12px; color:#ccc">梵大集团发布&nbsp;&nbsp;时间：2016-09-29 14:16</p>
+  <p class="visible-xs-block" style=" font-size:14px; color:#ccc;text-align:left">2016-09-29 14:16&nbsp;&nbsp;<span style="color:#11a2df">梵大集团</span></p>
+
+</div>
+
+  <div  style="padding-left:2%; padding-right:2%;margin-top:25px;color:#323232; ">
+  <p><span style="font-size: 16px;">&nbsp; &nbsp; &nbsp; <a href="http://www.quanlifang.net"><strong>梵大集团</strong></a>战略发布会将在5月5号至5月6号进行，为了给大家带来一场盛况空前的盛会，在梵大集团董事长薛鹏飞先生带领下，全体员工正在有条不紊的进行各项准备工作，有句话说"台上一分钟，台下十年功"，为了盛会胜利举行，全体员工将竭尽全力做好工作。</span></p><p><span style="font-size: 16px;">泉立方目前已经成为国内洗衣片行业的里程碑, 在洗衣片开始强占传统洗涤市场的形势下，越来越多的人开始选择了泉立方洗衣片。数据显示，不管是品牌影响力还是产品的口碑，泉立方都走在了洗衣片的前面。行业内，提起洗涤改革，不得不提起洗衣片，提起洗衣片，不得不提起泉立方。</span></p><p><span style="font-size: 16px;">泉立方虽然取得了快速发展，但是公司在策划、推广、市场战略方面从不停歇，在陆续签约性感女神柳岩，不老传说温碧霞后，更是在三亚重金打造了一场空前宏达的品牌盛筵，李荣浩、欧豪、海明威、至上励合等当红明星激情开唱，带来一场精彩绝伦的表演。现在，一场盛况空前的女神会即将震撼登场！</span></p><p><span style="font-size: 16px;">&nbsp; &nbsp; &nbsp; 泉立方重金签约当红明星刘涛作为品牌形象代言人，《欢乐颂》里的安迪，《琅琊榜》里的霓凰郡主，《芈月传》里的芈姝，即将于5月6号亮相盛会现场，与你"0"距离接触。</span></p><p><span style="font-size: 16px;">同时，梵大集团邀请了中央权威王牌财经主持人陈伟鸿共同见证此次盛会全过程。陈伟鸿，遍访世界500强的高端财经主播、财经制片人；采访过马云、希拉里、柳传志、王健林、巴菲特、比尔·盖茨………， 一份长长的豪华版对话名单，堪称中国财经对话高手。2016年5月6日！他将莅临梵大集团战略发布会，对话梵大、对话董事长薛鹏飞，全程为我们的梵大女神节隆重主持！</span></p><p><span style="font-size: 16px;">梵大集团战略发布会的脚步越来越近了，你准备好了吗？让我们共同期待！</span></p>
+  </div>
+
+</div>
+
+
+</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="visible-xs-block">
+			<div class="well well-lg ">
+				<div class="row" style="text-align: center">
+					<div class="col-xs-4" style="border-right:1px #0d1b0d  dotted">
+						<a id="czuo" style="font-size:18px; font-family:'微软雅黑';color:#000;"><i class="icon-weixin"></i>&nbsp;微信</a>
+					</div>
+					<div class="col-xs-4" style="border-right:1px #0d1b0d  dotted" class="img-responsive">
+						<a href="http://weibo.com/1958difo/" style="font-size:18px; font-family:'微软雅黑';color:#000;"><i class="icon-weibo"></i>&nbsp;微博</a>
+					</div>
+					<div class="col-xs-4" style="" class="img-responsive">
+						<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3317247221&amp;site=qq&amp;menu=yes" style="font-size:18px; font-family:'微软雅黑';color:#000;"><i class="icon-qq"></i>&nbsp;QQ</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid" style=" display:none;" id="hidewm">
+				<div class="row" style="background-color: #e5e5e5; padding-top: 20px; padding-bottom: 20px;margin-top:0px;">
+					<div class="col-xs-6" style="margin-top: 20px; font-family:'微软雅黑';color: #000;font-size:14px;">
+						<h3>泉立方微信</h3> 长按识别二维码关注
+						<br>或搜索微信号：DIFOquanlifang添加
+					</div>
+					<div class="col-xs-6" style="margin-top: 20px;"><img src="http://www.quanlifang.net/quan_m/Good_m/NEWS_S/imgs/ewm.png"></div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="row" style="margin-bottom: 10px; text-align:center">
+					<div class="col-xs-6">
+						<a href="http://shouquan.1958difo.net/" style="font-size:18px; font-family:'微软雅黑';color:#000;"><i class="icon-newspaper-o"></i>&nbsp;授权查询</a>
+					</div>
+					<div class="col-xs-6">
+						<a href="http://join.quanlifang.net/zhaoshang/m/index.html" style="font-size:18px; font-family:'微软雅黑';color:#000;"><i class="icon-user-plus"></i>&nbsp;申请加盟</a>
+					</div>
+				</div>
+			</div>
+			<div class="well well-xs">
+				<div class="row" style="text-align: center">
+					<div class="col-xs-12" style="font-family:'微软雅黑'; font-size: 14px;">广州笛梵尔生物科技有限公司 粤ICP备15086378号-2
+						<br>
+						<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44011102000395" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;font-family:'微软雅黑'; color:#7f7f7f;font-size:14px; color:  "><img src="quan_m/Good_m/NEWS_S/imgs/gongan.png" style="float:left;" />粤公网安备 44011102000395号</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#czuo").click(function() {
+
+					$("#hidewm").slideToggle(500);
+					$("#hidqq").hide(500);
+				});
+			});
+
+			$(document).ready(function() {
+				$("#caozuoqq").click(function() {
+
+					$("#hidqq").slideToggle(500);
+					$("#hidewm").hide(500);
+				});
+			});
+		</script>
+		<style>
+			.table> tbody> tr> td> a {
+				color: #8f8f8f
+			}
+		</style>
+		<script>	
+function ajax()
+ {
+ var xmlHttp;
+ 
+ try
+    {
+    xmlHttp=new XMLHttpRequest();
+    }
+ catch (e)
+    {
+
+   try
+      {
+      xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+      }
+   catch (e)
+      {
+
+      try
+         {
+         xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+      catch (e)
+         {
+         alert("您的浏览器不支持AJAX！");
+         return false;
+         }
+      }
+    }
+xmlHttp.onreadystatechange=function()
+      {
+      if(xmlHttp.readyState==4)
+        {
+   
+   document.getElementById("pptq").innerHTML=xmlHttp.responseText;
+         }}
+    xmlHttp.open("GET","navlist.html",true);
+    xmlHttp.send(null);
+}
+
+ajax();
+</script>
+<script type="text/javascript" src="js/jquery.min.js" ></script>
+<script>
+	$(function(){
+	daoh();
+})
+
+function daoh(){
+		var $nav = $("#navbar li");
+	$nav.click(function(){
+		$(this).find(".ej_show_box").toggle();
+	});
+	};
+
+</script>
+		<footer id="footer" role="contentinfo" style="background-color:#091038" class="hidden-xs">
+			<div class="container">
+				<div class="row">
+					<table class="table" style="text-align:left">
+						<thead>
+							<tr>
+								<th width="13%">关于泉立方</th>
+								<th width="11%">查询服务</th>
+								<th width="11%">明星产品</th>
+								<th width="11%">企业动态</th>
+								<th width="11%"> 加入我们</th>
+								<th width="11%">商家合作</th>
+								<th colspan="2">
+									<div align="left">联系我们</div>
+								</th>
+								<th width="19%" style="text-align:center">泉立方官方微信</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr rowspan="">
+								<td>
+									<a href="/About">品牌介绍</a>
+								</td>
+								<td>
+									<a href="http://www.kd315.net/1958difo/" target="_blank">防伪查询</a>
+								</td>
+								<td>
+									<a href="/DetergentSheets">洗衣片</a>
+								</td>
+								<td>
+									<a href="/Notic">企业公告</a>
+								</td>
+								<td>
+									<a href="http://join.quanlifang.net/zhaoshang/index.html">申请代理</a>
+								</td>
+								<td>媒体合作</td>
+								<td colspan="2">
+									<div align="left">联系电话:</div>
+								</td>
+								<td rowspan="6" align="center"><img src="quan_m/Good_m/NEWS_S/imgs/ewm.png " class="img-responsive"></td>
+							</tr>
+							<tr>
+								<td>
+									<a href="http://www.quanlifang.net/alt_video/2016/1106/136.html">视频欣赏</a>
+								</td>
+								<td>
+									<a href="http://shouquan.1958difo.net/" target="_blank">授权查询</a>
+								</td>
+								<td>
+									<a href="/ColorAbsorber">色母片</a>
+								</td>
+								<td>
+									<a href="/notic">企业新闻</td>
+								<td>&nbsp;</td>
+								<td>
+									<a href="/About">全球供应商</a>
+								</td>
+								<td colspan="2">
+									<div align="left" style="font-size:16px; font-family:'微软雅黑'; color:#E0E0E0; font-weight:bold">400-639-1958</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="/About">市场布局</a>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>&nbsp;</td>
+								<td></td>
+								<td width="5%" rowspan="2">
+									<div align="left" onmouseover="document.getElementById('WB1').style.display='block';document.getElementById('WB2').style.display='none';document.getElementById('qqbg2').style.display='block';document.getElementById('qqbg1').style.display='none';" onmouseout="document.getElementById('WB1').style.display='block';document.getElementById('WB2').style.display='none';document.getElementById('qqbg1').style.display='block';document.getElementById('qqbg2').style.display='none';">
+										<a target="_blank" href="tencent://message/?uin=3317247221&amp;Site=http://www.quanlifang.net&amp;Menu=yes"><img id="qqbg1" src="quan_m/Good_m/NEWS_S/imgs/qq.png" align="absmiddle"><img src="quan_m/Good_m/NEWS_S/imgs/qq-hover.png" align="absmiddle" id="qqbg2"></a>
+									</div>
+									<div align="left"></div>
+								</td>
+								<td width="8%" rowspan="2">
+									<div align="left" onmouseover="document.getElementById('WB2').style.display='block';document.getElementById('WB1').style.display='none';document.getElementById('qqbg1').style.display='block';document.getElementById('qqbg2').style.display='none';" onmouseout="document.getElementById('WB1').style.display='block';document.getElementById('WB2').style.display='none';document.getElementById('qqbg1').style.display='block';document.getElementById('qqbg2').style.display='none';">
+										<a href="http://weibo.com/1958difo" target="_blank"><img id="WB1" src="quan_m/Good_m/NEWS_S/imgs/weibo.png" class="img-responsive"><img id="WB2" src="quan_m/Good_m/NEWS_S/imgs/weibo-hover.png"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td colspan="2">
+									<div align="left"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td colspan="2">
+									<div align="left"></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div style=" width:100%;height:80px; border-top:1px solid #3D3D3D; text-align:center">
+				<p style="color:#CCC; font-family:'微软雅黑'; font-size:14px; margin-top:15px;">Copyright ©2015-2016&nbsp;广州笛梵尔生物科技有限公司&nbsp;&nbsp;&nbsp;粤ICP备15086378号-2
+					<br>
+					<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44011102000395" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;font-family:'微软雅黑'; color:#CCC;font-size:14px; color:  "><img src="quan_m/Good_m/NEWS_S/imgs/gongan.png" style="float:left;" />粤公网安备 44011102000395号</a>
+				</p>
+			</div>
+			</div>
+		</footer>
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+		<script src="quan_m/Good_m/NEWS_S/js/bootstrap.min.js"></script>
+		<script src="quan_m/Good_m/NEWS_S/js/jquery.waypoints.min.js"></script>
+		<script src="quan_m/Good_m/NEWS_S/js/jquery.stellar.min.js"></script>
+		<script src="quan_m/Good_m/NEWS_S/js/jquery.countTo.js"></script>
+		<script src="quan_m/Good_m/NEWS_S/js/jquery.magnific-popup.min.js"></script>
+		<script src="quan_m/Good_m/NEWS_S/js/magnific-popup-options.js"></script>
+		<script src="quan_m/Good_m/NEWS_S/js/jquery.style.switcher.js"></script>
+		
+
+
+
+		<script>
+			$(function() {
+				$('#colour-variations ul').styleSwitcher({
+					defaultThemeId: 'theme-switch',
+					hasPreview: false,
+					cookie: {
+						expires: 30,
+						isManagingLoad: true
+					}
+				});
+				$('.option-toggle').click(function() {
+					$('#colour-variations').toggleClass('sleep');
+				});
+			});
+		</script>
+		<script src="quan_m/Good_m/NEWS_S/js/main.js"></script>
+		<script src="quan_m/Good_m/NEWS_S/js/application.js"></script>
+		<script src="p/jquery.pin/jquery.pin.js"></script>
+		<script src="quan_m/Good_m/HOME/js/tianjia.js"></script>
+		<script>
+			$(".pinned").pin({
+				containerSelector: ".container",
+				minWidth: 940
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "newstype";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<script>
+    $("#xw").addClass("active");
+    $("#xwl").addClass("active-menu");
+    function updates(id) {
+        if (confirm("确认删除！"))
+        {
+            $.ajax({
+                type: "post",
+                url: "/Product/update",
+                data: { id: id },
+                success: function (data) {
+                    if (data == "1") {
+                        alert("删除成功！");
+                        location.href = '@Url.Action("newstype", "Product")';
+                    }
+                }
+                
+            });
+        }
+    }
+</script>
+<div class="header">
+    <h1 class="page-header">
+        新闻类型 <small>The news added</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#">新闻分类</a></li>
+        <li class="active">类型列表</li>
+    </ol>
+
+</div>
+<div id="page-inner">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Advanced Tables -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    新闻分类
+                    <a href="@Url.Action("addtype", "Product")" class="btn btn-default"> + 添加分类</a>
+                </div>
+                
+                   
+               
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>操作状态</th>
+                                    <th>分类名称</th>
+                                    <th>名称</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr class="gradeA">
+                                            <td style="width:500px"><a href="@Url.Action("addtype", "Product", new { id=@item.id})" style="width:80px" class="btn btn-default">编辑</a> <input style="width:80px" class="btn btn-default" onclick="updates(@item.id)" value="删除" /></td>
+                                            @if (@item.PPID == 1)
+                                            {
+                                                <td>公司咨询</td>
+                                            }
+                                            else if (@item.PPID == 2)
+                                            {
+                                                <td>公司学院</td>
+                                            }
+                                            <td>@item.typename</td>
+
+                                        </tr>
+                                    }
+                                }
+                                
+                         
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+            <!--End Advanced Tables -->
+        </div>
+    </div>
+   
+</div>

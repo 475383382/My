@@ -1,0 +1,59 @@
+/*product-list*/
+.sx-padding {
+    padding: 25px 0;
+}
+@media only screen and (min-width: 1200px) {
+.container {
+    width: 1140px;
+    min-width: 1140px;
+}
+}
+@media only screen and (max-width: 768px) {
+	.container{ width: auto; height: auto;}
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.aside {
+    width: 300px;
+}
+.pull-left {
+    float: left;
+}
+.aside {
+    width: 300px;
+}
+.pull-left {
+    float: left!important;
+}
+
+.neirong{ width: 1200px; height: auto; margin: 0 auto;}
+@media only screen and (max-width: 320px) {
+	.neirong{ width: 300px; height: auto; margin: 0 auto;}
+}
+
+@media only screen and (max-width: 768px) and (min-width:479px) {
+	.neirong{ width: 748px; height: auto; margin: 0 auto;}
+}
+
+@media only screen and (max-width: 480px) and (min-width:321px){
+	.neirong{ width: 460px; height: auto; margin: 0 auto;}
+}
+
+.biaoti{font-size:2rem; color: #979797; font-family: "微软雅黑";}
+.shuoming{font-size:1rem; color: #979797; font-family: "微软雅黑";}
+.wenzhang{ font-size: 1.5rem;color: #979797; }
+.xian{border-top: 1px #e4e4e4 solid; height: 15px;}
+
+.zuoleft{
+	float: left;
+	width: 780px;
+}
+.youright{ float: right; width: 300px; margin-left: 50px;}
+
+.list-unstyled{ font-family: "微软雅黑"; color: #081037; font-size: 1.4rem;}
+.ny-h4{ border-bottom: 1px #e4e4e4 solid; height: 30px; line-height:20px;}

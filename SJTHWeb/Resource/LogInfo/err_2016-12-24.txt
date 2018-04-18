@@ -1,0 +1,105 @@
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY nianASC
+列名 'nianASC' 无效。
+　  2016/12/24 14:44:58
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY yueASC
+列名 'yueASC' 无效。
+　  2016/12/24 14:44:58
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY jiduASC
+列名 'jiduASC' 无效。
+　  2016/12/24 14:44:58
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY nianASC
+列名 'nianASC' 无效。
+　  2016/12/24 14:45:08
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY yueASC
+列名 'yueASC' 无效。
+　  2016/12/24 14:45:08
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY jiduASC
+列名 'jiduASC' 无效。
+　  2016/12/24 14:45:08
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY nianASC
+列名 'nianASC' 无效。
+　  2016/12/24 14:45:13
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY yueASC
+列名 'yueASC' 无效。
+　  2016/12/24 14:45:13
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY jiduASC
+列名 'jiduASC' 无效。
+　  2016/12/24 14:45:13
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY nianASC
+列名 'nianASC' 无效。
+　  2016/12/24 14:45:14
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY yueASC
+列名 'yueASC' 无效。
+　  2016/12/24 14:45:14
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY jiduASC
+列名 'jiduASC' 无效。
+　  2016/12/24 14:45:14
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY nianASC
+列名 'nianASC' 无效。
+　  2016/12/24 14:45:29
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY yueASC
+列名 'yueASC' 无效。
+　  2016/12/24 14:45:30
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY jiduASC
+列名 'jiduASC' 无效。
+　  2016/12/24 14:45:30
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY nianASC
+列名 'nianASC' 无效。
+　  2016/12/24 14:45:50
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY yueASC
+列名 'yueASC' 无效。
+　  2016/12/24 14:45:50
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY jiduASC
+列名 'jiduASC' 无效。
+　  2016/12/24 14:45:51
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY nianASC
+列名 'nianASC' 无效。
+　  2016/12/24 14:46:17
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY yueASC
+列名 'yueASC' 无效。
+　  2016/12/24 14:46:20
+
+-----------public List<T> GetAll()-----------
+SELECT id,[name],[img],[yue],[jidu],[nian],[del],[datatimes] FROM [Salest] where  del = 1 ORDER BY jiduASC
+列名 'jiduASC' 无效。
+　  2016/12/24 14:46:39
+

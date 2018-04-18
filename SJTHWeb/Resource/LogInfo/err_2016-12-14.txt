@@ -1,0 +1,99 @@
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [datatimes] DESC) AS ROW_NUM,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],id FROM [Authority] WHERE 1 = 1  and del =1  and datatimes<='2016-12-12' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 10:51:12
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [datatimes] DESC) AS ROW_NUM,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],id FROM [Authority] WHERE 1 = 1  and del =1  and datatimes<='2016-12-12' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 10:51:22
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [datatimes] DESC) AS ROW_NUM,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],id FROM [Authority] WHERE 1 = 1  and del =1  and datatimes<='2016-12-12' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 10:55:19
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[headline],[contenttext],[userid],[creationtime],[newstype],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [creationtime] DESC) AS ROW_NUM,[headline],[contenttext],[userid],[creationtime],[newstype],[del],id FROM [newst] WHERE 1 = 1  and del =1  and creationtime between '2016-12-09' and '2016-12-10' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 14:18:51
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[headline],[contenttext],[userid],[creationtime],[newstype],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [creationtime] DESC) AS ROW_NUM,[headline],[contenttext],[userid],[creationtime],[newstype],[del],id FROM [newst] WHERE 1 = 1  and del =1  and creationtime between '2016-12-08' and '2016-12-10' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 14:18:57
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[headline],[contenttext],[userid],[creationtime],[newstype],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [creationtime] DESC) AS ROW_NUM,[headline],[contenttext],[userid],[creationtime],[newstype],[del],id FROM [newst] WHERE 1 = 1  and del =1  and creationtime between '2016-12-10' and '2016-12-23' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 14:19:08
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[headline],[contenttext],[userid],[creationtime],[newstype],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [creationtime] DESC) AS ROW_NUM,[headline],[contenttext],[userid],[creationtime],[newstype],[del],id FROM [newst] WHERE 1 = 1  and del =1  and creationtime between '2016-12-09' and '2016-12-23' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 14:19:10
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[headline],[contenttext],[userid],[creationtime],[newstype],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [creationtime] DESC) AS ROW_NUM,[headline],[contenttext],[userid],[creationtime],[newstype],[del],id FROM [newst] WHERE 1 = 1  and del =1  and creationtime between '2016-12-08' and '2016-12-23' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 14:19:19
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[headline],[contenttext],[userid],[creationtime],[newstype],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [creationtime] DESC) AS ROW_NUM,[headline],[contenttext],[userid],[creationtime],[newstype],[del],id FROM [newst] WHERE 1 = 1  and del =1  and creationtime between '2016-12-08' and '2016-12-14' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 14:19:31
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[headline],[contenttext],[userid],[creationtime],[newstype],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [creationtime] DESC) AS ROW_NUM,[headline],[contenttext],[userid],[creationtime],[newstype],[del],id FROM [newst] WHERE 1 = 1  and del =1  and creationtime between '2016-12-01' and '2016-12-14' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 14:19:54
+
+-----------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
+   SELECT id,[headline],[contenttext],[userid],[creationtime],[newstype],[del] 
+                                FROM (
+	                                SELECT ROW_NUMBER() OVER(ORDER BY  [creationtime] DESC) AS ROW_NUM,[headline],[contenttext],[userid],[creationtime],[newstype],[del],id FROM [newst] WHERE 1 = 1  and del =1  and creationtime between '2016-12-01' and '2016-12-14' 23:59:59
+                                )AS TEMP
+                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
+“23”附近有语法错误。
+　  2016/12/14 14:21:15
+

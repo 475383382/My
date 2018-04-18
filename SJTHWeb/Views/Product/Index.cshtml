@@ -1,0 +1,28 @@
+﻿@using sjth.Model
+@{
+    Layout = null;
+}
+@model UserModel 
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>产品</title>
+    <link rel="stylesheet" href="~/css/Login.css">
+    <link href="~/css/top.css" rel="stylesheet" />
+    <script src="~/js/jquery-1.7.1.min.js"></script>
+    <script src="~/js/top.js"></script>
+    <script>
+        function ClickRemoveChangeCode() {
+            var code = $("#imgCode").attr("src");
+            $("#imgCode").attr("src", code + "1");
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+       
+    </div>
+</body>
+</html>

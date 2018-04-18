@@ -1,0 +1,206 @@
+﻿
+@{
+    ViewBag.Title = "addproduct";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@model sjth.Model.product
+<pages validaterequest="false" enableeventvalidation="false">
+    <link href="~/kindeditor/themes/default/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/kindeditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="~/kindeditor/kindeditor.js"></script>
+    <script charset="utf-8" src="~/kindeditor/lang/zh_CN.js"></script>
+    <script charset="utf-8" src="~/kindeditor/plugins/code/prettify.js"></script>
+    <script>
+        $(function () {
+            var productImage =  "@Model.productImage";
+            if (productImage != "") {
+            $("#imgst").attr("src", "@Model.productImage");
+        }
+        });
+        KindEditor.ready(function (K) {
+            var editor1 = K.create('#productIntro', {
+                cssPath: '../../kindeditor/plugins/code/prettify.css',
+                uploadJson: '../../kindeditor/asp.net/upload_json.ashx',
+                fileManagerJson: '../../kindeditor/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                afterCreate: function () {
+                    var self = this;
+                    K.ctrl(document, 13, function () {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                    K.ctrl(self.edit.doc, 13, function () {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                }
+            });
+
+            prettyPrint();
+        });
+
+        KindEditor.ready(function (K) {
+            var editor1 = K.create('#productConstituent', {
+                cssPath: '../../kindeditor/plugins/code/prettify.css',
+                uploadJson: '../../kindeditor/asp.net/upload_json.ashx',
+                fileManagerJson: '../../kindeditor/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                afterCreate: function () {
+                    var self = this;
+                    K.ctrl(document, 13, function () {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                    K.ctrl(self.edit.doc, 13, function () {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                }
+            });
+
+            prettyPrint();
+        });
+        KindEditor.ready(function (K) {
+            var editor1 = K.create('#productUsage', {
+                cssPath: '../../kindeditor/plugins/code/prettify.css',
+                uploadJson: '../../kindeditor/asp.net/upload_json.ashx',
+                fileManagerJson: '../../kindeditor/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                afterCreate: function () {
+                    var self = this;
+                    K.ctrl(document, 13, function () {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                    K.ctrl(self.edit.doc, 13, function () {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                }
+            });
+
+            prettyPrint();
+        });
+        KindEditor.ready(function (K) {
+            var editor1 = K.create('#productNotes', {
+                cssPath: '../../kindeditor/plugins/code/prettify.css',
+                uploadJson: '../../kindeditor/asp.net/upload_json.ashx',
+                fileManagerJson: '../../kindeditor/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                afterCreate: function () {
+                    var self = this;
+                    K.ctrl(document, 13, function () {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                    K.ctrl(self.edit.doc, 13, function () {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                }
+            });
+
+            prettyPrint();
+        });
+
+        /*-----------------*/
+
+
+        KindEditor.ready(function (K) {
+            var editor = K.editor({
+                uploadJson: '../../kindeditor/asp.net/upload_json.ashx',
+                allowFileManager: true
+            });
+            K('#image1').click(function () {
+                editor.loadPlugin('image', function () {
+                    editor.plugin.imageDialog({
+                        showRemote: false,
+                        imageUrl: K('#url').val(),
+                        clickFn: function (url, title, width, height, border, align) {
+                            K('#productImage').val(url);
+                            $("#imgst").attr("src", url)
+                            editor.hideDialog();
+                        }
+                    });
+                });
+            });
+        });
+
+
+    </script>
+    <div class="header">
+        <h1 class="page-header">
+            产品管理 <small>The news added</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#">产品管理</a></li>
+            <li class="active">产品添加</li>
+        </ol>
+        <input type="hidden" class="VideoCon" />
+    </div>
+    @using (Html.BeginForm())
+    {
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="card-title">
+                                <div class="title"></div>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                        <div class="panel-body">
+                            @Html.HiddenFor(x => x.id)
+                            @Html.HiddenFor(x => x.productImage)
+                            
+                            <div class="sub-title">展示图片</div>
+                            <div>
+                                <img style="width:250px; height:250px;" src="~/images/detail.png" id="imgst" />
+                            </div>
+                            <div class="sub-title"></div>
+                            <div>
+                                <input type="hidden" id="url" value="" />
+                                <input type="button" id="image1" value="选择图片" />
+                            </div>
+                            <div class="sub-title">产品名称</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.productName, new { @class = "form-control", placeholder = "请输入产品名称", style = "width:250px" })
+                            </div>
+                            <div class="sub-title">产品介绍</div>
+                            <div>
+                                @Html.TextAreaFor(x => x.productIntro, new { @class = "form-control", @cols = "100", rows = "8", style = "width:700px;height:300px;" })
+                                @*@Html.TextBoxFor(x => x.productName, new { @class = "form-control", placeholder = "请输入产品名称", style = "width:250px" })*@
+                            </div>
+                            <div class="sub-title">产品成分</div>
+                            <div>
+                                @Html.TextAreaFor(x => x.productConstituent, new { @class = "form-control", @cols = "100", rows = "8", style = "width:700px;height:300px;" })
+                                @*@Html.TextBoxFor(x => x.productName, new { @class = "form-control", placeholder = "请输入产品名称", style = "width:250px" })*@
+                            </div>
+                            <div class="sub-title">使用方法</div>
+                            <div>
+                                @Html.TextAreaFor(x => x.productUsage, new { @class = "form-control", @cols = "100", rows = "8", style = "width:700px;height:300px;" })
+                                @*@Html.TextBoxFor(x => x.productName, new { @class = "form-control", placeholder = "请输入产品名称", style = "width:250px" })*@
+                            </div>
+                            <div class="sub-title">注意事项</div>
+                            <div>
+                                @Html.TextAreaFor(x => x.productNotes, new { @class = "form-control", @cols = "100", rows = "8", style = "width:700px;height:300px;" })
+                                @*@Html.TextBoxFor(x => x.productName, new { @class = "form-control", placeholder = "请输入产品名称", style = "width:250px" })*@
+                            </div>
+                            <div class="sub-title">注意事项</div>
+                            <div>
+                                
+                              @Html.TextBoxFor(x => x.productUrl, new { @class = "form-control", placeholder = "请输入产品视频url", style = "width:450px" })
+                            </div>
+                            <button type="submit" class="btn btn-default">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+
+

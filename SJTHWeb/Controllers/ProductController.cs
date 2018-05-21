@@ -49,12 +49,15 @@ namespace SJTHWeb.Controllers
             if (model.id != 0)
             {
                 newst models = new newst();
-                models= newsbll.GetById(model.id);
+                models = newsbll.GetById(model.id);
                 models.headline = model.headline;
                 models.newstype = model.newstype;
                 models.contenttext = model.contenttext;
+                models.newstkeywords = model.newstkeywords;
+                models.newstdescription = model.newstdescription;
                 model.userid = USERID;
                 newsbll.Update(models);
+                
             }
             else
             {
@@ -268,16 +271,22 @@ namespace SJTHWeb.Controllers
            return View(model);
         }
         [HttpPost]
+        [ValidateInput(false)]
+        [AuthAttribute]
         public ActionResult addAuthority(Authority model)
         {
             if (model.id != 0)
             {
-                Authority models = new Authority();
-                models = _aBLL.GetById((int)model.id);
-                models.authorityName = model.authorityName;
-                models.authoritytTop = model.authoritytTop;
-                models.authorityUrl = model.authorityUrl;
-                _aBLL.Update(models);
+               // Authority models = new Authority();
+                //models = _aBLL.GetById((int)model.id);
+                //models.authorityName = model.authorityName;
+                //models.authoritytTop = model.authoritytTop;
+                //models.authorityUrl = model.authorityUrl;
+                //models.contenttext = model.contenttext;
+                //models.newstkeywords = model.newstkeywords;
+                //models.newstdescription = model.newstdescription;
+                 model.del = 1;
+                _aBLL.Update(model);
             }
             else
             {

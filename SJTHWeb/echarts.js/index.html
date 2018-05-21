@@ -1,0 +1,113 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>echarts.js插件实现中国地图省份选择效果</title>
+	<style>
+	*{margin:0;padding:0;}
+	.wrong-message{text-align:center;}
+	</style>
+</head>
+<body>
+	<!-- 代码部分begin -->
+	<div id="main" style="height:400px"></div>
+	<div id="wrong-message" class="wrong-message">当前选择：广州 </div>
+	<script src="js/echarts.js"></script>
+	<script>
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+        // 使用
+        require(['echarts','echarts/chart/map'],function (ch) {
+            // 基于准备好的dom，初始化echarts图表
+            var myChart = ch.init(document.getElementById('main'));  
+            option = {
+			    tooltip : {
+			        trigger: 'item',
+			        formatter: '{b}'
+			    }, dataRange: {
+			        x: 'left',
+			        y: 'bottom',
+			        //东北（黑龙江省、吉林省、辽宁省）；
+			        //华东（上海市、江苏省、浙江省、安徽省、福建省、江西省、山东省、台湾省）；
+			        //华北（北京市、天津市、山西省、河北省、内蒙古自治区）；
+			        //华中（河南省、湖北省、湖南省）；
+			        //华南（广东省、广西壮族自治区、海南省、香港特别行政区、澳门特别行政区）；
+			        //西南（四川省、贵州省、云南省、重庆市、西藏自治区）；
+			        //西北（陕西省、甘肃省、青海省、宁夏回族自治区、新疆维吾尔自治区）
+			        splitList: [
+                        { start: 1, end: 1, label: '已覆盖返回', color: '#EE4000' },
+                        { start: 2, end: 2, label: '未覆盖范围', color: '#D1D1D1' },
+                         
+			        ],
+			    },
+			    series : [{
+		            name: '中国',
+		            type: 'map',
+		            mapType: 'china',
+		            //selectedMode : 'multiple',
+		            itemStyle:{
+		                normal:{label:{show:true}},
+		                emphasis:{label:{show:true}}
+		            },
+		            data: [
+       { name: '北京', selected: false, value: 1 },
+       { name: '天津', selected: false, value: 1 },
+       { name: '上海', selected: false, value: 2 },
+       { name: '重庆', selected: false, value: 2 },
+       { name: '河北', selected: false, value: 1 },
+       { name: '河南', selected: false, value: 1 },
+       { name: '云南', selected: false, value: 2 },
+       { name: '辽宁', selected: false, value: 2 },
+       { name: '黑龙江', selected: false, value: 2 },
+       { name: '湖南', selected: false, value: 2 },
+       { name: '安徽', selected: false, value: 2 },
+       { name: '山东', selected: false, value: 1 },
+       { name: '新疆', selected: false, value: 2 },
+       { name: '江苏', selected: false, value: 2 },
+       { name: '浙江', selected: false, value: 2 },
+       { name: '江西', selected: false, value: 2 },
+       { name: '湖北', selected: false, value: 2 },
+       { name: '广西', selected: false, value: 2 },
+       { name: '甘肃', selected: false, value: 2 },
+       { name: '山西', selected: false, value: 1 },
+       { name: '内蒙古', selected: false, value: 1 },
+       { name: '陕西', selected: false, value: 1 },
+       { name: '吉林', selected: false, value: 2 },
+       { name: '福建', selected: false, value: 2 },
+       { name: '贵州', selected: false, value: 2 },
+       { name: '广东', selected: false, value: 2 },
+       { name: '青海', selected: false, value: 2 },
+       { name: '西藏', selected: false, value: 2 },
+       { name: '四川', selected: false, value: 2 },
+       { name: '宁夏', selected: false, value: 2 },
+       { name: '海南', selected: false, value: 2 },
+       { name: '台湾', selected: false, value: 2 },
+       { name: '香港', selected: false, value: 2 },
+       { name: '澳门', selected: false, value: 2 }
+		            ]
+		        }]
+			};
+			var ecConfig = require('echarts/config');
+			myChart.on(ecConfig.EVENT.MAP_SELECTED, function (param){
+			    //var selected = param.selected;
+			    //var str = '当前选择： ';
+			    //for (var p in selected) {
+			    //    if (selected[p]) {
+			    //        str += p + ' ';
+			    //    }
+			    //}
+			    //document.getElementById('wrong-message').innerHTML = str;
+			})
+            // 为echarts对象加载数据 
+            myChart.setOption(option); 
+        });
+    </script>
+    <!-- 代码部分end -->
+</body>
+
+</html>

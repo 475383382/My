@@ -1,0 +1,70 @@
+-----------public List<T> GetAll()-----------
+SELECT top 10 id,[headline],[contenttext],[userid],[creationtime],[newstype],[del],[type],[newstkeywords],[newstdescription] FROM [newst] where  del =1
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 15:16:59
+
+-----------public List<T> GetAll()-----------
+SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription] FROM [Authority] where  del = 1
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 15:16:59
+
+-----------public List<T> GetAll()-----------
+SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription] FROM [Authority] where  del = 1
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 17:05:10
+
+-----------public T GetById(int id)-----------
+SELECT Id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription] FROM [Authority] WHERE Id = @id
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 17:05:10
+
+-----------public List<T> GetAll()-----------
+SELECT top 10 id,[headline],[contenttext],[userid],[creationtime],[newstype],[del],[type],[newstkeywords],[newstdescription] FROM [newst] where  del =1
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 17:08:23
+
+-----------public List<T> GetAll()-----------
+SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription] FROM [Authority] where  del = 1
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 17:08:23
+
+-----------public List<T> GetAll()-----------
+SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription] FROM [Authority] where  del = 1
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 17:17:01
+
+-----------public T GetById(int id)-----------
+SELECT Id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription] FROM [Authority] WHERE Id = @id
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 17:17:01
+
+-----------public List<T> GetAll()-----------
+SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription] FROM [Authority] where  del = 1
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 17:53:31
+
+-----------public T GetById(int id)-----------
+SELECT Id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription] FROM [Authority] WHERE Id = @id
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 17:53:31
+
+-----------public List<T> GetAll()-----------
+SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription] FROM [Authority] where  del = 1
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 19:31:41
+
+-----------public List<T> GetAll()-----------
+SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription],[composition],[specification],[area],[unitPrice],[totalPrices] FROM [Authority] where  del = 1
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 20:16:51
+
+-----------public T GetById(int id)-----------
+SELECT Id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],[contenttext],[newstkeywords],[newstdescription],[composition],[specification],[area],[unitPrice],[totalPrices] FROM [Authority] WHERE Id = @id
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 20:16:51
+
+-----------public List<T> GetAll()-----------
+SELECT id,[headline],[contenttext],[userid],[creationtime],[newstype],[del],[type],[newstkeywords],[newstdescription] FROM [newst] where  del = 1 order by creationtime DESC
+在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接)
+　  2018/5/20 21:38:17
+

@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "addNews";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+
 }
 @using sjth.Model;
 @model newst
@@ -65,6 +66,14 @@
                             <div class="sub-title">新闻标题</div>
                             <div>
                                 @Html.TextBoxFor(x => x.headline, new { @class = "form-control", placeholder = "请输入新闻标题", style = "width:250px" })
+                            </div>
+                            <div class="sub-title">新闻关键词用_隔开</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.newstkeywords, new { @class = "form-control", placeholder = "请输入新闻关键词", style = "width:550px" })
+                            </div>
+                            <div class="sub-title">新闻描述</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.newstdescription, new { @class = "form-control", placeholder = "请输入新闻描述", style = "width:250px" })
                             </div>
                             <div class="sub-title">新闻内容</div>
                             <div>

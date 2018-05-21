@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "汽车篷布产品";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    ViewBag.keywords = "煤车篷布_汽车篷布_拉煤车篷布批发_篷布价格_邯郸云龙篷布厂";
+    ViewBag.description = "专业拉煤车篷布迷彩盖布防飞尘布定制批发,迷彩布拉煤专用抗老化,耐斯拉";
+}
+
+<style>
+    .pro-det {
+        padding-top: 0px;
+    }
+</style>
+<link href="~/jquery-enlargement20160816/dist/zoomify.min.css" rel="stylesheet" />
+<script type="text/javascript">
+        $("#6").attr("class", "active hidden-xs");
+</script>
+<div class="main container">
+    <div class="row">
+        <div class="serli ">
+            <ol class="breadcrumb">
+                <li>
+                    <i class="glyphicon glyphicon-home"></i>
+                    <a href="~/index">主页</a>
+                </li>
+                <li class="active"> 煤车篷布产品展示 </li>
+                
+            </ol>
+        </div>
+
+        <div class="col-sm-3 col-xs-12">
+           <div style="height:20px"></div>
+            <div class="carousel-inner" role="listbox">
+                <div class="list-head">
+                    <h2>联系电话：13021867037</h2>
+                    @*<a href="javascript:void(0)">10311111111</a>*@
+                </div>
+                <div class="list-head">
+                    <h2>客服微信</h2>
+                    @*<a href="javascript:void(0)">10311111111</a>*@
+                </div>
+                <div class="item active">
+                    
+                    <img src="~/static/images/wx.jpg" />
+                </div>
+            </div>
+            <div class="pro-list">
+                <div class="list-head">
+                    <h2>煤车篷布资讯</h2>
+                    <a href="~/pengbu">更多+</a>
+                </div>
+                <dl>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            @*<dt>净洗剂</dt>*@
+                            <dd><a href="~/pengbu/pbxwInfo/@item.id">@item.headline</a></dd>
+                        }
+                    }
+
+
+                </dl>
+            </div>
+
+        </div>
+
+        <div class="col-sm-9 col-xs-12">
+            <div class="serli ">
+
+
+                <div class="pro-show">
+                    <div class="list-head">
+                        <h2>煤车篷布迷彩系列展示</h2>
+                        @*<a href="~/pengbu/peng">更多+</a>*@
+                    </div>
+                    <ul class="row">
+                        @if(ViewBag.AuthList!=null)
+                        {
+                            foreach (var item in ViewBag.AuthList)
+                            {
+
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <a href="~/pengbu/PengInfo/@item.id">
+                                    <img alt="@item.authorityName" width="300" height="200" src="@item.authoritytTop" />
+                                    <p>@item.authorityName </p>
+                                </a> 
+                            </div>
+                        </li>
+                        @*<li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="迷彩篷布" width="300" height="200" src="~/static/images/products/5zz.jpg" />
+                                <p>迷彩篷布</p>
+                            </div>
+                        </li>
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="灰黑篷布" width="300" height="200" src="~/static/images/products/4zz.jpg" />
+                                <p>灰黑篷布</p>
+                            </div>
+                        </li>
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="5*16规格篷布" width="300" height="200" src="~/static/images/products/6zz.jpg" />
+                                <p>5*16规格篷布</p>
+                            </div>
+                        </li>
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="5*15篷布" width="300" height="200" src="~/static/images/products/7zz.jpg" />
+                                <p>5*15篷布</p>
+                            </div>
+                        </li>
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="汽车篷布仓库" width="300" height="200" src="~/static/images/products/10(2).jpg" />
+
+                                <p>汽车篷布仓库</p>
+                            </div>
+                        </li>
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="汽车篷布" width="300" height="200" src="~/static/images/products/19.jpg" />
+                                <p>汽车篷布</p>
+                            </div>
+                        </li>
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="5*15汽车篷布" width="300" height="200" src="~/static/images/products/23.jpg" />
+                                <p>5*15汽车篷布</p>
+                            </div>
+                        </li>
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="黑色篷布" width="300" height="200" src="~/static/images/products/28.jpg" />
+                                <p>黑色篷布</p>
+                            </div>
+                        </li>
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="黑灰篷布" width="300" height="200" src="~/static/images/products/29.jpg" />
+                                <p>黑灰篷布</p>
+                            </div>
+                        </li>
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="篷布细节" width="300" height="200" src="~/static/images/products/25.jpg" />
+                                <p>篷布细节</p>
+                            </div>
+                        </li>
+                        <li class="col-sm-3 col-xs-6">
+                            <div>
+                                <img alt="4.5*4.5篷布" width="300" height="200" src="~/static/images/products/26.jpg" />
+                                <p>4.5*4.5篷布</p>
+                            </div>
+                        </li>*@
+
+                            }
+                        }
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/jquery-enlargement20160816/dist/zoomify.min.js"></script>

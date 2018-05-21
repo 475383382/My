@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "联系我们";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+<script>
+    $(function () {
+        $("#5").attr("class", "active hidden-xs");
+    })
+</script>
+<div class="abpg container">
+    <div class="">
+        <!--<div class="col-md-3">
+            <div class="model-title theme">
+                关于我们
+            </div>
+            <div class="model-list">
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                        <a href="about.html">关于蓝海</a>
+                    </li>
+                </ul>
+            </div>
+        </div>-->
+        <div class="col-md-12 serli">
+            <ol class="breadcrumb">
+                <li>
+                    <i class="glyphicon glyphicon-home"></i>
+                    <a href="~/index">主页</a>
+                </li>
+                <li class="active">联系我们</li>
+            </ol>
+            <div class="map">
+                <iframe src="~/static/map/map.html" title="地图"></iframe>
+              
+            </div>
+            <div class="row mes">
+                <div class="address col-sm-6 col-xs-12">
+                    <ul>
+                        <li>公司地址：邯郸市南环路美的城东门南行200米</li>
+                        
+                        <li>移动电话（微信）：13021867037</li>
+                        <li>联系邮箱：475383382@qq.com</li>
+                    </ul>
+
+                    
+                    <img width="280" height="280" src="~/static/images/wx.jpg" />
+                </div>
+                @*<div class="letter col-sm-6 col-xs-12">
+                    <form id="message">
+                        <input type="text" placeholder="姓名" />
+                        <input type="text" placeholder="联系电话" />
+                        <textarea rows="6" placeholder="消息"></textarea>
+                    </form>
+                    <a class="btn btn-primary">发送</a>
+                </div>*@
+            </div>
+        </div>
+    </div>
+</div>
+

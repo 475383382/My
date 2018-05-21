@@ -86,7 +86,7 @@
                                     foreach (var item in Model)
                                     {
                                         <tr class="gradeA">
-                                            <td style="width:500px"><a href="@Url.Action("addNews", "Product", new { id=@item.id})" style="width:80px" class="btn btn-default">编辑</a> <input style="width:80px" class="btn btn-default" onclick="updates(@item.id)" value="删除" /></td>
+                                            <td ><a href="@Url.Action("addNews", "Product", new { id=@item.id})" style="width:80px" class="btn btn-default">编辑</a> <input style="width:80px" class="btn btn-default" onclick="updates(@item.id)" value="删除" /></td>
                                             <td>@item.newstypename</td>
                                             <td>@item.headline</td>
                                             <td>@item.creationtime</td>

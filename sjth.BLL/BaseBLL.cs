@@ -25,7 +25,7 @@ namespace sjth.BLL
         /// <returns>受影响的行数</returns>
         public int Insert(T entity)
         {
-          
+            
             return _iBaseManager.Insert(entity);
         }
 
@@ -98,6 +98,17 @@ namespace sjth.BLL
         {
 
             return _iBaseManager.GetAll(where);
+
+        }
+        /// <summary>
+        /// 根基条件获取钱10行数据
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public List<T> GetTop10(string count, string where)
+        {
+
+            return _iBaseManager.GetTop10( count, where);
 
         }
 

@@ -1,31 +1,72 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "煤车篷布厂家_拉煤车篷布批发/供应_煤车篷布价格-邯郸云龙篷布厂";
     Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    ViewBag.keywords = "煤车篷布,煤车篷布厂家,拉煤车篷布批发,拉煤车篷布供应,煤车篷布价格";
+    ViewBag.description = "邯郸云龙篷布厂专业生产拉煤车篷布迷彩盖布防飞尘布定制批发,迷彩布拉煤专用抗老化,耐斯拉。联系电话：13021867037";
 }
 
+<link href="~/jquery-enlargement20160816/dist/zoomify.min.css" rel="stylesheet" />
+<script>
+    //$("#two").removeClass("divClass")//移除 ID为two的对象的class名为divClass的样式。
+    //$(#two).removeClass("divClass divClass2")//移除多个样式。
+    //$("#two").attr("class","divClass")//设置Id为two的class属性。
+    // class="active hidden-xs"
+    $(function () {
+        $("#1").attr("class", "active hidden-xs");
+    })
+
+</script>
+<style>
+    .define-table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-left: 1px solid #888;
+        border-top: 1px solid #888;
+        text-align:center;
+    }
+
+        .define-table th, .define-table td {
+            border-right: 1px solid #888;
+            border-bottom: 1px solid #888;
+            padding: 5px 15px;
+        }
+
+        .define-table th {
+            font-weight: bold;
+            background: #ccc;
+        }
+</style>  
 <div class="main container">
     <div class="row">
         <div class="col-sm-3 col-xs-12">
             <div class="pro-list">
                 <div class="list-head">
-                    <h2>产品分类</h2>
-                    <a href="products.html">更多+</a>
+                    <h2>煤车篷布资讯</h2>
+                    <a href="~/pengbu">更多+</a>
                 </div>
                 <dl>
-                    <dt>净洗剂</dt>
-                    <dd><a href="products-detail.html">6501</a></dd>
-                    <dt>酸度调节剂</dt>
-                    <dd><a href="products-detail1.html">一水柠檬酸/无水柠檬酸</a></dd>
-                    <dt>防腐剂</dt>
-                    <dd><a href="products-detail2.html">苯甲酸钠</a></dd>
-                    <dt>磷酸盐</dt>
-                    <dd><a href="products-detail3.html">96%/98%磷酸三钠</a></dd>
-                    <dd><a href="products-detail4.html">三聚磷酸钠</a></dd>
-                    <dt>其他醚</dt>
-                    <dd><a href="products-detail5.html">二乙二醇己醚</a></dd>
-                    <dd><a href="products-detail6.html">二丙二醇丙醚</a></dd>
-                    <dd><a href="products-detail7.html">三丙二醇甲醚</a></dd>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                    @*<dt>净洗剂</dt>*@
+                    <dd><a href="~/pengbu/pbxwInfo/@item.id">@item.headline</a></dd>
+                        }
+                    }
+
+                    @*<dd><a href="products-detail.html">6501</a></dd>
+                         <dt>酸度调节剂</dt>
+                        <dd><a href="products-detail1.html">一水柠檬酸/无水柠檬酸</a></dd>
+                        <dt>防腐剂</dt>
+                        <dd><a href="products-detail2.html">苯甲酸钠</a></dd>
+                        <dt>磷酸盐</dt>
+                        <dd><a href="products-detail3.html">96%/98%磷酸三钠</a></dd>
+                        <dd><a href="products-detail4.html">三聚磷酸钠</a></dd>
+                         <dt>其他醚</dt>
+                        <dd><a href="products-detail5.html">二乙二醇己醚</a></dd>
+                        <dd><a href="products-detail6.html">二丙二醇丙醚</a></dd>
+                        <dd><a href="products-detail7.html">三丙二醇甲醚</a></dd>*@
                 </dl>
             </div>
 
@@ -35,17 +76,18 @@
                 <div class="col-md-9 col-sm-12">
                     <div class="about">
                         <div class="list-head">
-                            <h2>公司简介</h2>
-                            <a href="about.html">更多+</a>
+                            <h2>邯郸云龙篷布厂</h2>
+                            @*<a href="about.html">更多+</a>*@
                         </div>
-                        <div class=" about-con row">
+                        <div class="about-con row">
                             <div class="col-sm-6 col-xs-12">
-                                <img src="~/static/images/ab.jpg" />
+                                <img src="~/static/images/products/30.jpg" />
                             </div>
                             <div class="col-sm-6 col-xs-12">
-                                <h3>昆山蓝海化工有限公司</h3>
+                                <h3> 邯郸云龙篷布厂 </h3>
                                 <p>
-                                    经销批发的丙二醇、乙二醇、甘油、油酸、胺类、硬脂酸畅销消费者市场，在消费者当中享有较高的地位，公司与多家零售商和代理商建立了长期稳定的合作关系。
+                                    煤车、砂石车、垃圾车篷布,盖布,防飞尘布批发厂家订做煤车、砂石车、垃圾车篷布,盖布,防飞尘布批发厂家订做。
+                                    煤车篷布_煤车盖布_拉煤车篷布批发_砂石车篷布订做批发_邯郸云龙篷布厂
                                 </p>
                             </div>
                         </div>
@@ -59,70 +101,343 @@
                         <div class="con-det">
                             <a href="contact.html"><img src="~/static/images/listcon.jpg" /></a>
                             <ul>
-                                <li>公司地址：江苏省昆山市智谷创意产业园</li>
-                                <li>固定电话：<br />0512-57995109</li>
-                                <li>联系邮箱：Cindy@kindjob.com</li>
+                                <li>公司地址：邯郸市南环路美的城东门南行200米</li>
+                                <li>联系电话（微信）：<br />13021867037</li>
+                                <li>联系邮箱：475383382@qq.com</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
             <div class="pro-show">
                 <div class="list-head">
-                    <h2>产品展示</h2>
-                    <a href="products.html">更多+</a>
+                    <h2>拉煤车篷布展示</h2>
+                    <a href="~/pengbu/peng">更多+</a>
                 </div>
                 <ul class="row">
+                    @if (ViewBag.AuthList != null)
+                    {
+                        foreach (var item in ViewBag.AuthList)
+                        {
                     <li class="col-sm-3 col-xs-6">
-                        <a href="products-detail.html">
-                            <img src="~/static/images/products/pro1.jpg" />
-                            <p>6501</p>
-                        </a>
+                        <a href="~/pengbu/PengInfo/@item.id">
+                            <img width="300" height="200" src="@item.authoritytTop" />
+                        
+                                <p>@item.authorityName</p>
+                            </a>
+                    </li>
+                    @*<li class="col-sm-3 col-xs-6">
+                        <img width="300" height="200" src="~/static/images/products/25.jpg" />
+                        <p>迷彩篷布细节</p>
                     </li>
                     <li class="col-sm-3 col-xs-6">
-                        <a href="products-detail1.html">
-                            <img src="~/static/images/products/pro2.jpg" />
-                            <p>一水柠檬酸/无水柠檬酸</p>
-                        </a>
+                        <img width="300" height="200" src="~/static/images/products/23.jpg" />
+                        <p>成品篷布</p>
                     </li>
                     <li class="col-sm-3 col-xs-6">
-                        <a href="products-detail2.html">
-                            <img src="~/static/images/products/pro3.jpg" />
-                            <p>苯甲酸钠</p>
-                        </a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="products-detail3.html">
-                            <img src="~/static/images/products/pro4.jpg" />
-                            <p>96%/98%磷酸三钠</p>
-                        </a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="products-detail4.html">
-                            <img src="~/static/images/products/pro5.jpg" />
-                            <p>三聚磷酸钠</p>
-                        </a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="products-detail5.html">
-                            <img src="~/static/images/products/pro6.jpg" />
-                            <p>二乙二醇己醚</p>
-                        </a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="products-detail6.html">
-                            <img src="~/static/images/products/pro7.jpg" />
-                            <p>二丙二醇丙醚</p>
-                        </a>
-                    </li>
-                    <li class="col-sm-3 col-xs-6">
-                        <a href="products-detail7.html">
-                            <img src="~/static/images/products/pro8.jpg" />
-                            <p>三丙二醇甲醚</p>
-                        </a>
-                    </li>
+                        <img width="300" height="200" src="~/static/images/products/28.jpg" />
+                        <p>黑色布料篷布</p>
+                    </li>*@
+                        }
+                    }
                 </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <div class="pro-list">
+                <div class="list-head">
+                    <h2>篷布规格</h2>
+                    <a href="~/pengbu">更多+</a>
+                </div>
+                @*<dl>
+                        <dt>酸度调节剂</dt>
+                        <dd><a href="products-detail1.html">一水柠檬酸/无水柠檬酸</a></dd>
+                        <dt>防腐剂</dt>
+                        <dd><a href="products-detail2.html">苯甲酸钠</a></dd>
+                        <dt>磷酸盐</dt>
+                        <dd><a href="products-detail3.html">96%/98%磷酸三钠</a></dd>
+                        <dd><a href="products-detail4.html">三聚磷酸钠</a></dd>
+                         <dt>其他醚</dt>
+                        <dd><a href="javascript:void(0)"> <span style="color:red"> &nbsp;&nbsp; 宽   &nbsp;&nbsp;  高</span></a></dd>
+                        <dd><a href="products-detail6.html">二丙二醇丙醚</a></dd>
+                        <dd><a href="products-detail7.html">三丙二醇甲醚</a></dd>
+                    </dl>*@
+                <div class="con-det">
+                    @*<table>
+                            <tr>
+                                <td class="de-feature">产品名称：</td>
+                                <td class="de-value">煤车篷布</td>
+                                <td class="de-feature">品质标准:</td>
+                                <td class="de-value">中国国家标准</td>
+                                <td class="de-feature">主要用途：</td>
+                                <td class="de-value">煤车盖布、篷布</td>
+                            </tr>
+                            <tr>
+                                <td class="de-feature">成分及含量:</td>
+                                <td class="de-value">100%涤纶</td>
+                                <td class="de-feature">密度：</td>
+                                <td class="de-value">多种</td>
+                                <td class="de-feature">染整工艺：</td>
+                                <td class="de-value">漂白、印花</td>
+                            </tr>
+                        </table>*@
+
+                    <ul>
+                        <li style="height:10px"></li>
+                        <li>产品名称：	煤车篷布</li>
+                        <li class="tab-space"></li>
+                        <li style="height:10px"></li>
+                        <li style="top:10px">品质标准:	中国国家标准</li>
+                        <li class="tab-space"></li>
+                        <li style="height:10px"></li>
+                        <li>主要用途：	煤车盖布、篷布</li>
+                        <li class="tab-space"></li>
+                        <li style="height:10px"></li>
+                        <li>成分及含量:	100%涤纶</li>
+                        <li class="tab-space"></li>
+                        <li style="height:10px"></li>
+                        <li>密度：	多种</li>
+                        <li class="tab-space"></li>
+                        <li style="height:10px"></li>
+                        <li>染整工艺：	漂白、印花</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+
+            <div class="pro-list">
+                <div class="list-head">
+                    <h2>价格列表</h2>
+                    <a href="~/pengbu/pengjiage">更多价格+</a>
+                </div>
+                <div class="about-con row">
+                    <div class="col-sm-4 col-xs-12">
+                        <img style="width:300px;height:250px;" src="/static/images/products/4zz.jpg">
+                    </div>
+                    <div class="col-sm-8 col-xs-12">
+                        <table class="table-striped define-table">
+                            <tr>
+                                <td colspan="5">产品价格表</td>
+
+                            </tr>
+                            <tr>
+                                <td>产品名称/产品规格</td><td>长度/米</td><td>宽度/米</td><td>单价平米/元</td><td>总价格/元</td>
+                            </tr>
+                            <tr>
+                                <td>迷彩篷布/4*12</td>
+                                <td>4米</td>
+                                <td>12米</td>
+                                <td>2元-3元</td>
+                                <td>96元-144元</td>
+                            </tr>
+                            <tr>
+                                <td>迷彩篷布/4*12.5</td>
+                                <td>4米</td>
+                                <td>12.5米</td>
+                                <td>2元-3元</td>
+                                <td>100元-150元</td>
+                            </tr>
+                            <tr>
+                                <td>迷彩篷布/4*13</td>
+                                <td>4米</td>
+                                <td>13米</td>
+                                <td>2元-3元</td>
+                                <td>104元-156元</td>
+                            </tr>
+                            <tr>
+                                <td>迷彩篷布/4*14</td>
+                                <td>4米</td>
+                                <td>7米</td>
+                                <td>2元-3元</td>
+                                <td>108元-162元</td>
+                            </tr>
+                            <tr>
+                                <td>迷彩篷布/5*15</td>
+                                <td>4米</td>
+                                <td>7米</td>
+                                <td>2元-3元</td>
+                                <td>150元-225元</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+
+
+            <div class="about">
+                <div class="list-head">
+                    <h2>客户分布地区</h2>
+                    @*<a href="~/pengbu">更多+</a>*@
+                </div>
+                <div class="about-con row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div id="main" style="height:400px"></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <h4 style="color: #027BD6;"> 邯郸云龙篷布厂 </h4>
+                        <div style="height:5px;"></div>
+                        <p>
+                            煤车、砂石车、垃圾车篷布,盖布,防飞尘布批发厂家订做煤车、砂石车、垃圾车篷布,盖布,防飞尘布批发厂家订做。
+                            煤车篷布_煤车盖布_拉煤车篷布批发_砂石车篷布订做批发-邯郸云龙篷布厂。
+                        </p>
+                        <p>
+                            邯郸云龙篷布厂自成立以来专门生产煤车篷布，以让司机朋友们用上物美价廉的篷布为目的兢兢业业，目前我们的客户遍布各个省市及地区，主要包括北京、河北省、山西省、山东省、陕西、河南、天津、内蒙等，以及周边省市，为500多户商家供应篷布，一直受到商家的信赖与支持。提供多种规格的煤车篷布包括&nbsp;4 &nbsp;* &nbsp;12、&nbsp;4 &nbsp;* &nbsp;12.5、&nbsp;4 &nbsp;* &nbsp;13、&nbsp;4 &nbsp;* &nbsp;14、&nbsp;4 &nbsp;* &nbsp;15、&nbsp;5 &nbsp;* &nbsp;15、&nbsp;5 &nbsp;* &nbsp;14、&nbsp;5 等多种规格最大能到&nbsp;20&nbsp;*&nbsp;20，查看更多规格，欢迎来电咨询：13021867037。
+                        </p>
+                        <img style="width:200px;height:200px;" src="/static/images/products/4zz.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+
+            <div class="pro-list">
+                <div class="list-head">
+                    <h2>购买须知</h2>
+                    @*<a href="~/pengbu">更多+</a>*@
+                </div>
+                <div class="about-con row">
+                    <div class="col-sm-6 col-xs-12">
+                        <dl>
+                            <dt>关于色差</dt>
+                            <dd><a href="javascript:void(0)">本网站展示的所有煤车篷布、盖布图片均为实物拍摄，但由于拍照技术、光线、像素等影响，实物和图片会有所偏差请以<span style="color:orangered"> ”实物为准“</span>。</a></dd>
+                            <dt>关于产品</dt>
+                            <dd><a href="javascript:void(0)">本厂篷布为精心制作，篷布质量也是无可厚非，抗暴晒，耐撕扯，请放心采购。</a></dd>
+                            <dt>产品配送</dt>
+                            <dd><a href="javascript:void(0)">本厂有专门的送货专车，可提供上门送货，也可提供物流配送，根据您的需求安排送货或者物流配送，物流支持验货付款，如果产品在运输过程中出现质量问题即可拒收产品。</a></dd>
+
+                            <dt>新客户提示</dt>
+                            <dd><a href="javascript:void(0)"> 如果您是新客户想采购我们的篷布，我们可以发送篷布样品，或者是视频录像等，让您充分认识我们煤车篷布，解决你的后顾之忧。</a></dd>
+
+                        </dl>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+
+                        <img style="width:100%;" src="~/static/images/products/qiche.jpg" />
+                        @*<img  style="width:400px;height:400px;"src="~/static/images/products/qiche1.jpg" />*@
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
+
+<script src="~/jquery-enlargement20160816/dist/zoomify.min.js"></script>
+<script type="text/javascript">
+  //  $('.col-sm-3 img').zoomify();
+</script>
+
+<script src="~/echarts.js/js/echarts.js"></script>
+<script>
+    // 路径配置
+    require.config({
+        paths: {
+            echarts: 'http://echarts.baidu.com/build/dist'
+        }
+    });
+    // 使用
+    require(['echarts', 'echarts/chart/map'], function (ch) {
+        // 基于准备好的dom，初始化echarts图表
+        var myChart = ch.init(document.getElementById('main'));
+        option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b}'
+            }, dataRange: {
+                x: 'left',
+                y: 'bottom',
+                //东北（黑龙江省、吉林省、辽宁省）；
+                //华东（上海市、江苏省、浙江省、安徽省、福建省、江西省、山东省、台湾省）；
+                //华北（北京市、天津市、山西省、河北省、内蒙古自治区）；
+                //华中（河南省、湖北省、湖南省）；
+                //华南（广东省、广西壮族自治区、海南省、香港特别行政区、澳门特别行政区）；
+                //西南（四川省、贵州省、云南省、重庆市、西藏自治区）；
+                //西北（陕西省、甘肃省、青海省、宁夏回族自治区、新疆维吾尔自治区）
+                splitList: [
+                    { start: 1, end: 1, label: '已覆盖范围', color: '#EE4000' },
+                    { start: 2, end: 2, label: '未覆盖范围', color: '#D1D1D1' },
+
+                ],
+            },
+            series: [{
+                name: '中国',
+                type: 'map',
+                mapType: 'china',
+                //selectedMode : 'multiple',
+                itemStyle: {
+                    normal: { label: { show: true } },
+                    emphasis: { label: { show: true } }
+                },
+                data: [
+   { name: '北京', selected: false, value: 1 },
+   { name: '天津', selected: false, value: 1 },
+   { name: '上海', selected: false, value: 2 },
+   { name: '重庆', selected: false, value: 2 },
+   { name: '河北', selected: false, value: 1 },
+   { name: '河南', selected: false, value: 1 },
+   { name: '云南', selected: false, value: 2 },
+   { name: '辽宁', selected: false, value: 2 },
+   { name: '黑龙江', selected: false, value: 2 },
+   { name: '湖南', selected: false, value: 2 },
+   { name: '安徽', selected: false, value: 2 },
+   { name: '山东', selected: false, value: 1 },
+   { name: '新疆', selected: false, value: 2 },
+   { name: '江苏', selected: false, value: 2 },
+   { name: '浙江', selected: false, value: 2 },
+   { name: '江西', selected: false, value: 2 },
+   { name: '湖北', selected: false, value: 2 },
+   { name: '广西', selected: false, value: 2 },
+   { name: '甘肃', selected: false, value: 2 },
+   { name: '山西', selected: false, value: 1 },
+   { name: '内蒙古', selected: false, value: 1 },
+   { name: '陕西', selected: false, value: 1 },
+   { name: '吉林', selected: false, value: 2 },
+   { name: '福建', selected: false, value: 2 },
+   { name: '贵州', selected: false, value: 2 },
+   { name: '广东', selected: false, value: 2 },
+   { name: '青海', selected: false, value: 2 },
+   { name: '西藏', selected: false, value: 2 },
+   { name: '四川', selected: false, value: 2 },
+   { name: '宁夏', selected: false, value: 2 },
+   { name: '海南', selected: false, value: 2 },
+   { name: '台湾', selected: false, value: 2 },
+   { name: '香港', selected: false, value: 2 },
+   { name: '澳门', selected: false, value: 2 }
+                ]
+            }]
+        };
+        var ecConfig = require('echarts/config');
+        myChart.on(ecConfig.EVENT.MAP_SELECTED, function (param) {
+            //var selected = param.selected;
+            //var str = '当前选择： ';
+            //for (var p in selected) {
+            //    if (selected[p]) {
+            //        str += p + ' ';
+            //    }
+            //}
+            //document.getElementById('wrong-message').innerHTML = str;
+        })
+        // 为echarts对象加载数据
+        myChart.setOption(option);
+    });
+</script>

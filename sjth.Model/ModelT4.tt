@@ -17,7 +17,7 @@
 	bool useTableNamesDictionary = true;
 #>
 <#	// 连接字符串,表结构查询语句
-	string musicStoreConnectionString = @"Data Source=bds257784298.my3w.com;Initial Catalog=bds257784298_db;User ID=bds257784298;Password=zhw860629";
+	string musicStoreConnectionString = @"Data Source=bds263396666.my3w.com;Initial Catalog=bds263396666_db;User ID=bds263396666;Password=zxw475383";
 	//三层 T4 数据库连接字符串从 OA.Common 里取 
 	//string musicStoreConnectionString = yhkj.Common.ConfigurationHelper.AppSetting();
 	string getAllTableSchemaSqlTemplate = @"SELECT sysobjects.Name as TableName, syscolumns.Name as ColumnName, SysTypes.Name as ColumnType, syscolumns.Length as ColumnLength,CASE syscolumns.isnullable WHEN '1' THEN 'true' ELSE 'false' END AS istablenull, isnull(sys.extended_properties.Value,'') as Remark,case when syscolumns.name in (select primarykey=a.name FROM syscolumns a inner join sysobjects b on a.id=b.id  and b.xtype='U' and b.name<>'dtproperties' where  exists(SELECT 1 FROM sysobjects where xtype='PK' and name in (SELECT name FROM sysindexes WHERE indid in(SELECT indid FROM sysindexkeys WHERE id = a.id AND colid=a.colid))) and b.name=sysobjects.Name) then 1 else 0 end as IsKey FROM sysobjects,SysTypes,syscolumns LEFT JOIN sys.extended_properties ON (Syscolumns.Id = sys.extended_properties.major_id AND Syscolumns.Colid = sys.extended_properties.minor_id) WHERE (sysobjects.Xtype ='u' OR Sysobjects.Xtype ='v') AND sysobjects.name='{0}' AND Sysobjects.Id = Syscolumns.Id AND SysTypes.XType = Syscolumns.XType AND SysTypes.Name <> 'sysname' AND Sysobjects.Name Like '%' AND (sys.extended_properties.name='MS_Description' or sys.extended_properties.name is null) ORDER By SysObjects.Name, SysColumns.colid ";
@@ -63,7 +63,7 @@ namespace sjth.Model
 			using (SqlConnection sqlConnection = new SqlConnection(musicStoreConnectionString))
 			{
 				// 获取所有用户表的查询语句
-				string getTableRemarkSql = string.Format("SELECT value FROM fn_listextendedproperty (NULL, 'schema', 'dbo', 'table', default, NULL, NULL) where name=N'MS_Description' or objname=N'{0}' ", tableName);
+				string getTableRemarkSql = string.Format("SELECT value FROM fn_listextendedproperty (NULL, 'schema', 'dbo', 'table', default, NULL, NULL) where name=N'MS_Description' and objname=N'{0}' ", tableName);
 				SqlCommand sqlCommand = new SqlCommand(getTableRemarkSql, sqlConnection);
 				sqlConnection.Open();
 				SqlDataReader reader = sqlCommand.ExecuteReader();
@@ -72,7 +72,7 @@ namespace sjth.Model
 				{
 					i++;
 					tableRemark = reader["value"] as string;
-					tableRemark += "实体类"+i;
+					 
 				}
 			} 
 #>

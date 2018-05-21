@@ -12,6 +12,7 @@
     <script charset="utf-8" src="~/kindeditor/kindeditor.js"></script>
     <script charset="utf-8" src="~/kindeditor/lang/zh_CN.js"></script>
     <script charset="utf-8" src="~/kindeditor/plugins/code/prettify.js"></script>
+
     <script>
 
         $(function () {
@@ -100,6 +101,29 @@
 
 
     </script>
+    <script>
+        KindEditor.ready(function (K) {
+            var editor1 = K.create('#contenttext', {
+                cssPath: '../../kindeditor/plugins/code/prettify.css',
+                uploadJson: '../../kindeditor/asp.net/upload_json.ashx',
+                fileManagerJson: '../../kindeditor/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                afterCreate: function () {
+                    var self = this;
+                    K.ctrl(document, 13, function () {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                    K.ctrl(self.edit.doc, 13, function () {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                }
+            });
+
+            prettyPrint();
+        });
+    </script>
     <div class="header">
         <h1 class="page-header">
             权威认证 <small>The news added</small>
@@ -136,18 +160,49 @@
                                 <input type="hidden" id="url" value="" />
                                 <input type="button" id="image1" value="选择图片" />
                             </div>
-                            <div class="sub-title">认证名称</div>
+                            <div class="sub-title">篷布名称</div>
 
                             <div>
                                 @Html.TextBoxFor(x => x.authorityName, new { @class = "form-control", placeholder = "产品名称 + 认证名称", style = "width:250px" })
                             </div>
-                            <div class="sub-title">详细图片</div>
+                            <div class="sub-title">篷布关键词用_隔开</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.newstkeywords, new { @class = "form-control", placeholder = "请输入新闻关键词", style = "width:550px" })
+                            </div>
+                            <div class="sub-title">篷布描述</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.newstdescription, new { @class = "form-control", placeholder = "请输入新闻描述", style = "width:550px" })
+                            </div>
+                            <div class="sub-title">成分及含量</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.composition, new { @class = "form-control", placeholder = "成分及含量", style = "width:250px" })
+                            </div>
+                            <div class="sub-title">规格</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.specification, new { @class = "form-control", placeholder = "规格", style = "width:250px" })
+                            </div>
+                            <div class="sub-title">面积</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.area, new { @class = "form-control", placeholder = "规格", style = "width:250px" })
+                            </div>
+                            <div class="sub-title">单价</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.unitPrice, new { @class = "form-control", placeholder = "规格", style = "width:250px" })
+                            </div>
+                            <div class="sub-title">总价</div>
+                            <div>
+                                @Html.TextBoxFor(x => x.totalPrices, new { @class = "form-control", placeholder = "规格", style = "width:250px" })
+                            </div>
+                            <div class="sub-title">篷布详情照片</div>
                             <input type="button" id="J_selectImage" value="批量上传" />
                             <div style="" id=""></div>
                             <div id="J_imageView">
                                
                             </div>
-
+                            <div class="sub-title">篷布介绍</div>
+                            <div>
+                                @Html.TextAreaFor(x => x.contenttext, new { @class = "form-control", @cols = "100", rows = "8", style = "width:700px;height:500px;" })
+                            </div>
                             <div style="clear: both" class="sub-title"></div>
                             <button type="submit" class="btn btn-default">提交</button>
                         </div>

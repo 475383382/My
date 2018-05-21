@@ -1,0 +1,112 @@
+﻿
+@{
+    if (Model != null) {
+        ViewBag.Title = Model.headline;
+        ViewBag.keywords = Model.newstkeywords;//关键词
+        ViewBag.description = Model.newstdescription;//描述
+    }
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+@using System.Web.Mvc;
+@using sjth.Model;
+@model newst
+<div class="abpg container">
+    <div class="row">
+        <!--<div class="col-md-3">
+            <div class="model-title theme">
+                关于我们
+            </div>
+            <div class="model-list">
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                        <a href="about.html">关于蓝海</a>
+                    </li>
+                </ul>
+            </div>
+        </div>-->
+        <ol class="breadcrumb">
+            <li>
+                <i class="glyphicon glyphicon-home"></i>
+                <a href="~/index">主页</a>
+            </li>
+            <li>
+
+                <a href="~/pengbu">煤车篷布资讯</a>
+            </li>
+            <li class="active">内容详情</li>
+        </ol>
+        <div class="col-sm-3 col-xs-12">
+            <div class="pro-list">
+                <div class="list-head">
+                    <h2>推荐阅读</h2>
+                    <a href="~/pengbu">更多+</a>
+                </div>
+                <dl>
+                    @if (ViewBag.list != null)
+                    {
+                        foreach (var item in ViewBag.list)
+                        {
+                            @*<dt>净洗剂</dt>*@
+                            <dd><a href="~/pengbu/pbxwInfo/@item.id">@item.headline</a></dd>
+                        }
+                    }
+
+                    @*<dd><a href="products-detail.html">6501</a></dd>
+                     <dt>酸度调节剂</dt>
+                    <dd><a href="products-detail1.html">一水柠檬酸/无水柠檬酸</a></dd>
+                    <dt>防腐剂</dt>
+                    <dd><a href="products-detail2.html">苯甲酸钠</a></dd>
+                    <dt>磷酸盐</dt>
+                    <dd><a href="products-detail3.html">96%/98%磷酸三钠</a></dd>
+                    <dd><a href="products-detail4.html">三聚磷酸钠</a></dd>
+                     <dt>其他醚</dt>
+                    <dd><a href="products-detail5.html">二乙二醇己醚</a></dd>
+                    <dd><a href="products-detail6.html">二丙二醇丙醚</a></dd>
+                    <dd><a href="products-detail7.html">三丙二醇甲醚</a></dd>*@
+                </dl>
+            </div>
+
+        </div>
+        <div class="col-md-8 serli">
+           
+            @if (Model != null)
+            {
+               
+                    <div class="news-deatil">
+                        <h2>@Model.headline</h2>
+                        <p class="news-time">
+                            发布时间：@Model.creationtime
+                        </p>
+                        @*<img src="static/images/news/news1.jpg" />*@
+                        <div class="news-con">
+                            @Html.Raw(Model.contenttext)
+                        </div>
+                    </div>
+                    
+                 
+            }
+            <ul class="pager">
+                @if (ViewBag.GetShangYiPianByDate.id != 0)
+                {
+                    <li class="previous"><a href="~/pengbu/pbxwInfo/@ViewBag.GetShangYiPianByDate.id"><span aria-hidden="true"></span>上一篇：@ViewBag.GetShangYiPianByDate.headline</a></li>
+                }
+                else
+                {
+
+                <li class="previous"><a href="javascript:void(0)"><span aria-hidden="true"></span> 上一篇：没有了</a></li>
+                }
+                @if (ViewBag.GetXiaYiPian.id != 0)
+                {
+                <li class="next"><a href="~/pengbu/pbxwInfo/@ViewBag.GetXiaYiPian.id">下一篇：@ViewBag.GetXiaYiPian.headline <span aria-hidden="true"></span></a></li>
+                }
+                else
+                {
+                    <li class="next"><a href="javascript:void(0)"><span aria-hidden="true"></span> 下一篇：没有了</a></li>
+                }
+
+            </ul>
+          
+        </div>
+    </div>
+</div>
+ 

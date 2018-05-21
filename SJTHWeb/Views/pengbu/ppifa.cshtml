@@ -1,0 +1,159 @@
+﻿@{
+    ViewBag.Title = "篷布批发";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    ViewBag.keywords = "汽车篷布_煤车篷布批发_邯郸云龙篷布厂";
+    ViewBag.description = "专业拉煤车篷布迷彩盖布防飞尘布定制批发,迷彩布拉煤专用抗老化,耐斯拉";
+}
+
+<script>
+    $(function () {
+        $("#3").attr("class", "active hidden-xs");
+    })
+</script>
+<div class="abpg container">
+    <div class="">
+        <!--<div class="col-md-3">
+            <div class="model-title theme">
+                产品介绍
+            </div>
+            <div class="model-list">
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                        <a href="about.html">产品介绍</a>
+                    </li>
+                </ul>
+            </div>
+        </div>-->
+        <div class="col-md-12 serli">
+            <ol class="breadcrumb">
+                <li>
+                    <i class="glyphicon glyphicon-home"></i>
+                    <a href="~/index">主页</a>
+                </li>
+                <li class="active"> 篷布批发 </li>
+            </ol>
+
+            <div class="pro-detail row">
+                <div class="col-sm-4 col-xs-12 ">
+
+                    <div id="carousel-example-generic1" class="carousel slide " data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic1" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic1" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                
+                                <img src="~/static/images/products/1zz.jpg" />
+                            </div>
+                            <div class="item">
+                                <img src="~/static/images/products/30.jpg" />
+                            </div>
+                            <div class="item">
+                                <img src="~/static/images/products/5zz.jpg" />
+                                
+                            </div>
+
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic1" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic1" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                    @*<img src="~/static/images/products/30.jpg" />*@
+                    <table class="price">
+                        <tr>
+                            <td colspan="2">汽车篷布批发：优质煤车篷布放心采购。</td>
+                        </tr>
+                        @*<tr>
+                                <td>起批量：</td>
+                                <td>≥2 吨</td>
+                            </tr>*@
+                        <tr>
+                            <td colspan="2">
+                                如有疑问？<i class="glyphicon glyphicon-hand-right"></i><a href="javascript:void(0)">联系我们:13021867037</a>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="pro-list">
+                        <div class="list-head">
+                            <h2>煤车篷布资讯</h2>
+                            <a href="~/pengbu">更多+</a>
+                        </div>
+                        <dl>
+                            <dd><a href="~/pengbu/pengjiage">篷布价格</a></dd>
+                            @if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    @*<dt>净洗剂</dt>*@
+                                    <dd><a href="~/pengbu/pbxwInfo/@item.id">@item.headline</a></dd>
+                                }
+                            }
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <div class="pack" style="font-size: 15px">
+                        <ul>
+                            <li><a>篷布信息</a><a style="float:right" href="~/pengbu/pengjiage">篷布批发价格+</a></li>
+                        </ul>
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="de-feature">产品名称：</td>
+                            <td class="de-value">煤车篷布</td>
+                            <td class="de-feature">品质标准:</td>
+                            <td class="de-value">中国国家标准</td>
+                            <td class="de-feature">主要用途：</td>
+                            <td class="de-value">煤车盖布、篷布</td>
+                        </tr>
+                        <tr>
+                            <td class="de-feature">成分及含量:</td>
+                            <td class="de-value">100%涤纶</td>
+                            <td class="de-feature">密度：</td>
+                            <td class="de-value">多种</td>
+                            <td class="de-feature">染整工艺：</td>
+                            <td class="de-value">漂白、印花</td>
+                        </tr>
+                    </table>
+                    <div class="tab-space"></div>
+                    <div class="news-con" style="font-size: 15px">
+                        <p>产品特征</p>
+                        <p>厚度指数：超薄薄常规厚</p>
+                        <p> 柔软指数：偏硬适中柔软超软</p>
+                        <p> 弹力指数：无弹力微弹弹力超弹</p>
+                        <p> 具体用途：工业,运输,装饰布,农业,煤车盖布</p>
+                    </div>
+                    <div class="pack">
+                        <ul>
+                            <li><a>产品优势</a></li>
+                        </ul>
+                    </div>
+                    <div class="news-con" style="font-size: 15px">
+                        <p>1、材质图面纹理平整不结痂,密度平均用高温热合一体拼接技术。</p>
+                        <p>2、布面平滑、轻便、延展性好、柔韧性强、张力好、抗撕裂、抗剥离强、环保、买摩擦、物理和化学性质稳定。</p>
+                        <p>3、抗氧化材质、持久抗晒、耐高温、寿命更长、被广泛应用。</p> 
+                        <p>4、人性设计：产品设计款式新颖。</p>
+                        <p>5、真材实料：选取材料经过多层把关生产加工。</p>
+                        <p>6、持久耐用：接缝紧密美观，细节讲究精细。</p>
+                        <p>7、质量从优：我们只做让您用的放心，实惠的产品。</p>
+                        <p>8、雄厚厂家：先进的设备，雄厚的技术，精湛的工艺。</p>
+                        <p>9、完美服务：完美的售后，我们做到了细心，热心，爱心，优质的售后让顾客无后顾之忧。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

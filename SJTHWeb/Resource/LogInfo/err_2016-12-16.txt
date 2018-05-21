@@ -1,9 +1,0 @@
------------public List<T> GetPage(out int totalCount, int pageNumber = 1, int pageSize = 20, string condition = null, object param = null, SortParameters sort = null)-----------
-   SELECT id,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del] 
-                                FROM (
-	                                SELECT ROW_NUMBER() OVER(ORDER BY [id]) AS ROW_NUM,[authorityName],[authoritytTop],[authorityUrl],[datatimes],[del],id FROM [Authority] WHERE 1 = 1  del =1 
-                                )AS TEMP
-                                WHERE TEMP.ROW_NUM BETWEEN 1 AND 10
-“del”附近有语法错误。
-　  2016/12/16 18:33:13
-

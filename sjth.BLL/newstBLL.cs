@@ -19,5 +19,22 @@ namespace sjth.BLL
         {
             return dao.GetAlls();
         }
+        /// <summary>
+        /// 根据时间查询上一条
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public newst GetShangYiPianByDate(string dateTime) {
+            return dao.GetShangYiPianByDate(dateTime);
+        }
+        /// <summary>
+        /// 根据时间查询下一条
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public newst GetXiaYiPian(string dateTime)
+        {
+            return dao.GetXiaYiPian(dateTime);
+        }
     }
 }

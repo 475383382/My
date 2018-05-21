@@ -201,6 +201,33 @@ namespace sjth.DAO
         }
 
         /// <summary>
+        /// 根据条件获取10条记录
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="where">where条件，两端不用带空格，比如：name='lmh'</param>
+        /// <returns></returns>
+        public List<T> GetTop10(string count,string where)
+        {
+            string sql = string.Empty;
+            try
+            {
+                sql = string.Format("SELECT top {2} id,{1} FROM [{0}]",
+               TableName<T>(),
+               FieldNames(typeof(T)), count);
+                if (!string.IsNullOrEmpty(where))
+                    sql = sql + " where " + where;
+                return Run(conn => conn.Query<T>(sql).ToList());
+            }
+            catch (Exception e)
+            {
+
+                Logger.writeInfos("-----------public List<T> GetAll()-----------\r\n" + sql + "\r\n" + e.Message + "\r\n");
+                return null;
+            }
+
+        }
+
+        /// <summary>
         /// 获取所有的实体
         /// </summary>
         /// <typeparam name="T"></typeparam>

@@ -1,0 +1,123 @@
+﻿
+@{
+    // ViewBag.Title = "PengInfo-云龙篷布";
+
+
+    if (Model != null)
+    {
+        ViewBag.Title = Model.authorityName;
+        ViewBag.keywords = Model.newstkeywords;//关键词
+        ViewBag.description = Model.newstdescription;//描述
+    }
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+    }
+<script>
+    $("#6").attr("class", "active hidden-xs");
+</script>
+<div class="abpg container">
+    <div class="">
+        <!--<div class="col-md-3">
+            <div class="model-title theme">
+                产品介绍
+            </div>
+            <div class="model-list">
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                        <a href="about.html">产品介绍</a>
+                    </li>
+                </ul>
+            </div>
+        </div>-->
+        <div class="col-md-12 serli">
+            <ol class="breadcrumb">
+                <li>
+                    <i class="glyphicon glyphicon-home"></i>
+                    <a href="~/index">主页</a>
+                </li>
+                <li class="active"><a href="~/pengbu/peng/">煤车篷布产品</a></li>
+                <li class="active"> 煤车篷布详情 </li>
+            </ol>
+            <div class="caseMenu clearfix">
+                <ul class="caseList">
+                    <li class="col-sm-2 col-xs-6 active">
+                        <div>
+                            <a href="javascript:void(0)">全部</a>
+                        </div>
+                    </li>
+                    @if (ViewBag.AuthList != null)
+                    {
+                        foreach (var item in ViewBag.AuthList)
+                        {
+                            <li class="col-sm-2 col-xs-6">
+                                <div>
+                                    <a href="~/pengbu/PengInfo/@item.id">@item.authorityName</a>
+                                </div>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="pro-detail row">
+                <div class="col-sm-4 col-xs-12 ">
+                    <img src="@Model.authoritytTop" />
+                    <table class="price">
+                        <tr>
+                            <td>参考价：</td>
+                            <td class="pr-num">2-3元/平米</td>
+                        </tr>
+                        <tr>
+                            <td>起批价：</td>
+                            <td>2-3元/平米</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                如有疑问？<i class="glyphicon glyphicon-hand-right"></i> <a href="javascript:void(0)">联系我们</a>
+                            </td>
+                            <td>
+                             <span style="color:#ff0000">13021867037</span> 
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <div class="pack">
+                        <ul>
+                            <li><a>详细信息</a></li>
+                        </ul>
+                    </div>
+                     @*@Html.Raw(Model.contenttext)*@
+                    <table>
+                        <tr>
+                            <td class="de-feature">产品名称：</td>
+                            <td class="de-value">@Model.authorityName</td>
+                            <td class="de-feature">成分及含量：</td>
+                            <td class="de-value">	100%涤纶</td>
+                            <td class="de-feature">规格：</td>
+                            <td class="de-value">@Model.specification</td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="de-feature">面积：</td>
+                            <td class="de-value">@Model.area 平米</td>
+                            <td class="de-feature">单价:</td>
+                            <td class="de-value">@Model.unitPrice 元/平米</td>
+                            <td class="de-feature">总价：</td>
+                            <td class="de-value">@Model.totalPrices 元/平米</td>
+                             
+                        </tr>
+                    </table>
+                    <div class="tab-space"></div>
+                    <div class="news-con">
+                          @Html.Raw(Model.contenttext) 
+                    </div>
+                        <!--<div class="pro-imgcs">
+            <img src="static/images/products/pro1-1.png"/>
+        </div>-->
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
